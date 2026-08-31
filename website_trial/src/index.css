@@ -1,0 +1,430 @@
+:root {
+  --color-navy: #092644;
+  --color-navy-dark: #05172b;
+  --color-navy-light: #133961;
+  --color-navy-surface: #0e3054;
+  --color-orange: #F78E1E;
+  --color-orange-hover: #e07c10;
+  --color-orange-soft: rgba(247, 142, 30, 0.12);
+  --color-bg-light: #F8F9FA;
+  --color-bg-sand: #F4F2EE;
+  --color-white: #FFFFFF;
+  --color-text-dark: #121820;
+  --color-text-muted: #626E7A;
+  --color-text-light: #E2E8F0;
+  --color-border-light: rgba(9, 38, 68, 0.1);
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+
+  --font-heading: 'Josefin Sans', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7.5rem;
+  /* 120px desktop padding */
+
+  /* Emil Kowalski Design Engineering Easing Curves */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --transition-fast: transform 160ms var(--ease-out), opacity 160ms var(--ease-out);
+  --transition-smooth: transform 280ms var(--ease-out), background-color 280ms var(--ease-out), box-shadow 280ms var(--ease-out);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-subtle: 0 10px 30px rgba(9, 38, 68, 0.05);
+  --shadow-elevated: 0 20px 45px rgba(9, 38, 68, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* Accessibility Focus-Visible Ring (WCAG 2.1 AA) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip link for screen reader users */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--color-orange);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  z-index: 9999;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: top 0.2s var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Typography Hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+}
+
+p {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 200ms var(--ease-out);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
+
+/* Emil Kowalski Rule: Responsive Button Press Active Scale */
+button:active,
+.btn:active {
+  transform: scale(0.97) !important;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* Editorial Section Header */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+}
+
+.dark-section {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section h4 {
+  color: var(--color-white);
+}
+
+.dark-section p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Buttons & Interactive Elements */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2.25rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  min-height: 44px;
+  /* Accessible Touch Target */
+  transition: transform 200ms var(--ease-out), background-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background-color: var(--color-navy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(9, 38, 68, 0.2);
+  }
+}
+
+.btn-orange {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border-color: var(--color-orange);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-orange:hover {
+    background-color: var(--color-orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(247, 142, 30, 0.3);
+  }
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-outline-dark:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+  }
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-outline-light:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+    border-color: var(--color-white);
+  }
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-full);
+}
+
+.status-badge.launching {
+  background-color: rgba(247, 142, 30, 0.15);
+  color: var(--color-orange);
+  border: 1px solid rgba(247, 142, 30, 0.3);
+}
+
+.status-badge.delivered {
+  background-color: rgba(9, 38, 68, 0.1);
+  color: var(--color-navy);
+  border: 1px solid rgba(9, 38, 68, 0.2);
+}
+
+.dark-section .status-badge.delivered {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Form Controls */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-navy);
+}
+
+.dark-section .form-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-dark);
+  outline: none;
+  transition: border-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-navy);
+  box-shadow: 0 0 0 3px rgba(9, 38, 68, 0.1);
+}
+
+.dark-section .form-input,
+.dark-section .form-select,
+.dark-section .form-textarea {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+}
+
+.dark-section .form-input:focus,
+.dark-section .form-select:focus,
+.dark-section .form-textarea:focus {
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(247, 142, 30, 0.2);
+}
+
+/* Asymmetric Editorial Grid */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+}
+
+.dark-section .glass-card {
+  background: rgba(9, 38, 68, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Emil Kowalski Entry Animations: never scale(0), start from scale(0.95) & opacity 0 */
+@keyframes scaleFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: scaleFadeIn 0.35s var(--ease-out) forwards;
+}
+
+/* Modal backdrop */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5, 23, 43, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  animation: scaleFadeIn 0.25s var(--ease-out);
+}
