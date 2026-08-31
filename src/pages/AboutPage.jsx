@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
 import { ArrowRight, ShieldCheck, Heart, Sparkles, Compass, CheckCircle2, Eye, Award } from 'lucide-react';
+import { assetPath } from '../utils/assetPath';
 
 export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
   const { leadership, values } = useCMS();
@@ -49,7 +50,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url('/assets/images/shreyas_interior.jpg')`,
+            backgroundImage: `url(${assetPath('images/shreyas_interior.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',
@@ -181,17 +182,17 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
               {
                 name: 'Team Member 1',
                 title: 'Director | Construction Strategy & CEO | Bespoke',
-                image: '/assets/images/team_member.png'
+                image: assetPath('images/team_member.png')
               },
               {
                 name: 'Team Member 2',
                 title: 'Vice President | Commercial & Development Strategy',
-                image: '/assets/images/team_member.png'
+                image: assetPath('images/team_member.png')
               },
               {
                 name: 'Team Member 3',
                 title: 'Vice President & Business Head | Advithiya',
-                image: '/assets/images/team_member.png'
+                image: assetPath('images/team_member.png')
               }
             ].map((member, index) => (
               <motion.div

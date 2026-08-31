@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
 import { MapPin, Phone, Mail, Clock, Send, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
+import { assetPath } from '../utils/assetPath';
 
 export const ContactPage = ({ setActivePage }) => {
   const { company, projects } = useCMS();
@@ -48,7 +49,7 @@ export const ContactPage = ({ setActivePage }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url('/assets/images/shreyas_exterior.jpg')`,
+            backgroundImage: `url(${assetPath('images/shreyas_exterior.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',

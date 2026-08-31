@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
 import { ShieldCheck, ChevronDown, CheckCircle2, FileText, Lock, Eye, ArrowRight, Award, Compass, HardHat, Layers } from 'lucide-react';
+import { assetPath } from '../utils/assetPath';
 
 export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
   const { qualityPillars, charter } = useCMS();
@@ -34,17 +35,17 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
   return (
     <div className="standards-page animate-fade-in" style={{ paddingTop: '5rem' }}>
       {/* 01. HERO */}
-      <section 
-        style={{ 
+      <section
+        style={{
           position: 'relative',
-          paddingTop: '6rem', 
-          paddingBottom: '6rem', 
-          backgroundColor: '#092644', 
+          paddingTop: '6rem',
+          paddingBottom: '6rem',
+          backgroundColor: '#092644',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
       >
-        <motion.div 
+        <motion.div
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.28 }}
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
@@ -54,7 +55,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url('/assets/images/material_texture.jpg')`,
+            backgroundImage: `url(${assetPath('images/material_texture.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',
@@ -91,7 +92,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
           </p>
 
           {/* Quality Pillars Badges */}
-          <div 
+          <div
             style={{
               padding: '1.25rem 1.5rem',
               backgroundColor: '#F8F9FA',
@@ -111,7 +112,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
             {qualityPillars.map((pillar, idx) => {
               const isOpen = activeAccordion === idx;
               return (
-                <div 
+                <div
                   key={idx}
                   style={{
                     border: '1px solid rgba(9, 38, 68, 0.1)',
@@ -189,7 +190,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginTop: '2.5rem' }}>
             {['Site Planning & Sunlight', 'Water Conservation & Recycling', 'Responsible Material Choices', 'Resident Well-being'].map((item, index) => (
-              <div 
+              <div
                 key={index}
                 style={{
                   backgroundColor: '#FFFFFF',
@@ -226,7 +227,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
             </p>
           </div>
 
-          <div 
+          <div
             style={{
               padding: '1.25rem 1.5rem',
               backgroundColor: '#F8F9FA',
@@ -356,7 +357,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
             See the plan. Know the progress. Choose with confidence.
           </h2>
 
-          <button 
+          <button
             className="btn btn-orange"
             onClick={() => {
               if (setActivePage) setActivePage('projects');

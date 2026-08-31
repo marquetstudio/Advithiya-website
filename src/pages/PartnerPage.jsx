@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Users, HardHat, Send, CheckCircle2, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
+import { assetPath } from '../utils/assetPath';
 
 export const PartnerPage = () => {
   const [partnerType, setPartnerType] = useState('Land Partnership');
@@ -36,17 +37,17 @@ export const PartnerPage = () => {
   return (
     <div className="partner-page animate-fade-in" style={{ paddingTop: '5rem' }}>
       {/* 01. HERO */}
-      <section 
-        style={{ 
+      <section
+        style={{
           position: 'relative',
-          paddingTop: '6rem', 
-          paddingBottom: '6rem', 
-          backgroundColor: '#092644', 
+          paddingTop: '6rem',
+          paddingBottom: '6rem',
+          backgroundColor: '#092644',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
       >
-        <motion.div 
+        <motion.div
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.28 }}
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
@@ -56,7 +57,7 @@ export const PartnerPage = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url('/assets/images/urban_chalet.jpg')`,
+            backgroundImage: `url(${assetPath('images/urban_chalet.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',
@@ -96,12 +97,12 @@ export const PartnerPage = () => {
                 <div style={{ width: '52px', height: '52px', borderRadius: '8px', backgroundColor: 'rgba(247, 142, 30, 0.12)', color: '#F78E1E', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
                   <Building2 size={26} />
                 </div>
-                
+
                 <span className="section-tag" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>Landowners</span>
                 <h2 style={{ fontSize: '1.5rem', color: '#092644', marginBottom: '0.5rem' }}>
                   Have a development opportunity?
                 </h2>
-                
+
                 <div style={{ color: '#F78E1E', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1rem' }}>
                   The right development begins with the right opportunity.
                 </div>
@@ -115,7 +116,7 @@ export const PartnerPage = () => {
                 </p>
               </div>
 
-              <button 
+              <button
                 className="btn btn-outline-dark"
                 onClick={() => handleSelectCategory('Land Partnership')}
               >
@@ -156,7 +157,7 @@ export const PartnerPage = () => {
                 </p>
               </div>
 
-              <button 
+              <button
                 className="btn btn-outline-dark"
                 onClick={() => handleSelectCategory('Channel Partnership')}
               >
@@ -197,7 +198,7 @@ export const PartnerPage = () => {
                 </p>
               </div>
 
-              <button 
+              <button
                 className="btn btn-outline-dark"
                 onClick={() => handleSelectCategory('Vendor / Consultant')}
               >
@@ -233,7 +234,7 @@ export const PartnerPage = () => {
                   <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
                     Partnership Category
                   </label>
-                  <select 
+                  <select
                     value={formData.category}
                     onChange={(e) => {
                       setFormData({ ...formData, category: e.target.value });
@@ -252,9 +253,9 @@ export const PartnerPage = () => {
                   <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
                     Full Name / Organization *
                   </label>
-                  <input 
-                    type="text" 
-                    required 
+                  <input
+                    type="text"
+                    required
                     placeholder="Enter your name or company"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -267,9 +268,9 @@ export const PartnerPage = () => {
                     <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
                       Phone Number *
                     </label>
-                    <input 
-                      type="tel" 
-                      required 
+                    <input
+                      type="tel"
+                      required
                       placeholder="+91 Phone number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -281,9 +282,9 @@ export const PartnerPage = () => {
                     <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
                       Email Address *
                     </label>
-                    <input 
-                      type="email" 
-                      required 
+                    <input
+                      type="email"
+                      required
                       placeholder="name@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -296,7 +297,7 @@ export const PartnerPage = () => {
                   <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
                     Tell us what you bring to the table *
                   </label>
-                  <textarea 
+                  <textarea
                     rows={4}
                     required
                     placeholder="Provide details about your land parcel, network, services, or expertise..."

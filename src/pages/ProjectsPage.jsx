@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
 import { ArrowRight, ShieldCheck, Filter, MessageSquare, Compass } from 'lucide-react';
+import { assetPath } from '../utils/assetPath';
 
 export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
   const { projects } = useCMS();
@@ -66,7 +67,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url('/assets/images/hero_architecture.jpg')`,
+            backgroundImage: `url(${assetPath('images/hero_architecture.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
 import { ArrowLeft, ArrowRight, Share2, BookOpen, MessageSquare } from 'lucide-react';
 import { toast } from 'sonner';
+import { assetPath } from '../utils/assetPath';
 
 export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal }) => {
   const { articles } = useCMS();
@@ -22,7 +23,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
       <div className="insights-detail-page animate-fade-in" style={{ paddingTop: '5.5rem' }}>
         <section style={{ backgroundColor: '#092644', color: '#FFFFFF', padding: '4.5rem 0 3.5rem 0' }}>
           <div className="container" style={{ maxWidth: '840px' }}>
-            <button 
+            <button
               onClick={() => onSelectArticle(null)}
               style={{
                 background: 'rgba(255, 255, 255, 0.12)',
@@ -53,7 +54,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.7)' }}>
               <div>Published: {activeArticle.date} • Advithiya Editorial</div>
-              <button 
+              <button
                 onClick={() => handleShare(activeArticle)}
                 style={{
                   background: 'none',
@@ -76,27 +77,27 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
 
         <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
           <div className="container" style={{ maxWidth: '800px' }}>
-            <div 
-              style={{ 
-                fontSize: '1.15rem', 
-                color: '#626E7A', 
-                lineHeight: 1.85, 
-                whiteSpace: 'pre-line' 
+            <div
+              style={{
+                fontSize: '1.15rem',
+                color: '#626E7A',
+                lineHeight: 1.85,
+                whiteSpace: 'pre-line'
               }}
             >
               {activeArticle.content}
             </div>
 
             <div style={{ marginTop: '4rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(9, 38, 68, 0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-              <button 
-                className="btn btn-outline-dark" 
+              <button
+                className="btn btn-outline-dark"
                 onClick={() => onSelectArticle(null)}
               >
                 ← Back to Insights Overview
               </button>
 
-              <button 
-                className="btn btn-orange" 
+              <button
+                className="btn btn-orange"
                 onClick={onOpenSpeakModal}
               >
                 <span>Speak to Our Team</span>
@@ -113,17 +114,17 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
   return (
     <div className="insights-page animate-fade-in" style={{ paddingTop: '5rem' }}>
       {/* 01. HERO */}
-      <section 
-        style={{ 
+      <section
+        style={{
           position: 'relative',
-          paddingTop: '6rem', 
-          paddingBottom: '6rem', 
-          backgroundColor: '#092644', 
+          paddingTop: '6rem',
+          paddingBottom: '6rem',
+          backgroundColor: '#092644',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
       >
-        <motion.div 
+        <motion.div
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.28 }}
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
@@ -133,7 +134,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url('/assets/images/shreyas_interior.jpg')`,
+            backgroundImage: `url(${assetPath('images/shreyas_interior.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',
@@ -180,11 +181,11 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
                   <div style={{ fontSize: '0.85rem', color: '#F78E1E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                     {art.category} • {art.readTime}
                   </div>
-                  
+
                   <h2 style={{ fontSize: '1.45rem', color: '#092644', lineHeight: 1.35, marginBottom: '1rem' }}>
                     {art.title}
                   </h2>
-                  
+
                   <p style={{ fontSize: '0.95rem', color: '#626E7A', lineHeight: 1.65, marginBottom: '2rem' }}>
                     {art.excerpt}
                   </p>
@@ -211,7 +212,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
             Speak with the Advithiya team for information about our projects, plans and documentation.
           </p>
 
-          <button 
+          <button
             className="btn btn-orange"
             onClick={onOpenSpeakModal}
           >

@@ -12,9 +12,27 @@
  *   backgroundImage: `url(${assetPath('images/foo.png')})`
  */
 export const assetPath = (path) => {
-  // import.meta.env.BASE_URL is injected by Vite at build time.
-  // It equals '/' in dev with no base, or '/Advithiya-website/' in production.
-  const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // strip trailing slash
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  if (!path) return '';
+  if (
+    path.startsWith('http://') ||
+    path.startsWith('https://') ||
+    path.startsWith('data:') ||
+    path.startsWith('blob:')
+  ) {
+    return path;
+  }
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+  let cleanPath = path;
+  if (cleanPath.startsWith('/assets/')) {
+    cleanPath = cleanPath.slice('/assets'.length);
+  } else if (cleanPath.startsWith('assets/')) {
+    cleanPath = cleanPath.slice('assets'.length);
+  }
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = `/${cleanPath}`;
+  }
   return `${base}/assets${cleanPath}`;
 };
+
+export const getAssetUrl = assetPath;
+export default assetPath;
