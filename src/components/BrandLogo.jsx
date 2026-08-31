@@ -1,4 +1,5 @@
 import React from 'react';
+import { assetPath } from '../utils/assetPath';
 
 export const BrandLogo = ({
   variant = 'full', // 'full', 'inverted', 'mark-only'
@@ -17,7 +18,7 @@ export const BrandLogo = ({
       style={{ display: 'inline-flex', alignItems: 'center' }}
     >
       <img
-        src="/assets/images/brand_logo.png"
+        src={assetPath('images/brand_logo.png')}
         alt="Advithiya – Crafting Possibilities"
         style={{
           height: `${size}px`,

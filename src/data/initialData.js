@@ -1,3 +1,5 @@
+const img = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
+
 export const initialData = {
   company: {
     name: "Advithiya",
@@ -29,9 +31,9 @@ export const initialData = {
       landExtent: "0.42 Acres",
       carpetArea: "1,240 – 1,890 sq. ft.",
       reraNo: "PRM/KA/RERA/1251/309/PR/240826/006892",
-      heroImage: "/assets/images/shreyas_exterior.jpg",
-      interiorImage: "/assets/images/shreyas_interior.jpg",
-      textureImage: "/assets/images/material_texture.jpg",
+      heroImage: img("shreyas_exterior.jpg"),
+      interiorImage: img("shreyas_interior.jpg"),
+      textureImage: img("material_texture.jpg"),
       description: "A boutique residential community designed around privacy, comfort and everyday functionality.",
       vision: "A considered collection of 16 homes across four levels, offering 2 and 3 BHK residences designed around privacy, comfort and everyday functionality.",
       pricing: "Pricing on request (Launching Soon)",
@@ -52,7 +54,7 @@ export const initialData = {
           date: "Q3 2026",
           milestone: "Project Planning & Internal Verification",
           description: "Micro-climate site analysis, structural engineering reviews, and RERA documentation completed.",
-          image: "/assets/images/shreyas_exterior.jpg"
+          image: img("shreyas_exterior.jpg")
         }
       ]
     },
@@ -75,9 +77,9 @@ export const initialData = {
       landExtent: "Boutique Enclave",
       carpetArea: "3 BHK Boutique Residences",
       reraNo: "PRM/KA/RERA/1251/309/PR/210515/004120",
-      heroImage: "/assets/images/urban_chalet.jpg",
-      interiorImage: "/assets/images/hero_architecture.jpg",
-      textureImage: "/assets/images/material_texture.jpg",
+      heroImage: img("urban_chalet.jpg"),
+      interiorImage: img("hero_architecture.jpg"),
+      textureImage: img("material_texture.jpg"),
       description: "A boutique collection of 3 BHK homes across two towers, created for just 10 families.",
       vision: "Boutique design homes limited by design. Featuring two towers across five stories with two parking spaces per apartment and elevator access on Dasarahalli Main Road, Kempapura.",
       pricing: "Delivered & Occupied",
@@ -97,7 +99,7 @@ export const initialData = {
           date: "Completed & Delivered",
           milestone: "Handover to 10 Families",
           description: "All residences completed and handed over on Dasarahalli Main Road, Kempapura.",
-          image: "/assets/images/urban_chalet.jpg"
+          image: img("urban_chalet.jpg")
         }
       ]
     }

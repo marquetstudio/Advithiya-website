@@ -7,6 +7,7 @@ import {
 import { useCMS } from '../context/CMSContext';
 import AnimatedCounter from '../components/AnimatedCounter';
 import TextToImageHero from '../components/TextToImageHero';
+import { assetPath } from '../utils/assetPath';
 
 export const HomePage = ({
   setActivePage,
@@ -172,7 +173,7 @@ export const HomePage = ({
               }}
             >
               <img
-                src="/assets/images/about_advithiya_image.png"
+                src={assetPath('images/about_advithiya_image.png')}
                 alt="Advithiya Architectural Landscape & Living"
                 style={{
                   width: '100%',
@@ -408,22 +409,22 @@ export const HomePage = ({
               {
                 title: "Thoughtful Design",
                 desc: "Spaces considered around how people live.",
-                image: "/assets/images/thoughtful_design.png"
+                image: assetPath('images/thoughtful_design.png')
               },
               {
                 title: "Quality",
                 desc: "Attention to detail from planning through delivery.",
-                image: "/assets/images/quality.png"
+                image: assetPath('images/quality.png')
               },
               {
                 title: "Responsible Development",
                 desc: "Considered choices around resources, materials and long-term community well-being.",
-                image: "/assets/images/responsible_development.png"
+                image: assetPath('images/responsible_development.png')
               },
               {
                 title: "Transparency",
                 desc: "Clear information, respectful guidance and accountable delivery.",
-                image: "/assets/images/transparency.png"
+                image: assetPath('images/transparency.png')
               }
             ].map((pillar, idx) => (
               <motion.div

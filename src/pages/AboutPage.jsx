@@ -96,7 +96,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
               }}
             >
               <img
-                src="/assets/images/who_we_are.png"
+                src={assetPath('images/who_we_are.png')}
                 alt="Who We Are"
                 style={{
                   width: '100%',
