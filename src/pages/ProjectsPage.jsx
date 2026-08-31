@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
 import { ArrowRight, ShieldCheck, Filter, MessageSquare, Compass } from 'lucide-react';
 import { assetPath } from '../utils/assetPath';
@@ -150,33 +150,43 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
       {/* 03. PROJECTS LIST */}
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          {filteredProjects.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '4rem 0', color: '#626E7A' }}>
-              <h3>No projects match your selected filter.</h3>
-              <button
-                className="btn btn-outline-dark"
-                onClick={() => { setStatusFilter('All'); setTypeFilter('All'); }}
-                style={{ marginTop: '1rem' }}
+          <AnimatePresence mode="wait">
+            {filteredProjects.length === 0 ? (
+              <motion.div
+                key="empty-state"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.25 }}
+                style={{ textAlign: 'center', padding: '4rem 0', color: '#626E7A' }}
               >
-                Clear Filters
-              </button>
-            </div>
-          ) : (
-            <motion.div
-              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '3rem' }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={containerVariants}
-            >
-              {filteredProjects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  variants={itemVariants}
-                  whileHover={{ y: -8, boxShadow: '0 25px 45px rgba(9, 38, 68, 0.12)' }}
-                  transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-                  style={{
-                    backgroundColor: '#F8F9FA',
+                <h3>No projects match your selected filter.</h3>
+                <button
+                  className="btn btn-outline-dark"
+                  onClick={() => { setStatusFilter('All'); setTypeFilter('All'); }}
+                  style={{ marginTop: '1rem' }}
+                >
+                  Clear Filters
+                </button>
+              </motion.div>
+            ) : (
+              <motion.div
+                key={`${statusFilter}-${typeFilter}`}
+                style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '3rem' }}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={containerVariants}
+              >
+                {filteredProjects.map((project) => (
+                  <motion.div
+                    key={project.id}
+                    layout
+                    variants={itemVariants}
+                    whileHover={{ y: -8, boxShadow: '0 25px 45px rgba(9, 38, 68, 0.12)' }}
+                    transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+                    style={{
+                      backgroundColor: '#F8F9FA',
                     borderRadius: '8px',
                     overflow: 'hidden',
                     border: '1px solid rgba(9, 38, 68, 0.08)',
@@ -254,6 +264,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
               ))}
             </motion.div>
           )}
+          </AnimatePresence>
         </div>
       </section>
 
