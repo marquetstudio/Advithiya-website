@@ -38,7 +38,7 @@ export const SpeakToTeamModal = ({ isOpen, onClose, defaultProject = '' }) => {
         style={{
           width: '100%',
           maxWidth: '560px',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           padding: '2.5rem',
           position: 'relative',
@@ -70,7 +70,7 @@ export const SpeakToTeamModal = ({ isOpen, onClose, defaultProject = '' }) => {
 
         {submitted ? (
           <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
-            <CheckCircle2 size={54} style={{ color: '#F78E1E', margin: '0 auto 1.25rem auto' }} />
+            <CheckCircle2 size={54} style={{ color: '#A6462A', margin: '0 auto 1.25rem auto' }} />
             <h3 style={{ color: '#FFFFFF', marginBottom: '0.75rem' }}>Thank You for Reaching Out</h3>
             <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
               Your inquiry has been routed directly to our project team at <strong>{company.email}</strong>. A representative will contact you within 2 business hours.
@@ -134,7 +134,7 @@ export const SpeakToTeamModal = ({ isOpen, onClose, defaultProject = '' }) => {
                     className="form-select"
                     value={formData.enquiryType}
                     onChange={(e) => setFormData({ ...formData, enquiryType: e.target.value })}
-                    style={{ backgroundColor: '#0e3054', color: '#FFFFFF' }}
+                    style={{ backgroundColor: '#563D2F', color: '#FFFFFF' }}
                   >
                     <option>Schedule Site Visit</option>
                     <option>Request Pricing & Cost Sheet</option>
@@ -148,7 +148,7 @@ export const SpeakToTeamModal = ({ isOpen, onClose, defaultProject = '' }) => {
                     className="form-select"
                     value={formData.project}
                     onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                    style={{ backgroundColor: '#0e3054', color: '#FFFFFF' }}
+                    style={{ backgroundColor: '#563D2F', color: '#FFFFFF' }}
                   >
                     {projects.map((p) => (
                       <option key={p.id} value={p.name}>{p.name}</option>

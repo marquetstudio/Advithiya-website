@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Calculator, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { assetPath } from '../utils/assetPath';
 
 export const TextToImageHero = ({
@@ -24,8 +24,8 @@ export const TextToImageHero = ({
         minHeight: '94vh',
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: '#05172b',
-        color: '#FFFFFF',
+        backgroundColor: '#F6EFE4',
+        color: '#4A3428',
         overflow: 'hidden',
         paddingTop: '6rem'
       }}
@@ -38,19 +38,19 @@ export const TextToImageHero = ({
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url(${shreyas.heroImage || assetPath('images/hero_architecture.jpg')})`,
+          backgroundImage: `url(${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 35%',
           scale: bgScale,
-          filter: 'contrast(1.08) brightness(0.85)',
+          filter: 'contrast(1.0) brightness(0.95)',
           zIndex: 0
         }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
+        animate={{ opacity: 0.2 }}
         transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
       />
 
-      {/* 2. GRADIENT OVERLAY */}
+      {/* 2. GRADIENT OVERLAY (SAND THEME) */}
       <div
         style={{
           position: 'absolute',
@@ -58,7 +58,7 @@ export const TextToImageHero = ({
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(180deg, rgba(5, 23, 43, 0.88) 0%, rgba(9, 38, 68, 0.65) 50%, rgba(5, 23, 43, 0.98) 100%)',
+          background: 'linear-gradient(180deg, rgba(246, 239, 228, 0.95) 0%, rgba(246, 239, 228, 0.20) 50%, rgba(246, 239, 228, 1) 100%)',
           zIndex: 1
         }}
       />
@@ -76,21 +76,12 @@ export const TextToImageHero = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
         >
-          <motion.span
-            className="section-tag"
-            initial={{ opacity: 0, x: -15 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
-          >
-          </motion.span>
-
           {/* GIANT ARCHITECTURAL IMAGE-MASKED BRAND WORDMARK */}
           <div style={{ position: 'relative', margin: '0.5rem 0 1.5rem 0' }}>
             <h1
               style={{
                 color: 'transparent',
-                backgroundImage: `url(${shreyas.heroImage || assetPath('images/hero_architecture.jpg')})`,
+                backgroundImage: `url(${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 WebkitBackgroundClip: 'text',
@@ -101,14 +92,14 @@ export const TextToImageHero = ({
                 letterSpacing: '-0.02em',
                 textTransform: 'uppercase',
                 margin: 0,
-                filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))'
+                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
               }}
             >
               ADVITHIYA
             </h1>
             <h2
               style={{
-                color: '#FFFFFF',
+                color: '#4A3428',
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.85rem)',
                 lineHeight: 1.1,
                 marginTop: '0.25rem',
@@ -116,17 +107,17 @@ export const TextToImageHero = ({
               }}
             >
               Thoughtfully built. <br />
-              <span style={{ color: '#F78E1E' }}>Transparently delivered.</span>
+              <span style={{ color: '#A6462A' }}>Transparently delivered.</span>
             </h2>
           </div>
 
           <p
             style={{
               fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-              color: 'rgba(255, 255, 255, 0.9)',
+              color: '#7A6355',
               marginBottom: '2.5rem',
               maxWidth: '720px',
-              fontWeight: 300,
+              fontWeight: 400,
               lineHeight: 1.65
             }}
           >
@@ -137,7 +128,12 @@ export const TextToImageHero = ({
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="btn btn-orange"
+              className="btn"
+              style={{
+                backgroundColor: '#A6462A',
+                color: '#FFFFFF',
+                border: '1px solid #A6462A'
+              }}
               onClick={() => {
                 setActivePage('projects');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -150,7 +146,12 @@ export const TextToImageHero = ({
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="btn btn-outline-light"
+              className="btn"
+              style={{
+                backgroundColor: 'transparent',
+                color: '#4A3428',
+                border: '1px solid #4A3428'
+              }}
               onClick={onOpenSpeakModal}
             >
               <span>Speak to Our Team</span>

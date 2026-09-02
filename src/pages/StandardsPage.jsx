@@ -40,7 +40,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
           position: 'relative',
           paddingTop: '6rem',
           paddingBottom: '6rem',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
@@ -81,7 +81,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <span className="section-tag">Quality</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#092644', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428', marginBottom: '1.5rem' }}>
             Quality begins long before handover.
           </h2>
           <p style={{ fontSize: '1.15rem', color: '#626E7A', lineHeight: 1.75, marginBottom: '1.25rem' }}>
@@ -97,10 +97,10 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
               padding: '1.25rem 1.5rem',
               backgroundColor: '#F8F9FA',
               borderRadius: '8px',
-              borderLeft: '4px solid #F78E1E',
+              borderLeft: '4px solid #A6462A',
               marginBottom: '3rem',
               fontSize: '1rem',
-              color: '#092644',
+              color: '#4A3428',
               fontWeight: 600
             }}
           >
@@ -115,7 +115,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
                 <div
                   key={idx}
                   style={{
-                    border: '1px solid rgba(9, 38, 68, 0.1)',
+                    border: '1px solid rgba(74, 52, 40, 0.1)',
                     borderRadius: '8px',
                     overflow: 'hidden',
                     transition: 'all 0.3s ease'
@@ -132,7 +132,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
                       fontFamily: "'Josefin Sans', sans-serif",
                       fontSize: '1.3rem',
                       fontWeight: 600,
-                      color: '#092644',
+                      color: '#4A3428',
                       cursor: 'pointer',
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -140,11 +140,11 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <span style={{ color: '#F78E1E', fontSize: '1.1rem' }}>0{idx + 1}.</span>
+                      <span style={{ color: '#A6462A', fontSize: '1.1rem' }}>0{idx + 1}.</span>
                       <span>{pillar.title}</span>
                     </div>
                     <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                      <ChevronDown size={22} style={{ color: '#F78E1E' }} />
+                      <ChevronDown size={22} style={{ color: '#A6462A' }} />
                     </motion.div>
                   </button>
 
@@ -158,7 +158,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
                         style={{ overflow: 'hidden' }}
                       >
                         <div style={{ padding: '0 2rem 1.75rem 2rem', backgroundColor: '#F8F9FA', color: '#626E7A', fontSize: '1.05rem', lineHeight: 1.7 }}>
-                          <p style={{ marginBottom: '1rem', fontWeight: 500, color: '#092644' }}>{pillar.summary}</p>
+                          <p style={{ marginBottom: '1rem', fontWeight: 500, color: '#4A3428' }}>{pillar.summary}</p>
                           <p style={{ margin: 0 }}>{pillar.detail}</p>
                         </div>
                       </motion.div>
@@ -175,7 +175,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
       <section className="section-padding" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <span className="section-tag">Responsible Development</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#092644', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428', marginBottom: '1.5rem' }}>
             Building with the future in mind.
           </h2>
 
@@ -196,14 +196,14 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
                   backgroundColor: '#FFFFFF',
                   padding: '1.5rem',
                   borderRadius: '8px',
-                  border: '1px solid rgba(9, 38, 68, 0.08)',
+                  border: '1px solid rgba(74, 52, 40, 0.08)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.75rem'
                 }}
               >
-                <CheckCircle2 size={20} style={{ color: '#F78E1E', flexShrink: 0 }} />
-                <span style={{ color: '#092644', fontWeight: 600, fontSize: '0.95rem' }}>{item}</span>
+                <CheckCircle2 size={20} style={{ color: '#A6462A', flexShrink: 0 }} />
+                <span style={{ color: '#4A3428', fontWeight: 600, fontSize: '0.95rem' }}>{item}</span>
               </div>
             ))}
           </div>
@@ -214,7 +214,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <span className="section-tag">Transparency</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#092644', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428', marginBottom: '1.5rem' }}>
             Clear information. No unnecessary complexity.
           </h2>
 
@@ -232,9 +232,9 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
               padding: '1.25rem 1.5rem',
               backgroundColor: '#F8F9FA',
               borderRadius: '8px',
-              borderLeft: '4px solid #F78E1E',
+              borderLeft: '4px solid #A6462A',
               fontSize: '1rem',
-              color: '#092644',
+              color: '#4A3428',
               fontWeight: 600
             }}
           >
@@ -244,7 +244,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
       </section>
 
       {/* 05. CUSTOMER CHARTER */}
-      <section className="section-padding" style={{ backgroundColor: '#092644', color: '#FFFFFF' }}>
+      <section className="section-padding" style={{ backgroundColor: '#4A3428', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '880px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="section-tag">Customer Charter</span>
@@ -268,7 +268,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
                   gap: '1.5rem'
                 }}
               >
-                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.4rem', fontWeight: 700, color: '#F78E1E', minWidth: '40px' }}>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.4rem', fontWeight: 700, color: '#A6462A', minWidth: '40px' }}>
                   0{i + 1}
                 </div>
                 <div>
@@ -290,7 +290,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
         <div className="container" style={{ maxWidth: '900px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="section-tag">Visibility</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#092644' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428' }}>
               What you can expect to find on our project pages.
             </h2>
           </div>
@@ -331,13 +331,13 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
                     backgroundColor: '#F8F9FA',
                     padding: '2rem',
                     borderRadius: '8px',
-                    border: '1px solid rgba(9, 38, 68, 0.08)'
+                    border: '1px solid rgba(74, 52, 40, 0.08)'
                   }}
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '8px', backgroundColor: 'rgba(247, 142, 30, 0.12)', color: '#F78E1E', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '8px', backgroundColor: 'rgba(166, 70, 42, 0.12)', color: '#A6462A', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
                     <IconComp size={22} />
                   </div>
-                  <h3 style={{ fontSize: '1.2rem', color: '#092644', marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontSize: '1.2rem', color: '#4A3428', marginBottom: '0.5rem' }}>
                     {item.title}
                   </h3>
                   <p style={{ fontSize: '0.925rem', color: '#626E7A', margin: 0, lineHeight: 1.6 }}>
@@ -351,7 +351,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
       </section>
 
       {/* 07. CLOSING */}
-      <section style={{ backgroundColor: '#05172b', color: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ backgroundColor: '#312119', color: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <h2 style={{ color: '#FFFFFF', fontSize: 'clamp(2.25rem, 4vw, 3.25rem)', marginBottom: '2rem' }}>
             See the plan. Know the progress. Choose with confidence.

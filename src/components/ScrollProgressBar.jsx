@@ -17,7 +17,7 @@ export const ScrollProgressBar = () => {
         left: 0,
         right: 0,
         height: '3px',
-        backgroundColor: '#F78E1E',
+        backgroundColor: '#A6462A',
         transformOrigin: '0%',
         scaleX,
         zIndex: 1000

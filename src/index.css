@@ -1,18 +1,18 @@
 :root {
-  --color-navy: #092644;
-  --color-navy-dark: #05172b;
-  --color-navy-light: #133961;
-  --color-navy-surface: #0e3054;
-  --color-orange: #F78E1E;
-  --color-orange-hover: #e07c10;
-  --color-orange-soft: rgba(247, 142, 30, 0.12);
-  --color-bg-light: #F8F9FA;
-  --color-bg-sand: #F4F2EE;
+  --color-navy: #4A3428; /* Secondary: Dark Brown/Rust */
+  --color-navy-dark: #312119;
+  --color-navy-light: #6A4B3A;
+  --color-navy-surface: #563D2F;
+  --color-orange: #A6462A; /* Accent: Rust Orange */
+  --color-orange-hover: #A85621;
+  --color-orange-soft: rgba(166, 70, 42, 0.12);
+  --color-bg-light: #F6EFE4; /* Primary: Sand */
+  --color-bg-sand: #EAE1D3;
   --color-white: #FFFFFF;
-  --color-text-dark: #121820;
-  --color-text-muted: #626E7A;
-  --color-text-light: #E2E8F0;
-  --color-border-light: rgba(9, 38, 68, 0.1);
+  --color-text-dark: #4A3428;
+  --color-text-muted: #826E64;
+  --color-text-light: #EBE4DD;
+  --color-border-light: rgba(74, 52, 40, 0.1);
   --color-border-dark: rgba(255, 255, 255, 0.12);
 
   --font-heading: 'Josefin Sans', sans-serif;
@@ -38,8 +38,8 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  --shadow-subtle: 0 10px 30px rgba(9, 38, 68, 0.05);
-  --shadow-elevated: 0 20px 45px rgba(9, 38, 68, 0.12);
+  --shadow-subtle: 0 10px 30px rgba(74, 52, 40, 0.05);
+  --shadow-elevated: 0 20px 45px rgba(74, 52, 40, 0.12);
 }
 
 *,
@@ -234,7 +234,7 @@ button:active,
   .btn-primary:hover {
     background-color: var(--color-navy-light);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(9, 38, 68, 0.2);
+    box-shadow: 0 8px 20px rgba(74, 52, 40, 0.2);
   }
 }
 
@@ -248,7 +248,7 @@ button:active,
   .btn-orange:hover {
     background-color: var(--color-orange-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(247, 142, 30, 0.3);
+    box-shadow: 0 8px 20px rgba(166, 70, 42, 0.3);
   }
 }
 
@@ -293,15 +293,15 @@ button:active,
 }
 
 .status-badge.launching {
-  background-color: rgba(247, 142, 30, 0.15);
+  background-color: rgba(166, 70, 42, 0.15);
   color: var(--color-orange);
-  border: 1px solid rgba(247, 142, 30, 0.3);
+  border: 1px solid rgba(166, 70, 42, 0.3);
 }
 
 .status-badge.delivered {
-  background-color: rgba(9, 38, 68, 0.1);
+  background-color: rgba(74, 52, 40, 0.1);
   color: var(--color-navy);
-  border: 1px solid rgba(9, 38, 68, 0.2);
+  border: 1px solid rgba(74, 52, 40, 0.2);
 }
 
 .dark-section .status-badge.delivered {
@@ -346,7 +346,7 @@ button:active,
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--color-navy);
-  box-shadow: 0 0 0 3px rgba(9, 38, 68, 0.1);
+  box-shadow: 0 0 0 3px rgba(74, 52, 40, 0.1);
 }
 
 .dark-section .form-input,
@@ -361,7 +361,7 @@ button:active,
 .dark-section .form-select:focus,
 .dark-section .form-textarea:focus {
   border-color: var(--color-orange);
-  box-shadow: 0 0 0 3px rgba(247, 142, 30, 0.2);
+  box-shadow: 0 0 0 3px rgba(166, 70, 42, 0.2);
 }
 
 /* Asymmetric Editorial Grid */
@@ -390,7 +390,7 @@ button:active,
 }
 
 .dark-section .glass-card {
-  background: rgba(9, 38, 68, 0.6);
+  background: rgba(74, 52, 40, 0.6);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -418,7 +418,7 @@ button:active,
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(5, 23, 43, 0.82);
+  background-color: rgba(49, 33, 25, 0.82);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;

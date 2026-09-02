@@ -15,7 +15,7 @@ export const CustomerCharterModal = ({ isOpen, onClose }) => {
           width: '100%',
           maxWidth: '680px',
           backgroundColor: '#FFFFFF',
-          color: '#092644',
+          color: '#4A3428',
           padding: '3rem 2.5rem',
           position: 'relative',
           borderRadius: '12px',
@@ -28,9 +28,9 @@ export const CustomerCharterModal = ({ isOpen, onClose }) => {
             position: 'absolute',
             top: '1.25rem',
             right: '1.25rem',
-            background: 'rgba(9, 38, 68, 0.08)',
+            background: 'rgba(74, 52, 40, 0.08)',
             border: 'none',
-            color: '#092644',
+            color: '#4A3428',
             borderRadius: '50%',
             width: '36px',
             height: '36px',
@@ -44,11 +44,11 @@ export const CustomerCharterModal = ({ isOpen, onClose }) => {
         </button>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-          <ShieldCheck size={28} style={{ color: '#F78E1E' }} />
+          <ShieldCheck size={28} style={{ color: '#A6462A' }} />
           <span className="section-tag" style={{ margin: 0 }}>Trust By Design</span>
         </div>
 
-        <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#092644' }}>The Advithiya Customer Charter</h2>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#4A3428' }}>The Advithiya Customer Charter</h2>
         <p style={{ color: '#626E7A', marginBottom: '2rem', fontSize: '0.95rem' }}>
           Our five non-negotiable promises to every homebuyer and landowner before, during, and after development.
         </p>
@@ -61,9 +61,9 @@ export const CustomerCharterModal = ({ isOpen, onClose }) => {
                 display: 'flex',
                 gap: '1.25rem',
                 padding: '1.25rem',
-                backgroundColor: 'rgba(9, 38, 68, 0.03)',
+                backgroundColor: 'rgba(74, 52, 40, 0.03)',
                 borderRadius: '8px',
-                borderLeft: '4px solid #F78E1E'
+                borderLeft: '4px solid #A6462A'
               }}
             >
               <div
@@ -71,14 +71,14 @@ export const CustomerCharterModal = ({ isOpen, onClose }) => {
                   fontFamily: "'Josefin Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: '1.5rem',
-                  color: '#F78E1E',
+                  color: '#A6462A',
                   lineHeight: 1
                 }}
               >
                 0{index + 1}
               </div>
               <div>
-                <h4 style={{ fontSize: '1.1rem', color: '#092644', marginBottom: '0.35rem' }}>{promise.title}</h4>
+                <h4 style={{ fontSize: '1.1rem', color: '#4A3428', marginBottom: '0.35rem' }}>{promise.title}</h4>
                 <p style={{ fontSize: '0.9rem', color: '#626E7A', margin: 0 }}>{promise.desc}</p>
               </div>
             </div>

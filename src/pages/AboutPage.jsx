@@ -35,7 +35,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
           position: 'relative',
           paddingTop: '6rem',
           paddingBottom: '6rem',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
@@ -62,7 +62,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
           <span className="section-tag">About Advithiya</span>
           <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '1.25rem' }}>
             Building with purpose. <br />
-            <span style={{ color: '#F78E1E' }}>Thinking ahead.</span>
+            <span style={{ color: '#A6462A' }}>Thinking ahead.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'rgba(255, 255, 255, 0.88)', fontWeight: 300, lineHeight: 1.6 }}>
             Advithiya creates residential and plotted developments with a focus on practical design, responsible development and lasting customer relationships.
@@ -91,7 +91,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                 position: 'relative',
                 overflow: 'hidden',
                 borderRadius: '8px',
-                boxShadow: '0 20px 45px rgba(9, 38, 68, 0.08)',
+                boxShadow: '0 20px 45px rgba(74, 52, 40, 0.08)',
                 height: '100%',
                 minHeight: '480px'
               }}
@@ -122,7 +122,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.6rem',
-                  color: '#F78E1E',
+                  color: '#A6462A',
                   fontSize: '0.85rem',
                   fontWeight: 700,
                   letterSpacing: '0.14em',
@@ -137,7 +137,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
               <h2
                 style={{
                   fontSize: 'clamp(2.25rem, 4vw, 3.25rem)',
-                  color: '#092644',
+                  color: '#4A3428',
                   lineHeight: 1.15,
                   fontWeight: 700,
                   marginBottom: '2rem'
@@ -169,7 +169,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
         <div className="container">
           <div style={{ maxWidth: '720px', margin: '0 auto 3.5rem auto', textAlign: 'center' }}>
             <span className="section-tag">Leadership</span>
-            <h2 style={{ fontSize: 'clamp(1rem, 3.5vw, 2.5rem)', color: '#092644', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontSize: 'clamp(1rem, 3.5vw, 2.5rem)', color: '#4A3428', marginBottom: '0.75rem' }}>
               Experience that shapes every decision.
             </h2>
             <p style={{ color: '#626E7A', fontSize: '1.1rem' }}>
@@ -203,8 +203,8 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                   backgroundColor: '#FFFFFF',
                   borderRadius: '12px',
                   overflow: 'hidden',
-                  boxShadow: '0 4px 20px rgba(9, 38, 68, 0.07)',
-                  border: '1px solid rgba(9, 38, 68, 0.06)'
+                  boxShadow: '0 4px 20px rgba(74, 52, 40, 0.07)',
+                  border: '1px solid rgba(74, 52, 40, 0.06)'
                 }}
               >
                 {/* Headshot Image */}
@@ -233,7 +233,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
 
                 {/* Name & Role */}
                 <div style={{ padding: '1.5rem 1.75rem 1.75rem' }}>
-                  <h3 style={{ fontSize: '1.2rem', color: '#092644', fontWeight: 700, marginBottom: '0.4rem' }}>
+                  <h3 style={{ fontSize: '1.2rem', color: '#4A3428', fontWeight: 700, marginBottom: '0.4rem' }}>
                     {member.name}
                   </h3>
                   <p style={{ fontSize: '0.9rem', color: '#626E7A', lineHeight: 1.5, margin: 0 }}>
@@ -251,7 +251,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
         <div className="container" style={{ maxWidth: '880px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="section-tag">Our Values</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#092644' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428' }}>
               The principles behind our work.
             </h2>
           </div>
@@ -289,15 +289,15 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                   padding: '1.75rem 2rem',
                   backgroundColor: '#F8F9FA',
                   borderRadius: '8px',
-                  borderLeft: '4px solid #F78E1E',
-                  border: '1px solid rgba(9, 38, 68, 0.08)'
+                  borderLeft: '4px solid #A6462A',
+                  border: '1px solid rgba(74, 52, 40, 0.08)'
                 }}
               >
-                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#092644', minWidth: '40px' }}>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#4A3428', minWidth: '40px' }}>
                   0{idx + 1}.
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '1.25rem', color: '#092644', marginBottom: '0.25rem' }}>
+                  <h3 style={{ fontSize: '1.25rem', color: '#4A3428', marginBottom: '0.25rem' }}>
                     {val.title}
                   </h3>
                   <p style={{ fontSize: '0.95rem', color: '#626E7A', margin: 0 }}>
@@ -311,10 +311,10 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
       </section>
 
       {/* 05. OUR COMMITMENT */}
-      <section className="section-padding" style={{ backgroundColor: '#F8F9FA', borderTop: '1px solid rgba(9, 38, 68, 0.08)' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F8F9FA', borderTop: '1px solid rgba(74, 52, 40, 0.08)' }}>
         <div className="container" style={{ maxWidth: '840px', textAlign: 'center' }}>
           <span className="section-tag">Our Commitment</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.5rem)', color: '#092644', marginBottom: '1rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.5rem)', color: '#4A3428', marginBottom: '1rem' }}>
             Designed with care. Developed responsibly.
           </h2>
           <p style={{ fontSize: '1.15rem', color: '#626E7A', lineHeight: 1.75, marginBottom: '2.5rem' }}>
@@ -335,7 +335,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
       </section>
 
       {/* 06. CLOSING */}
-      <section style={{ backgroundColor: '#092644', color: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ backgroundColor: '#4A3428', color: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
           <span className="section-tag">Explore Advithiya</span>
           <h2 style={{ color: '#FFFFFF', fontSize: 'clamp(2rem, 4vw, 2.5rem)', marginBottom: '1rem' }}>

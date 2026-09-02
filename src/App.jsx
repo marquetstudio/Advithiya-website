@@ -122,8 +122,8 @@ export function AppContent() {
             style: {
               fontFamily: "'Poppins', sans-serif",
               borderRadius: '8px',
-              border: '1px solid rgba(247, 142, 30, 0.3)',
-              backgroundColor: '#05172b',
+              border: '1px solid rgba(166, 70, 42, 0.3)',
+              backgroundColor: '#312119',
               color: '#FFFFFF'
             }
           }}

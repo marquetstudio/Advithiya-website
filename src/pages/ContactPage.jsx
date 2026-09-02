@@ -34,7 +34,7 @@ export const ContactPage = ({ setActivePage }) => {
           position: 'relative',
           paddingTop: '6rem',
           paddingBottom: '6rem',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
@@ -73,9 +73,9 @@ export const ContactPage = ({ setActivePage }) => {
         <div className="container">
           <div className="editorial-grid" style={{ alignItems: 'start' }}>
             {/* 02. GET IN TOUCH FORM */}
-            <div style={{ backgroundColor: '#F8F9FA', padding: '2.5rem', borderRadius: '8px', border: '1px solid rgba(9,38,68,0.08)' }}>
+            <div style={{ backgroundColor: '#F8F9FA', padding: '2.5rem', borderRadius: '8px', border: '1px solid rgba(74, 52, 40,0.08)' }}>
               <span className="section-tag">Get in Touch</span>
-              <h2 style={{ fontSize: '1.85rem', color: '#092644', marginBottom: '0.5rem' }}>
+              <h2 style={{ fontSize: '1.85rem', color: '#4A3428', marginBottom: '0.5rem' }}>
                 Tell us a little about what you need.
               </h2>
               <p style={{ color: '#626E7A', fontSize: '0.9rem', marginBottom: '2rem' }}>
@@ -84,8 +84,8 @@ export const ContactPage = ({ setActivePage }) => {
 
               {formSubmitted ? (
                 <div style={{ textAlign: 'center', padding: '2rem 0' }}>
-                  <CheckCircle2 size={54} style={{ color: '#F78E1E', margin: '0 auto 1rem auto' }} />
-                  <h3 style={{ color: '#092644' }}>Thank You</h3>
+                  <CheckCircle2 size={54} style={{ color: '#A6462A', margin: '0 auto 1rem auto' }} />
+                  <h3 style={{ color: '#4A3428' }}>Thank You</h3>
                   <p style={{ color: '#626E7A' }}>
                     Your enquiry has been received. A project advisor will contact you during business hours.
                   </p>
@@ -93,7 +93,7 @@ export const ContactPage = ({ setActivePage }) => {
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                   <div>
-                    <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                       Name *
                     </label>
                     <input
@@ -102,13 +102,13 @@ export const ContactPage = ({ setActivePage }) => {
                       placeholder="Enter your name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(9,38,68,0.15)', backgroundColor: '#FFFFFF' }}
+                      style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(74, 52, 40,0.15)', backgroundColor: '#FFFFFF' }}
                     />
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
                     <div>
-                      <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                         Phone *
                       </label>
                       <input
@@ -117,12 +117,12 @@ export const ContactPage = ({ setActivePage }) => {
                         placeholder="Enter your phone number"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(9,38,68,0.15)', backgroundColor: '#FFFFFF' }}
+                        style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(74, 52, 40,0.15)', backgroundColor: '#FFFFFF' }}
                       />
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                         Email *
                       </label>
                       <input
@@ -131,21 +131,21 @@ export const ContactPage = ({ setActivePage }) => {
                         placeholder="Enter your email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(9,38,68,0.15)', backgroundColor: '#FFFFFF' }}
+                        style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(74, 52, 40,0.15)', backgroundColor: '#FFFFFF' }}
                       />
                     </div>
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
                     <div>
-                      <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                         Enquiry Type
                       </label>
                       <select
                         value={formData.enquiryType}
                         onChange={(e) => setFormData({ ...formData, enquiryType: e.target.value })}
                         className="form-select"
-                        style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', backgroundColor: '#FFFFFF', borderColor: 'rgba(9,38,68,0.15)' }}
+                        style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', backgroundColor: '#FFFFFF', borderColor: 'rgba(74, 52, 40,0.15)' }}
                       >
                         <option value="Project Enquiry">Project Enquiry</option>
                         <option value="Schedule a Site Visit">Schedule a Site Visit</option>
@@ -158,14 +158,14 @@ export const ContactPage = ({ setActivePage }) => {
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                         Project of Interest
                       </label>
                       <select
                         value={formData.projectOfInterest}
                         onChange={(e) => setFormData({ ...formData, projectOfInterest: e.target.value })}
                         className="form-select"
-                        style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', backgroundColor: '#FFFFFF', borderColor: 'rgba(9,38,68,0.15)' }}
+                        style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', backgroundColor: '#FFFFFF', borderColor: 'rgba(74, 52, 40,0.15)' }}
                       >
                         <option value="Advithiya Shreyas">Advithiya Shreyas (Launching Soon)</option>
                         <option value="Advithiya Urban Chalet">Advithiya Urban Chalet (Delivered)</option>
@@ -175,7 +175,7 @@ export const ContactPage = ({ setActivePage }) => {
                   </div>
 
                   <div>
-                    <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                       Message
                     </label>
                     <textarea
@@ -183,7 +183,7 @@ export const ContactPage = ({ setActivePage }) => {
                       placeholder="Tell us more about your query..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(9,38,68,0.15)', backgroundColor: '#FFFFFF', resize: 'vertical' }}
+                      style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(74, 52, 40,0.15)', backgroundColor: '#FFFFFF', resize: 'vertical' }}
                     />
                   </div>
 
@@ -202,38 +202,38 @@ export const ContactPage = ({ setActivePage }) => {
             {/* 04. CORPORATE OFFICE */}
             <div>
               <span className="section-tag">Corporate Office</span>
-              <h2 style={{ fontSize: '1.85rem', color: '#092644', marginBottom: '1.5rem' }}>
+              <h2 style={{ fontSize: '1.85rem', color: '#4A3428', marginBottom: '1.5rem' }}>
                 {company.corporateName || "Advithiya Developers"}
               </h2>
 
               <motion.div
                 whileHover={{ y: -4 }}
                 style={{
-                  backgroundColor: '#092644',
+                  backgroundColor: '#4A3428',
                   color: '#FFFFFF',
                   padding: '2.5rem',
                   borderRadius: '8px',
-                  boxShadow: '0 20px 40px rgba(9, 38, 68, 0.15)',
+                  boxShadow: '0 20px 40px rgba(74, 52, 40, 0.15)',
                   marginBottom: '2rem'
                 }}
               >
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1rem' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                    <MapPin size={22} style={{ color: '#F78E1E', flexShrink: 0, marginTop: '2px' }} />
+                    <MapPin size={22} style={{ color: '#A6462A', flexShrink: 0, marginTop: '2px' }} />
                     <span style={{ color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
                       {company.address}
                     </span>
                   </div>
 
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                    <Phone size={20} style={{ color: '#F78E1E', flexShrink: 0 }} />
+                    <Phone size={20} style={{ color: '#A6462A', flexShrink: 0 }} />
                     <a href={`tel:${company.phone}`} style={{ color: '#FFFFFF', textDecoration: 'none', fontWeight: 500 }}>
                       Phone: {company.phone}
                     </a>
                   </div>
 
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                    <Mail size={20} style={{ color: '#F78E1E', flexShrink: 0 }} />
+                    <Mail size={20} style={{ color: '#A6462A', flexShrink: 0 }} />
                     <a href={`mailto:${company.email}`} style={{ color: '#FFFFFF', textDecoration: 'none' }}>
                       Email: {company.email}
                     </a>
@@ -247,22 +247,22 @@ export const ContactPage = ({ setActivePage }) => {
                   backgroundColor: '#F8F9FA',
                   padding: '2rem',
                   borderRadius: '8px',
-                  borderLeft: '4px solid #F78E1E',
-                  border: '1px solid rgba(9, 38, 68, 0.08)'
+                  borderLeft: '4px solid #A6462A',
+                  border: '1px solid rgba(74, 52, 40, 0.08)'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#092644', fontWeight: 600, fontSize: '1.1rem', marginBottom: '0.5rem' }}>
-                  <ShieldCheck size={20} style={{ color: '#F78E1E' }} />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4A3428', fontWeight: 600, fontSize: '1.1rem', marginBottom: '0.5rem' }}>
+                  <ShieldCheck size={20} style={{ color: '#A6462A' }} />
                   <span>Grievance & Customer Support</span>
                 </div>
-                <h4 style={{ fontSize: '1rem', color: '#092644', margin: '0.5rem 0' }}>
+                <h4 style={{ fontSize: '1rem', color: '#4A3428', margin: '0.5rem 0' }}>
                   Need assistance with an existing enquiry or concern?
                 </h4>
                 <p style={{ fontSize: '0.9rem', color: '#626E7A', lineHeight: 1.6, margin: '0 0 0.75rem 0' }}>
                   For customer questions, complaints or escalation, please contact our team through the appropriate channel.
                 </p>
-                <div style={{ fontSize: '0.85rem', color: '#092644', fontWeight: 600 }}>
-                  Grievance Contact: <span style={{ color: '#626E7A' }}>[To be confirmed] | Reach out to <a href={`mailto:${company.email}`} style={{ color: '#F78E1E' }}>{company.email}</a></span>
+                <div style={{ fontSize: '0.85rem', color: '#4A3428', fontWeight: 600 }}>
+                  Grievance Contact: <span style={{ color: '#626E7A' }}>[To be confirmed] | Reach out to <a href={`mailto:${company.email}`} style={{ color: '#A6462A' }}>{company.email}</a></span>
                 </div>
               </div>
             </div>
@@ -275,7 +275,7 @@ export const ContactPage = ({ setActivePage }) => {
         <div className="container" style={{ maxWidth: '960px' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span className="section-tag">Find Us</span>
-            <h2 style={{ fontSize: 'clamp(1.85rem, 3vw, 2.5rem)', color: '#092644' }}>
+            <h2 style={{ fontSize: 'clamp(1.85rem, 3vw, 2.5rem)', color: '#4A3428' }}>
               Visit our office.
             </h2>
             <p style={{ color: '#626E7A', fontSize: '1rem' }}>
@@ -283,7 +283,7 @@ export const ContactPage = ({ setActivePage }) => {
             </p>
           </div>
 
-          <div style={{ width: '100%', height: '360px', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(9,38,68,0.12)', boxShadow: '0 10px 25px rgba(9,38,68,0.06)' }}>
+          <div style={{ width: '100%', height: '360px', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(74, 52, 40,0.12)', boxShadow: '0 10px 25px rgba(74, 52, 40,0.06)' }}>
             <iframe
               title="Advithiya Developers Office Location"
               src="https://maps.google.com/maps?q=New+BEL+Road,+RMV+2nd+Stage,+Bangalore+560094&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -299,7 +299,7 @@ export const ContactPage = ({ setActivePage }) => {
       </section>
 
       {/* 07. CLOSING CTA */}
-      <section style={{ backgroundColor: '#092644', color: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ backgroundColor: '#4A3428', color: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <h2 style={{ color: '#FFFFFF', fontSize: 'clamp(2.25rem, 4vw, 3.25rem)', marginBottom: '1rem' }}>
             Looking for a project?
