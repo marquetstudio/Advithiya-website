@@ -65,7 +65,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
             <span style={{ color: '#A6462A' }}>Thinking ahead.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'rgba(255, 255, 255, 0.88)', fontWeight: 300, lineHeight: 1.6 }}>
-            Advithiya creates residential and plotted developments with a focus on practical design, responsible development and lasting customer relationships.
+            Advithiya creates residential and commercial developments with a focus on practical design, responsible development and lasting customer relationships.
           </p>
         </div>
       </section>
@@ -148,7 +148,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
 
               <div style={{ fontSize: '1.1rem', color: '#626E7A', display: 'flex', flexDirection: 'column', gap: '1.5rem', lineHeight: 1.75 }}>
                 <p>
-                  Advithiya was established with a clear ambition: to create residential and plotted developments that bring together design, functionality, responsible development and dependable execution.
+                  Advithiya was established with a clear ambition: to create residential and commercial developments that bring together design, functionality, responsible development and dependable execution.
                 </p>
 
                 <p>

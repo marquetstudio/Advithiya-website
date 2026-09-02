@@ -292,19 +292,20 @@ button:active,
   border-radius: var(--radius-full);
 }
 
-.status-badge.launching {
-  background-color: rgba(166, 70, 42, 0.15);
-  color: var(--color-orange);
-  border: 1px solid rgba(166, 70, 42, 0.3);
+.status-badge.upcoming {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border: 1px solid var(--color-orange);
 }
 
-.status-badge.delivered {
-  background-color: rgba(74, 52, 40, 0.1);
-  color: var(--color-navy);
-  border: 1px solid rgba(74, 52, 40, 0.2);
+.status-badge.ongoing {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border: 1px solid var(--color-navy);
 }
 
-.dark-section .status-badge.delivered {
+.dark-section .status-badge.ongoing,
+.dark-section .status-badge.upcoming {
   background-color: rgba(255, 255, 255, 0.15);
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.25);

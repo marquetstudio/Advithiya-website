@@ -107,7 +107,7 @@ export const HomePage = ({
                   fontWeight: 400
                 }}
               >
-                Advithiya was established with a clear ambition: to create thoughtfully designed residential and plotted developments that respond to how people live today and adapt to how urban communities evolve tomorrow.
+                Advithiya was established with a clear ambition: to create thoughtfully designed residential and commercial developments that respond to how people live today and adapt to how urban communities evolve tomorrow.
               </p>
 
               <p
@@ -199,7 +199,7 @@ export const HomePage = ({
                 Spaces designed with purpose.
               </h2>
               <p style={{ color: '#626E7A', fontSize: '1.1rem', maxWidth: '640px', margin: 0 }}>
-                Explore Advithiya's residential and plotted developments, each shaped by its location, purpose and the way people live.
+                Explore Advithiya's residential and commercial developments, each shaped by its location, purpose and the way people live.
               </p>
             </div>
             <button
@@ -474,9 +474,9 @@ export const HomePage = ({
                 alignItems: 'center',
                 gap: '0.75rem',
                 padding: '0.85rem 2rem',
-                border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                border: '1.5px solid #A6462A',
                 borderRadius: '4px',
-                backgroundColor: 'rgba(255, 255, 255, 0.42)',
+                backgroundColor: '#A6462A',
                 color: '#FFFFFF',
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 600,
@@ -486,7 +486,7 @@ export const HomePage = ({
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#FFFFFF';
-                e.currentTarget.style.color = '#4A3428';
+                e.currentTarget.style.color = '#A6462A';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = '#A6462A';

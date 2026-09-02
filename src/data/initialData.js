@@ -5,7 +5,7 @@ export const initialData = {
     name: "Advithiya",
     corporateName: "Advithiya Developers",
     tagline: "Thoughtfully built. Transparently delivered.",
-    subtagline: "Creating thoughtfully designed residential and plotted communities in Bangalore.",
+    subtagline: "Creating thoughtfully designed residential and Commercial communities in Bangalore.",
     phone: "+91 9886036366",
     phoneDisplay: "+91 98860 36366",
     email: "shwetha@Advithiyaa.com",
@@ -19,8 +19,8 @@ export const initialData = {
       name: "Advithiya Shreyas",
       tagline: "16 homes. One considered community.",
       subheadline: "Boutique communities. Everyday intelligence.",
-      status: "Launching Soon",
-      statusBadgeStyle: "launching",
+      status: "Upcoming",
+      statusBadgeStyle: "upcoming",
       type: "Residential",
       location: "[Verified Location]",
       locationSubtitle: "Bangalore",
@@ -56,15 +56,16 @@ export const initialData = {
           description: "Micro-climate site analysis, structural engineering reviews, and RERA documentation completed.",
           image: img("shreyas_exterior.jpg")
         }
-      ]
+      ],
+      lastUpdated: "September 2026"
     },
     {
       id: "urban-chalet",
       name: "Advithiya Urban Chalet",
       tagline: "Boutique design homes. Limited by design.",
       subheadline: "A boutique collection of 3 BHK homes across two towers, created for just 10 families.",
-      status: "Delivered",
-      statusBadgeStyle: "delivered",
+      status: "Ongoing",
+      statusBadgeStyle: "ongoing",
       type: "Residential",
       location: "Dasarahalli Main Road, Kempapura",
       locationSubtitle: "Kempapura, Bangalore",
@@ -101,7 +102,8 @@ export const initialData = {
           description: "All residences completed and handed over on Dasarahalli Main Road, Kempapura.",
           image: img("urban_chalet.jpg")
         }
-      ]
+      ],
+      lastUpdated: "September 2026"
     }
   ],
   articles: [

@@ -146,10 +146,12 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
             </div>
           </div>
 
-          <button className="btn btn-orange" onClick={onOpenSpeakModal} style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}>
-            <Calendar size={14} />
-            <span>Schedule Site Visit</span>
-          </button>
+          {project.id !== 'urban-chalet' && (
+            <button className="btn btn-orange" onClick={onOpenSpeakModal} style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}>
+              <Calendar size={14} />
+              <span>Schedule Site Visit</span>
+            </button>
+          )}
         </div>
       </section>
 
@@ -164,27 +166,29 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
             {project.vision}
           </p>
 
-          <div
-            style={{
-              padding: '1.75rem',
-              backgroundColor: '#F8F9FA',
-              borderRadius: '8px',
-              borderLeft: '4px solid #A6462A',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              gap: '1rem'
-            }}
-          >
-            <div>
-              <h4 style={{ color: '#4A3428', marginBottom: '0.25rem' }}>Pricing Structure</h4>
-              <p style={{ color: '#626E7A', fontSize: '0.95rem', margin: 0 }}>{project.pricingNote}</p>
+          {project.id !== 'urban-chalet' && (
+            <div
+              style={{
+                padding: '1.75rem',
+                backgroundColor: '#F8F9FA',
+                borderRadius: '8px',
+                borderLeft: '4px solid #A6462A',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '1rem'
+              }}
+            >
+              <div>
+                <h4 style={{ color: '#4A3428', marginBottom: '0.25rem' }}>Pricing Structure</h4>
+                <p style={{ color: '#626E7A', fontSize: '0.95rem', margin: 0 }}>{project.pricingNote}</p>
+              </div>
+              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.65rem', fontWeight: 700, color: '#A6462A' }}>
+                {project.pricing}
+              </div>
             </div>
-            <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.65rem', fontWeight: 700, color: '#A6462A' }}>
-              {project.pricing}
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
@@ -318,8 +322,8 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
               <span className="section-tag">Transparent Progress</span>
               <h2>Dated Construction Logs</h2>
             </div>
-            <div style={{ fontSize: '0.85rem', color: '#626E7A' }}>
-              Managed via Advithiya CMS • Updated Monthly
+            <div style={{ fontSize: '0.85rem', color: '#626E7A', fontWeight: 500 }}>
+              Last updated: {project.lastUpdated || "September 2026"}
             </div>
           </div>
 
@@ -360,8 +364,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
       {/* 7. LOCATION MAP SECTION */}
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <span className="section-tag">Neighborhood Context</span>
-          <h2 style={{ marginBottom: '1.5rem' }}>Location & Surroundings</h2>
+          <h2 style={{ marginBottom: '1.5rem' }}>Know your neighborhood</h2>
 
           <div
             style={{

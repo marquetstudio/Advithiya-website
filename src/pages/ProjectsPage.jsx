@@ -19,7 +19,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
     const matchesType =
       typeFilter === 'All' ||
       (typeFilter === 'Residential' && p.type === 'Residential') ||
-      (typeFilter === 'Plotted Developments' && p.type === 'Plotted');
+      (typeFilter === 'Commercial' && p.type === 'Commercial');
 
     return matchesStatus && matchesType;
   });
@@ -81,7 +81,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
             Creating spaces for the way people live.
           </h1>
           <p style={{ fontSize: '1.2rem', color: 'rgba(255, 255, 255, 0.88)', fontWeight: 300, lineHeight: 1.6 }}>
-            Explore Advithiya's residential and plotted developments across Bangalore, each shaped by its location, purpose and approach to everyday living.
+            Explore Advithiya's residential and commercial developments across Bangalore, each shaped by its location, purpose and approach to everyday living.
           </p>
         </div>
       </section>
@@ -118,10 +118,10 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
               ))}
             </div>
 
-            {/* Typology Filter: Residential | Plotted Developments */}
+            {/* Typology Filter: Residential | Commercial */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
               <span style={{ fontSize: '0.85rem', color: '#626E7A', fontWeight: 500 }}>Category:</span>
-              {['All', 'Residential', 'Plotted Developments'].map((type) => (
+              {['All', 'Residential', 'Commercial'].map((type) => (
                 <button
                   key={type}
                   onClick={() => setTypeFilter(type)}
