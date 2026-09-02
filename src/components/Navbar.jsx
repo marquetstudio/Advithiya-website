@@ -47,10 +47,10 @@ export const Navbar = ({
         left: 0,
         right: 0,
         zIndex: 900,
-        backgroundColor: scrolled ? 'rgba(9, 38, 68, 0.94)' : 'rgba(9, 38, 68, 0.85)',
+        backgroundColor: scrolled ? 'rgba(246, 239, 228, 0.94)' : 'rgba(246, 239, 228, 0.85)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        borderBottom: '1px solid rgba(74, 52, 40, 0.08)',
         transition: 'all 0.35s ease',
         padding: scrolled ? '0.85rem 0' : '1.25rem 0'
       }}
@@ -61,7 +61,7 @@ export const Navbar = ({
           onClick={() => handleNavClick('home')} 
           style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
         >
-          <BrandLogo variant="inverted" size={80} />
+          <BrandLogo variant="dark-brown" size={80} />
         </div>
 
         {/* Desktop Navigation Links */}
@@ -73,7 +73,7 @@ export const Navbar = ({
               style={{
                 background: 'none',
                 border: 'none',
-                color: activePage === item.id ? '#F78E1E' : 'rgba(255, 255, 255, 0.85)',
+                color: activePage === item.id ? '#A6462A' : '#8A7563',
                 fontFamily: "'Poppins', sans-serif",
                 fontSize: '0.9rem',
                 fontWeight: activePage === item.id ? '600' : '400',
@@ -92,7 +92,7 @@ export const Navbar = ({
                     left: 0,
                     right: 0,
                     height: '2px',
-                    backgroundColor: '#F78E1E',
+                    backgroundColor: '#A6462A',
                     borderRadius: '2px'
                   }} 
                 />
@@ -120,7 +120,7 @@ export const Navbar = ({
             style={{
               background: 'none',
               border: 'none',
-              color: '#FFFFFF',
+              color: '#4A3428',
               cursor: 'pointer',
               padding: '0.5rem',
               display: 'none'
@@ -140,8 +140,8 @@ export const Navbar = ({
             top: '100%',
             left: 0,
             right: 0,
-            backgroundColor: '#092644',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            backgroundColor: '#F6EFE4',
+            borderBottom: '1px solid rgba(74, 52, 40, 0.1)',
             padding: '2rem 1.5rem',
             display: 'flex',
             flexDirection: 'column',
@@ -156,7 +156,7 @@ export const Navbar = ({
               style={{
                 background: 'none',
                 border: 'none',
-                color: activePage === item.id ? '#F78E1E' : '#FFFFFF',
+                color: activePage === item.id ? '#A6462A' : '#8A7563',
                 fontFamily: "'Josefin Sans', sans-serif",
                 fontSize: '1.25rem',
                 textAlign: 'left',

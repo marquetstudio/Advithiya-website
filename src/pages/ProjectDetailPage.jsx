@@ -41,7 +41,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
           minHeight: '75vh',
           display: 'flex',
           alignItems: 'flex-end',
-          backgroundColor: '#05172b',
+          backgroundColor: '#312119',
           color: '#FFFFFF',
           paddingBottom: '4rem',
           overflow: 'hidden'
@@ -71,7 +71,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'linear-gradient(180deg, rgba(5, 23, 43, 0.4) 0%, rgba(9, 38, 68, 0.85) 75%, rgba(5, 23, 43, 0.98) 100%)',
+            background: 'linear-gradient(180deg, rgba(49, 33, 25, 0.4) 0%, rgba(74, 52, 40, 0.85) 75%, rgba(49, 33, 25, 0.98) 100%)',
             zIndex: 1
           }}
         />
@@ -105,7 +105,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
             <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '0.5rem' }}>
               {project.name}
             </h1>
-            <div style={{ fontSize: '1.2rem', color: '#F78E1E', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{ fontSize: '1.2rem', color: '#A6462A', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <MapPin size={18} />
               <span>{project.location}</span>
             </div>
@@ -119,7 +119,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
           position: 'sticky',
           top: '64px',
           zIndex: 800,
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           borderBottom: '1px solid rgba(255, 255, 255, 0.12)',
           boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
@@ -157,7 +157,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <span className="section-tag">Architectural Vision</span>
-          <h2 style={{ fontSize: '2.25rem', color: '#092644', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: '2.25rem', color: '#4A3428', marginBottom: '1.5rem' }}>
             "Designed as an antidote to hyper-dense urban living."
           </h2>
           <p style={{ fontSize: '1.15rem', color: '#626E7A', lineHeight: 1.8, marginBottom: '2rem' }}>
@@ -169,7 +169,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
               padding: '1.75rem',
               backgroundColor: '#F8F9FA',
               borderRadius: '8px',
-              borderLeft: '4px solid #F78E1E',
+              borderLeft: '4px solid #A6462A',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
@@ -178,10 +178,10 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
             }}
           >
             <div>
-              <h4 style={{ color: '#092644', marginBottom: '0.25rem' }}>Pricing Structure</h4>
+              <h4 style={{ color: '#4A3428', marginBottom: '0.25rem' }}>Pricing Structure</h4>
               <p style={{ color: '#626E7A', fontSize: '0.95rem', margin: 0 }}>{project.pricingNote}</p>
             </div>
-            <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.65rem', fontWeight: 700, color: '#F78E1E' }}>
+            <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.65rem', fontWeight: 700, color: '#A6462A' }}>
               {project.pricing}
             </div>
           </div>
@@ -204,7 +204,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                   borderRadius: '8px',
                   overflow: 'hidden',
                   cursor: 'pointer',
-                  border: '1px solid rgba(9,38,68,0.1)'
+                  border: '1px solid rgba(74, 52, 40,0.1)'
                 }}
                 whileHover={{ y: -4 }}
                 onClick={() => setSelectedImage(img.src)}
@@ -223,7 +223,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                     left: 0,
                     right: 0,
                     padding: '1rem',
-                    background: 'linear-gradient(0deg, rgba(5,23,43,0.9) 0%, transparent 100%)',
+                    background: 'linear-gradient(0deg, rgba(49, 33, 25,0.9) 0%, transparent 100%)',
                     color: '#FFFFFF',
                     fontSize: '0.85rem',
                     display: 'flex',
@@ -232,7 +232,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                   }}
                 >
                   <span>{img.title}</span>
-                  <Eye size={16} style={{ color: '#F78E1E' }} />
+                  <Eye size={16} style={{ color: '#A6462A' }} />
                 </div>
               </motion.div>
             ))}
@@ -258,7 +258,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                 position: 'absolute',
                 top: '-1rem',
                 right: '-1rem',
-                backgroundColor: '#F78E1E',
+                backgroundColor: '#A6462A',
                 color: '#FFF',
                 border: 'none',
                 borderRadius: '50%',
@@ -282,8 +282,8 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
               <h2 style={{ marginBottom: '1.5rem' }}>Thoughtful Features</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {project.amenities?.map((item, i) => (
-                  <div key={i} style={{ borderBottom: '1px solid rgba(9, 38, 68, 0.08)', paddingBottom: '1.25rem' }}>
-                    <h4 style={{ color: '#092644', fontSize: '1.1rem', marginBottom: '0.25rem' }}>{item.title}</h4>
+                  <div key={i} style={{ borderBottom: '1px solid rgba(74, 52, 40, 0.08)', paddingBottom: '1.25rem' }}>
+                    <h4 style={{ color: '#4A3428', fontSize: '1.1rem', marginBottom: '0.25rem' }}>{item.title}</h4>
                     <p style={{ fontSize: '0.9rem', color: '#626E7A', margin: 0 }}>{item.desc}</p>
                   </div>
                 ))}
@@ -295,11 +295,11 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
               <h2 style={{ marginBottom: '1.5rem' }}>Material Specifications</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {project.specifications?.map((spec, i) => (
-                  <div key={i} style={{ borderBottom: '1px solid rgba(9, 38, 68, 0.08)', paddingBottom: '1.25rem' }}>
-                    <div style={{ fontSize: '0.75rem', color: '#F78E1E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                  <div key={i} style={{ borderBottom: '1px solid rgba(74, 52, 40, 0.08)', paddingBottom: '1.25rem' }}>
+                    <div style={{ fontSize: '0.75rem', color: '#A6462A', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                       {spec.category}
                     </div>
-                    <p style={{ fontSize: '0.95rem', color: '#092644', fontWeight: 500, margin: '0.25rem 0 0 0' }}>
+                    <p style={{ fontSize: '0.95rem', color: '#4A3428', fontWeight: 500, margin: '0.25rem 0 0 0' }}>
                       {spec.detail}
                     </p>
                   </div>
@@ -332,7 +332,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                   backgroundColor: '#FFFFFF',
                   borderRadius: '8px',
                   overflow: 'hidden',
-                  border: '1px solid rgba(9,38,68,0.08)'
+                  border: '1px solid rgba(74, 52, 40,0.08)'
                 }}
               >
                 <div style={{ height: '180px', overflow: 'hidden' }}>
@@ -345,10 +345,10 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                   />
                 </div>
                 <div style={{ padding: '1.5rem' }}>
-                  <div style={{ fontSize: '0.8rem', color: '#F78E1E', fontWeight: 600, marginBottom: '0.35rem' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#A6462A', fontWeight: 600, marginBottom: '0.35rem' }}>
                     {log.date}
                   </div>
-                  <h4 style={{ color: '#092644', marginBottom: '0.5rem', fontSize: '1.15rem' }}>{log.milestone}</h4>
+                  <h4 style={{ color: '#4A3428', marginBottom: '0.5rem', fontSize: '1.15rem' }}>{log.milestone}</h4>
                   <p style={{ fontSize: '0.875rem', color: '#626E7A', margin: 0 }}>{log.description}</p>
                 </div>
               </motion.div>
@@ -365,7 +365,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
 
           <div
             style={{
-              backgroundColor: '#092644',
+              backgroundColor: '#4A3428',
               color: '#FFFFFF',
               borderRadius: '8px',
               padding: '2.5rem',
@@ -380,7 +380,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
               <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
                 Strategically positioned in North Bangalore's prime residential corridor. 15 minutes from Manyata Tech Park, 25 minutes from Kempegowda International Airport.
               </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.9rem', color: '#F78E1E' }}>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.9rem', color: '#A6462A' }}>
                 <li>✓ 5 Mins to Sahakarnagar Main Commercial Boulevard</li>
                 <li>✓ 10 Mins to Aster CMI Hospital</li>
                 <li>✓ Direct connectivity to Bellary Road Highway</li>
@@ -402,7 +402,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                 padding: '1.5rem'
               }}
             >
-              <MapPin size={36} style={{ color: '#F78E1E' }} />
+              <MapPin size={36} style={{ color: '#A6462A' }} />
               <div style={{ fontWeight: 600 }}>Interactive Map View</div>
               <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', margin: 0 }}>
                 Exact GPS coordinates & site location plan shared upon request.
@@ -425,7 +425,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
 
           {formSubmitted ? (
             <div style={{ textAlign: 'center', padding: '2.5rem', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
-              <CheckCircle2 size={48} style={{ color: '#F78E1E', margin: '0 auto 1rem auto' }} />
+              <CheckCircle2 size={48} style={{ color: '#A6462A', margin: '0 auto 1rem auto' }} />
               <h3 style={{ color: '#FFFFFF' }}>Inquiry Received</h3>
               <p style={{ color: 'rgba(255,255,255,0.8)' }}>
                 Thank you for your interest in {project.name}. Our project team will reach out to you shortly.

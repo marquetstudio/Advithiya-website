@@ -52,7 +52,7 @@ export const HomePage = ({
       />
 
       {/* 02. ABOUT ADVITHIYA */}
-      <section className="section-padding" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid rgba(9,38,68,0.06)' }}>
+      <section className="section-padding" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid rgba(74, 52, 40,0.06)' }}>
         <div className="container">
           <div
             style={{
@@ -74,7 +74,7 @@ export const HomePage = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.6rem',
-                  color: '#F78E1E',
+                  color: '#A6462A',
                   fontSize: '0.85rem',
                   fontWeight: 700,
                   letterSpacing: '0.14em',
@@ -89,7 +89,7 @@ export const HomePage = ({
               <h2
                 style={{
                   fontSize: 'clamp(2.25rem, 4vw, 3.25rem)',
-                  color: '#092644',
+                  color: '#4A3428',
                   lineHeight: 1.15,
                   fontWeight: 700,
                   marginBottom: '2rem'
@@ -133,10 +133,10 @@ export const HomePage = ({
                   alignItems: 'center',
                   gap: '0.75rem',
                   padding: '0.85rem 1.85rem',
-                  border: '1.5px solid #092644',
+                  border: '1.5px solid #4A3428',
                   borderRadius: '4px',
                   backgroundColor: 'transparent',
-                  color: '#092644',
+                  color: '#4A3428',
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 600,
                   fontSize: '0.95rem',
@@ -144,16 +144,16 @@ export const HomePage = ({
                   transition: 'all 0.25s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#092644';
+                  e.currentTarget.style.backgroundColor = '#4A3428';
                   e.currentTarget.style.color = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#092644';
+                  e.currentTarget.style.color = '#4A3428';
                 }}
               >
                 <span>Discover Advithiya</span>
-                <ArrowRight size={16} style={{ color: '#F78E1E' }} />
+                <ArrowRight size={16} style={{ color: '#A6462A' }} />
               </button>
             </motion.div>
 
@@ -167,7 +167,7 @@ export const HomePage = ({
                 position: 'relative',
                 borderRadius: '8px',
                 overflow: 'hidden',
-                boxShadow: '0 20px 45px rgba(9, 38, 68, 0.08)',
+                boxShadow: '0 20px 45px rgba(74, 52, 40, 0.08)',
                 height: '100%',
                 minHeight: '460px'
               }}
@@ -195,7 +195,7 @@ export const HomePage = ({
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3.5rem', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
               <span className="section-tag">Featured Projects</span>
-              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#092644', marginBottom: '0.5rem' }}>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428', marginBottom: '0.5rem' }}>
                 Spaces designed with purpose.
               </h2>
               <p style={{ color: '#626E7A', fontSize: '1.1rem', maxWidth: '640px', margin: 0 }}>
@@ -228,10 +228,10 @@ export const HomePage = ({
                 backgroundColor: '#FFFFFF',
                 borderRadius: '8px',
                 overflow: 'hidden',
-                border: '1px solid rgba(9, 38, 68, 0.08)',
+                border: '1px solid rgba(74, 52, 40, 0.08)',
                 cursor: 'pointer'
               }}
-              whileHover={{ y: -8, boxShadow: '0 25px 45px rgba(9, 38, 68, 0.12)' }}
+              whileHover={{ y: -8, boxShadow: '0 25px 45px rgba(74, 52, 40, 0.12)' }}
               transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
               onClick={() => {
                 onSelectProject(shreyas);
@@ -255,10 +255,10 @@ export const HomePage = ({
               </div>
 
               <div style={{ padding: '2rem' }}>
-                <div style={{ fontSize: '0.85rem', color: '#F78E1E', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
+                <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
                   [Verified Location] | Residential | Launching Soon
                 </div>
-                <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: '#092644' }}>
+                <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: '#4A3428' }}>
                   {shreyas.name}
                 </h3>
                 <p style={{ fontSize: '0.95rem', color: '#626E7A', marginBottom: '1.5rem', lineHeight: 1.6 }}>
@@ -271,7 +271,7 @@ export const HomePage = ({
                     backgroundColor: '#F8F9FA',
                     borderRadius: '6px',
                     fontSize: '2 rem',
-                    color: '#092644',
+                    color: '#4A3428',
                     fontWeight: 600,
                     marginBottom: '1.5rem'
                   }}
@@ -303,10 +303,10 @@ export const HomePage = ({
                   backgroundColor: '#FFFFFF',
                   borderRadius: '8px',
                   overflow: 'hidden',
-                  border: '1px solid rgba(9, 38, 68, 0.08)',
+                  border: '1px solid rgba(74, 52, 40, 0.08)',
                   cursor: 'pointer'
                 }}
-                whileHover={{ y: -8, boxShadow: '0 25px 45px rgba(9, 38, 68, 0.12)' }}
+                whileHover={{ y: -8, boxShadow: '0 25px 45px rgba(74, 52, 40, 0.12)' }}
                 transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                 onClick={() => {
                   onSelectProject(urbanChalet);
@@ -330,10 +330,10 @@ export const HomePage = ({
                 </div>
 
                 <div style={{ padding: '2rem' }}>
-                  <div style={{ fontSize: '0.85rem', color: '#F78E1E', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
+                  <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
                     Dasarahalli Main Road, Kempapura | Residential | Delivered
                   </div>
-                  <h3 style={{ fontSize: '1.75rem', marginBottom: '0.25rem', color: '#092644' }}>
+                  <h3 style={{ fontSize: '1.75rem', marginBottom: '0.25rem', color: '#4A3428' }}>
                     {urbanChalet.name}
                   </h3>
                   <p style={{ fontSize: '0.95rem', color: '#626E7A', marginBottom: '1.5rem', lineHeight: 1.6 }}>
@@ -346,7 +346,7 @@ export const HomePage = ({
                       backgroundColor: '#F8F9FA',
                       borderRadius: '6px',
                       fontSize: '2 rem',
-                      color: '#092644',
+                      color: '#4A3428',
                       fontWeight: 600,
                       marginBottom: '1.5rem'
                     }}
@@ -375,7 +375,7 @@ export const HomePage = ({
       </section>
 
       {/* 04. WHAT DEFINES US (RICH BLUE SECTION) */}
-      <section className="section-padding" style={{ backgroundColor: '#092644', color: '#FFFFFF', position: 'relative' }}>
+      <section className="section-padding" style={{ backgroundColor: '#4A3428', color: '#FFFFFF', position: 'relative' }}>
         <div className="container">
           <div style={{ maxWidth: '840px', margin: '0 auto 4rem auto', textAlign: 'center' }}>
             <div
@@ -384,7 +384,7 @@ export const HomePage = ({
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '0.6rem',
-                color: '#F78E1E',
+                color: '#A6462A',
                 fontSize: '0.85rem',
                 fontWeight: 700,
                 letterSpacing: '0.14em',
@@ -451,7 +451,7 @@ export const HomePage = ({
                 </div>
 
                 <div style={{ padding: '2rem 1.75rem 2.25rem 1.75rem', textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-                  <h3 style={{ fontSize: '1.3rem', color: '#092644', fontWeight: 700, marginBottom: '0.75rem', lineHeight: 1.25 }}>
+                  <h3 style={{ fontSize: '1.3rem', color: '#4A3428', fontWeight: 700, marginBottom: '0.75rem', lineHeight: 1.25 }}>
                     {pillar.title}
                   </h3>
                   <p style={{ fontSize: '0.95rem', color: '#626E7A', margin: 0, lineHeight: 1.65 }}>
@@ -486,10 +486,10 @@ export const HomePage = ({
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#FFFFFF';
-                e.currentTarget.style.color = '#092644';
+                e.currentTarget.style.color = '#4A3428';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#F78E1E';
+                e.currentTarget.style.backgroundColor = '#A6462A';
                 e.currentTarget.style.color = '#FFFFFF';
               }}
             >
@@ -501,7 +501,7 @@ export const HomePage = ({
       </section>
 
       {/* 05. INSIGHTS (CRISP LIGHT SECTION) */}
-      <section className="section-padding" style={{ backgroundColor: '#F8F9FA', borderTop: '1px solid rgba(9, 38, 68, 0.08)' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F8F9FA', borderTop: '1px solid rgba(74, 52, 40, 0.08)' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3.5rem', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
@@ -510,7 +510,7 @@ export const HomePage = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.6rem',
-                  color: '#F78E1E',
+                  color: '#A6462A',
                   fontSize: '0.85rem',
                   fontWeight: 700,
                   letterSpacing: '0.14em',
@@ -522,7 +522,7 @@ export const HomePage = ({
                 <span>INSIGHTS</span>
               </div>
 
-              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#092644', marginBottom: '0.5rem', fontWeight: 700 }}>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428', marginBottom: '0.5rem', fontWeight: 700 }}>
                 Useful thinking for better decisions.
               </h2>
               <p style={{ color: '#626E7A', fontSize: '1.1rem', maxWidth: '640px', margin: 0 }}>
@@ -540,10 +540,10 @@ export const HomePage = ({
                 alignItems: 'center',
                 gap: '0.6rem',
                 padding: '0.75rem 1.6rem',
-                border: '1.5px solid #092644',
+                border: '1.5px solid #4A3428',
                 borderRadius: '4px',
                 backgroundColor: 'transparent',
-                color: '#092644',
+                color: '#4A3428',
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 600,
                 fontSize: '0.9rem',
@@ -551,16 +551,16 @@ export const HomePage = ({
                 transition: 'all 0.25s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#092644';
+                e.currentTarget.style.backgroundColor = '#4A3428';
                 e.currentTarget.style.color = '#FFFFFF';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = '#092644';
+                e.currentTarget.style.color = '#4A3428';
               }}
             >
               <span>Explore Insights</span>
-              <ArrowRight size={16} style={{ color: '#F78E1E' }} />
+              <ArrowRight size={16} style={{ color: '#A6462A' }} />
             </button>
           </div>
 
@@ -568,14 +568,14 @@ export const HomePage = ({
             {articles.slice(0, 3).map((art) => (
               <motion.div
                 key={art.id}
-                whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(9, 38, 68, 0.08)' }}
+                whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(74, 52, 40, 0.08)' }}
                 transition={{ duration: 0.3 }}
                 style={{
                   backgroundColor: '#FFFFFF',
                   padding: '2.5rem 2.25rem',
                   borderRadius: '12px',
-                  border: '1px solid rgba(9, 38, 68, 0.08)',
-                  boxShadow: '0 8px 24px rgba(9, 38, 68, 0.03)',
+                  border: '1px solid rgba(74, 52, 40, 0.08)',
+                  boxShadow: '0 8px 24px rgba(74, 52, 40, 0.03)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -588,10 +588,10 @@ export const HomePage = ({
                 }}
               >
                 <div>
-                  <div style={{ fontSize: '0.8rem', color: '#F78E1E', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.85rem' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#A6462A', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.85rem' }}>
                     {art.category} • {art.readTime}
                   </div>
-                  <h3 style={{ fontSize: '1.35rem', color: '#092644', lineHeight: 1.35, marginBottom: '1rem', fontWeight: 600 }}>
+                  <h3 style={{ fontSize: '1.35rem', color: '#4A3428', lineHeight: 1.35, marginBottom: '1rem', fontWeight: 600 }}>
                     {art.title}
                   </h3>
                   <p style={{ fontSize: '0.925rem', color: '#626E7A', lineHeight: 1.65, marginBottom: '1.75rem' }}>
@@ -599,9 +599,9 @@ export const HomePage = ({
                   </p>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                   <span>Read Article</span>
-                  <ArrowRight size={16} style={{ color: '#F78E1E' }} />
+                  <ArrowRight size={16} style={{ color: '#A6462A' }} />
                 </div>
               </motion.div>
             ))}
@@ -610,7 +610,7 @@ export const HomePage = ({
       </section>
 
       {/* 07. CLOSING CTA */}
-      <section style={{ backgroundColor: '#092644', color: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ backgroundColor: '#4A3428', color: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <span className="section-tag">Get in Touch</span>
           <h2 style={{ color: '#FFFFFF', fontSize: 'clamp(2.25rem, 4vw, 3.25rem)', marginBottom: '1rem' }}>

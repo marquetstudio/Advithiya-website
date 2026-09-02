@@ -21,7 +21,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
   if (activeArticle) {
     return (
       <div className="insights-detail-page animate-fade-in" style={{ paddingTop: '5.5rem' }}>
-        <section style={{ backgroundColor: '#092644', color: '#FFFFFF', padding: '4.5rem 0 3.5rem 0' }}>
+        <section style={{ backgroundColor: '#4A3428', color: '#FFFFFF', padding: '4.5rem 0 3.5rem 0' }}>
           <div className="container" style={{ maxWidth: '840px' }}>
             <button
               onClick={() => onSelectArticle(null)}
@@ -44,7 +44,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
               <span>Back to All Insights</span>
             </button>
 
-            <div style={{ fontSize: '0.85rem', color: '#F78E1E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>
+            <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>
               {activeArticle.category} • {activeArticle.readTime}
             </div>
 
@@ -59,7 +59,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#F78E1E',
+                  color: '#A6462A',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
@@ -88,7 +88,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
               {activeArticle.content}
             </div>
 
-            <div style={{ marginTop: '4rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(9, 38, 68, 0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+            <div style={{ marginTop: '4rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(74, 52, 40, 0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
               <button
                 className="btn btn-outline-dark"
                 onClick={() => onSelectArticle(null)}
@@ -119,7 +119,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
           position: 'relative',
           paddingTop: '6rem',
           paddingBottom: '6rem',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
@@ -160,13 +160,13 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
             {articles.map((art) => (
               <motion.div
                 key={art.id}
-                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(9, 38, 68, 0.1)' }}
+                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(74, 52, 40, 0.1)' }}
                 transition={{ duration: 0.3 }}
                 style={{
                   backgroundColor: '#F8F9FA',
                   borderRadius: '8px',
                   padding: '2.5rem',
-                  border: '1px solid rgba(9, 38, 68, 0.08)',
+                  border: '1px solid rgba(74, 52, 40, 0.08)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -178,11 +178,11 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
                 }}
               >
                 <div>
-                  <div style={{ fontSize: '0.85rem', color: '#F78E1E', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+                  <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                     {art.category} • {art.readTime}
                   </div>
 
-                  <h2 style={{ fontSize: '1.45rem', color: '#092644', lineHeight: 1.35, marginBottom: '1rem' }}>
+                  <h2 style={{ fontSize: '1.45rem', color: '#4A3428', lineHeight: 1.35, marginBottom: '1rem' }}>
                     {art.title}
                   </h2>
 
@@ -191,9 +191,9 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
                   </p>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#092644', fontWeight: 600, fontSize: '0.95rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4A3428', fontWeight: 600, fontSize: '0.95rem' }}>
                   <span>Read Article</span>
-                  <ArrowRight size={16} style={{ color: '#F78E1E' }} />
+                  <ArrowRight size={16} style={{ color: '#A6462A' }} />
                 </div>
               </motion.div>
             ))}
@@ -202,7 +202,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
       </section>
 
       {/* 03. CLOSING CTA */}
-      <section style={{ backgroundColor: '#092644', color: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ backgroundColor: '#4A3428', color: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <span className="section-tag">Direct Dialogue</span>
           <h2 style={{ color: '#FFFFFF', fontSize: 'clamp(2.25rem, 4vw, 3.25rem)', marginBottom: '1rem' }}>

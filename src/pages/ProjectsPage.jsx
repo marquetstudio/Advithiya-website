@@ -52,7 +52,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
           position: 'relative',
           paddingTop: '6rem',
           paddingBottom: '6rem',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
@@ -87,9 +87,9 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
       </section>
 
       {/* 02. PROJECT CATEGORIES */}
-      <section style={{ backgroundColor: '#F8F9FA', padding: '2.5rem 0', borderBottom: '1px solid rgba(9, 38, 68, 0.08)' }}>
+      <section style={{ backgroundColor: '#F8F9FA', padding: '2.5rem 0', borderBottom: '1px solid rgba(74, 52, 40, 0.08)' }}>
         <div className="container">
-          <div style={{ marginBottom: '1.25rem', color: '#092644', fontWeight: 600, fontSize: '1.1rem', fontFamily: "'Josefin Sans', sans-serif" }}>
+          <div style={{ marginBottom: '1.25rem', color: '#4A3428', fontWeight: 600, fontSize: '1.1rem', fontFamily: "'Josefin Sans', sans-serif" }}>
             Explore our developments
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
@@ -103,9 +103,9 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                     padding: '0.6rem 1.35rem',
                     borderRadius: '4px',
                     border: '1px solid',
-                    borderColor: statusFilter === status ? '#092644' : 'rgba(9, 38, 68, 0.15)',
-                    backgroundColor: statusFilter === status ? '#092644' : '#FFFFFF',
-                    color: statusFilter === status ? '#FFFFFF' : '#092644',
+                    borderColor: statusFilter === status ? '#4A3428' : 'rgba(74, 52, 40, 0.15)',
+                    backgroundColor: statusFilter === status ? '#4A3428' : '#FFFFFF',
+                    color: statusFilter === status ? '#FFFFFF' : '#4A3428',
                     fontFamily: "'Poppins', sans-serif",
                     fontSize: '0.875rem',
                     fontWeight: statusFilter === status ? 600 : 400,
@@ -129,9 +129,9 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                     padding: '0.5rem 1rem',
                     borderRadius: '4px',
                     border: '1px solid',
-                    borderColor: typeFilter === type ? '#F78E1E' : 'rgba(9, 38, 68, 0.15)',
-                    backgroundColor: typeFilter === type ? 'rgba(247, 142, 30, 0.12)' : '#FFFFFF',
-                    color: typeFilter === type ? '#F78E1E' : '#092644',
+                    borderColor: typeFilter === type ? '#A6462A' : 'rgba(74, 52, 40, 0.15)',
+                    backgroundColor: typeFilter === type ? 'rgba(166, 70, 42, 0.12)' : '#FFFFFF',
+                    color: typeFilter === type ? '#A6462A' : '#4A3428',
                     fontFamily: "'Poppins', sans-serif",
                     fontSize: '0.85rem',
                     fontWeight: typeFilter === type ? 600 : 400,
@@ -183,13 +183,13 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                     key={project.id}
                     layout
                     variants={itemVariants}
-                    whileHover={{ y: -8, boxShadow: '0 25px 45px rgba(9, 38, 68, 0.12)' }}
+                    whileHover={{ y: -8, boxShadow: '0 25px 45px rgba(74, 52, 40, 0.12)' }}
                     transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
                     style={{
                       backgroundColor: '#F8F9FA',
                     borderRadius: '8px',
                     overflow: 'hidden',
-                    border: '1px solid rgba(9, 38, 68, 0.08)',
+                    border: '1px solid rgba(74, 52, 40, 0.08)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
@@ -218,15 +218,15 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                     </div>
 
                     <div style={{ padding: '2.25rem' }}>
-                      <div style={{ fontSize: '0.85rem', color: '#F78E1E', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
+                      <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
                         {project.id === 'shreyas' ? '[Verified Location] | Residential | Launching Soon' : `${project.location} | Residential | Delivered`}
                       </div>
 
-                      <h2 style={{ fontSize: '1.85rem', marginBottom: '0.4rem', color: '#092644' }}>
+                      <h2 style={{ fontSize: '1.85rem', marginBottom: '0.4rem', color: '#4A3428' }}>
                         {project.name}
                       </h2>
 
-                      <div style={{ fontSize: '1rem', color: '#092644', fontWeight: 600, marginBottom: '0.75rem' }}>
+                      <div style={{ fontSize: '1rem', color: '#4A3428', fontWeight: 600, marginBottom: '0.75rem' }}>
                         {project.tagline}
                       </div>
 
@@ -241,9 +241,9 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                           padding: '1rem 1.25rem',
                           backgroundColor: '#FFFFFF',
                           borderRadius: '6px',
-                          border: '1px solid rgba(9, 38, 68, 0.08)',
+                          border: '1px solid rgba(74, 52, 40, 0.08)',
                           fontSize: '0.9rem',
-                          color: '#092644',
+                          color: '#4A3428',
                           fontWeight: 600
                         }}
                       >
@@ -255,7 +255,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                   </div>
 
                   <div style={{ padding: '0 2.25rem 2.25rem 2.25rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#F78E1E', fontWeight: 600, fontSize: '0.95rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#A6462A', fontWeight: 600, fontSize: '0.95rem' }}>
                       <span>Explore Project</span>
                       <ArrowRight size={16} />
                     </div>
@@ -269,10 +269,10 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
       </section>
 
       {/* 04. PROJECT PHILOSOPHY */}
-      <section className="section-padding" style={{ backgroundColor: '#F8F9FA', borderTop: '1px solid rgba(9, 38, 68, 0.08)' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F8F9FA', borderTop: '1px solid rgba(74, 52, 40, 0.08)' }}>
         <div className="container" style={{ maxWidth: '840px', textAlign: 'center' }}>
           <span className="section-tag">Project Philosophy</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#092644', marginBottom: '1rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428', marginBottom: '1rem' }}>
             Every project starts with its context.
           </h2>
           <p style={{ fontSize: '1.15rem', color: '#626E7A', lineHeight: 1.75, marginBottom: '2.5rem' }}>
@@ -293,7 +293,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
       </section>
 
       {/* 05. CLOSING CTA */}
-      <section style={{ backgroundColor: '#092644', color: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ backgroundColor: '#4A3428', color: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <span className="section-tag">Direct Guidance</span>
           <h2 style={{ color: '#FFFFFF', fontSize: 'clamp(2.25rem, 4vw, 3.25rem)', marginBottom: '1rem' }}>

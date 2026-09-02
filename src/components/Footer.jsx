@@ -16,7 +16,7 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
     <footer
       style={{
         position: 'relative',
-        backgroundColor: '#05172b',
+        backgroundColor: '#312119',
         color: '#FFFFFF',
         paddingTop: '5rem',
         paddingBottom: '3rem',
@@ -39,7 +39,7 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
           {/* Brand */}
           <div>
             <BrandLogo variant="inverted" size={80} />
-            <div style={{ marginTop: '1.25rem', color: '#F78E1E', fontWeight: 600, fontSize: '1rem' }}>
+            <div style={{ marginTop: '1.25rem', color: '#A6462A', fontWeight: 600, fontSize: '1rem' }}>
               {company.tagline || "Thoughtfully built. Transparently delivered."}
             </div>
             <p style={{ marginTop: '0.5rem', color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.9rem', maxWidth: '320px', lineHeight: 1.6 }}>
@@ -75,7 +75,7 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
                       padding: 0,
                       transition: 'color 0.2s ease'
                     }}
-                    onMouseEnter={(e) => e.target.style.color = '#F78E1E'}
+                    onMouseEnter={(e) => e.target.style.color = '#A6462A'}
                     onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.75)'}
                   >
                     {item.label}
@@ -95,15 +95,15 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
                 {company.corporateName || "Advithiya Developers"}
               </div>
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                <MapPin size={18} style={{ color: '#F78E1E', flexShrink: 0, marginTop: '3px' }} />
+                <MapPin size={18} style={{ color: '#A6462A', flexShrink: 0, marginTop: '3px' }} />
                 <span>{company.address}</span>
               </div>
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <Phone size={16} style={{ color: '#F78E1E', flexShrink: 0 }} />
+                <Phone size={16} style={{ color: '#A6462A', flexShrink: 0 }} />
                 <a href={`tel:${company.phone}`} style={{ color: 'inherit' }}>Phone: {company.phone}</a>
               </div>
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <Mail size={16} style={{ color: '#F78E1E', flexShrink: 0 }} />
+                <Mail size={16} style={{ color: '#A6462A', flexShrink: 0 }} />
                 <a href={`mailto:${company.email}`} style={{ color: 'inherit' }}>Email: {company.email}</a>
               </div>
             </div>
@@ -121,7 +121,7 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: '#F78E1E',
+                    color: '#A6462A',
                     cursor: 'pointer',
                     padding: 0,
                     fontWeight: 500,

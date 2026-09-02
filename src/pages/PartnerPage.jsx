@@ -42,7 +42,7 @@ export const PartnerPage = () => {
           position: 'relative',
           paddingTop: '6rem',
           paddingBottom: '6rem',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           overflow: 'hidden'
         }}
@@ -87,23 +87,23 @@ export const PartnerPage = () => {
                 backgroundColor: '#F8F9FA',
                 padding: '2.5rem',
                 borderRadius: '8px',
-                border: '1px solid rgba(9, 38, 68, 0.08)',
+                border: '1px solid rgba(74, 52, 40, 0.08)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between'
               }}
             >
               <div>
-                <div style={{ width: '52px', height: '52px', borderRadius: '8px', backgroundColor: 'rgba(247, 142, 30, 0.12)', color: '#F78E1E', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                <div style={{ width: '52px', height: '52px', borderRadius: '8px', backgroundColor: 'rgba(166, 70, 42, 0.12)', color: '#A6462A', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
                   <Building2 size={26} />
                 </div>
 
                 <span className="section-tag" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>Landowners</span>
-                <h2 style={{ fontSize: '1.5rem', color: '#092644', marginBottom: '0.5rem' }}>
+                <h2 style={{ fontSize: '1.5rem', color: '#4A3428', marginBottom: '0.5rem' }}>
                   Have a development opportunity?
                 </h2>
 
-                <div style={{ color: '#F78E1E', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1rem' }}>
+                <div style={{ color: '#A6462A', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1rem' }}>
                   The right development begins with the right opportunity.
                 </div>
 
@@ -132,19 +132,19 @@ export const PartnerPage = () => {
                 backgroundColor: '#F8F9FA',
                 padding: '2.5rem',
                 borderRadius: '8px',
-                border: '1px solid rgba(9, 38, 68, 0.08)',
+                border: '1px solid rgba(74, 52, 40, 0.08)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between'
               }}
             >
               <div>
-                <div style={{ width: '52px', height: '52px', borderRadius: '8px', backgroundColor: 'rgba(247, 142, 30, 0.12)', color: '#F78E1E', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                <div style={{ width: '52px', height: '52px', borderRadius: '8px', backgroundColor: 'rgba(166, 70, 42, 0.12)', color: '#A6462A', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
                   <Users size={26} />
                 </div>
 
                 <span className="section-tag" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>Channel Partners</span>
-                <h2 style={{ fontSize: '1.5rem', color: '#092644', marginBottom: '1rem' }}>
+                <h2 style={{ fontSize: '1.5rem', color: '#4A3428', marginBottom: '1rem' }}>
                   Grow with Advithiya.
                 </h2>
 
@@ -173,19 +173,19 @@ export const PartnerPage = () => {
                 backgroundColor: '#F8F9FA',
                 padding: '2.5rem',
                 borderRadius: '8px',
-                border: '1px solid rgba(9, 38, 68, 0.08)',
+                border: '1px solid rgba(74, 52, 40, 0.08)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between'
               }}
             >
               <div>
-                <div style={{ width: '52px', height: '52px', borderRadius: '8px', backgroundColor: 'rgba(247, 142, 30, 0.12)', color: '#F78E1E', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                <div style={{ width: '52px', height: '52px', borderRadius: '8px', backgroundColor: 'rgba(166, 70, 42, 0.12)', color: '#A6462A', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
                   <HardHat size={26} />
                 </div>
 
                 <span className="section-tag" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>Vendors & Consultants</span>
-                <h2 style={{ fontSize: '1.5rem', color: '#092644', marginBottom: '1rem' }}>
+                <h2 style={{ fontSize: '1.5rem', color: '#4A3428', marginBottom: '1rem' }}>
                   Bring your expertise to our projects.
                 </h2>
 
@@ -209,10 +209,10 @@ export const PartnerPage = () => {
           </div>
 
           {/* 05. CLOSING CTA & ENQUIRY FORM */}
-          <div ref={enquiryFormRef} style={{ maxWidth: '720px', margin: '0 auto', backgroundColor: '#F8F9FA', padding: '3rem', borderRadius: '8px', border: '1px solid rgba(9,38,68,0.1)' }}>
+          <div ref={enquiryFormRef} style={{ maxWidth: '720px', margin: '0 auto', backgroundColor: '#F8F9FA', padding: '3rem', borderRadius: '8px', border: '1px solid rgba(74, 52, 40,0.1)' }}>
             <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
               <span className="section-tag">Partnership Enquiry</span>
-              <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', color: '#092644', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', color: '#4A3428', marginBottom: '0.75rem' }}>
                 Have an opportunity to discuss?
               </h2>
               <p style={{ color: '#626E7A', fontSize: '1.05rem', margin: 0 }}>
@@ -222,8 +222,8 @@ export const PartnerPage = () => {
 
             {formSubmitted ? (
               <div style={{ textAlign: 'center', padding: '2rem 0' }}>
-                <CheckCircle2 size={54} style={{ color: '#F78E1E', margin: '0 auto 1rem auto' }} />
-                <h3 style={{ color: '#092644' }}>Enquiry Received</h3>
+                <CheckCircle2 size={54} style={{ color: '#A6462A', margin: '0 auto 1rem auto' }} />
+                <h3 style={{ color: '#4A3428' }}>Enquiry Received</h3>
                 <p style={{ color: '#626E7A' }}>
                   Thank you. An Advithiya team member will connect with you shortly.
                 </p>
@@ -231,7 +231,7 @@ export const PartnerPage = () => {
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div>
-                  <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                     Partnership Category
                   </label>
                   <select
@@ -241,7 +241,7 @@ export const PartnerPage = () => {
                       setPartnerType(e.target.value);
                     }}
                     className="form-select"
-                    style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', backgroundColor: '#FFFFFF', borderColor: 'rgba(9,38,68,0.15)' }}
+                    style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', backgroundColor: '#FFFFFF', borderColor: 'rgba(74, 52, 40,0.15)' }}
                   >
                     <option value="Land Partnership">Land Partnership</option>
                     <option value="Channel Partnership">Channel Partnership</option>
@@ -250,7 +250,7 @@ export const PartnerPage = () => {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                     Full Name / Organization *
                   </label>
                   <input
@@ -259,13 +259,13 @@ export const PartnerPage = () => {
                     placeholder="Enter your name or company"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(9,38,68,0.15)', backgroundColor: '#FFFFFF' }}
+                    style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(74, 52, 40,0.15)', backgroundColor: '#FFFFFF' }}
                   />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
                   <div>
-                    <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                       Phone Number *
                     </label>
                     <input
@@ -274,12 +274,12 @@ export const PartnerPage = () => {
                       placeholder="+91 Phone number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(9,38,68,0.15)', backgroundColor: '#FFFFFF' }}
+                      style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(74, 52, 40,0.15)', backgroundColor: '#FFFFFF' }}
                     />
                   </div>
 
                   <div>
-                    <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                       Email Address *
                     </label>
                     <input
@@ -288,13 +288,13 @@ export const PartnerPage = () => {
                       placeholder="name@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(9,38,68,0.15)', backgroundColor: '#FFFFFF' }}
+                      style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(74, 52, 40,0.15)', backgroundColor: '#FFFFFF' }}
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', marginBottom: '0.4rem', color: '#092644', fontWeight: 600, fontSize: '0.9rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.4rem', color: '#4A3428', fontWeight: 600, fontSize: '0.9rem' }}>
                     Tell us what you bring to the table *
                   </label>
                   <textarea
@@ -303,7 +303,7 @@ export const PartnerPage = () => {
                     placeholder="Provide details about your land parcel, network, services, or expertise..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(9,38,68,0.15)', backgroundColor: '#FFFFFF', resize: 'vertical' }}
+                    style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', border: '1px solid rgba(74, 52, 40,0.15)', backgroundColor: '#FFFFFF', resize: 'vertical' }}
                   />
                 </div>
 

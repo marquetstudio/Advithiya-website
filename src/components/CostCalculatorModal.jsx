@@ -49,13 +49,13 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
           maxWidth: '780px',
           maxHeight: '90vh',
           overflowY: 'auto',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           padding: '2.5rem',
           position: 'relative',
           borderRadius: '12px',
           boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-          border: '1px solid rgba(247, 142, 30, 0.3)'
+          border: '1px solid rgba(166, 70, 42, 0.3)'
         }}
       >
         <button
@@ -80,7 +80,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
         </button>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-          <Calculator size={26} style={{ color: '#F78E1E' }} />
+          <Calculator size={26} style={{ color: '#A6462A' }} />
           <span className="section-tag" style={{ margin: 0 }}>Transparent Pricing</span>
         </div>
 
@@ -97,9 +97,9 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
             onClick={() => setUnitType('2bhk')}
             style={{
               padding: '1.25rem',
-              backgroundColor: unitType === '2bhk' ? '#0e3054' : 'rgba(255,255,255,0.04)',
+              backgroundColor: unitType === '2bhk' ? '#563D2F' : 'rgba(255,255,255,0.04)',
               border: '1px solid',
-              borderColor: unitType === '2bhk' ? '#F78E1E' : 'rgba(255,255,255,0.1)',
+              borderColor: unitType === '2bhk' ? '#A6462A' : 'rgba(255,255,255,0.1)',
               borderRadius: '8px',
               color: '#FFFFFF',
               textAlign: 'left',
@@ -107,7 +107,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
               transition: 'all 0.2s ease'
             }}
           >
-            <div style={{ fontSize: '0.8rem', color: '#F78E1E', fontWeight: 600, textTransform: 'uppercase' }}>2 BHK Residence</div>
+            <div style={{ fontSize: '0.8rem', color: '#A6462A', fontWeight: 600, textTransform: 'uppercase' }}>2 BHK Residence</div>
             <div style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: "'Josefin Sans', sans-serif" }}>1,240 sq. ft. Carpet Area</div>
             <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.25rem' }}>Base ₹1.45 Cr*</div>
           </button>
@@ -116,9 +116,9 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
             onClick={() => setUnitType('3bhk')}
             style={{
               padding: '1.25rem',
-              backgroundColor: unitType === '3bhk' ? '#0e3054' : 'rgba(255,255,255,0.04)',
+              backgroundColor: unitType === '3bhk' ? '#563D2F' : 'rgba(255,255,255,0.04)',
               border: '1px solid',
-              borderColor: unitType === '3bhk' ? '#F78E1E' : 'rgba(255,255,255,0.1)',
+              borderColor: unitType === '3bhk' ? '#A6462A' : 'rgba(255,255,255,0.1)',
               borderRadius: '8px',
               color: '#FFFFFF',
               textAlign: 'left',
@@ -126,7 +126,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
               transition: 'all 0.2s ease'
             }}
           >
-            <div style={{ fontSize: '0.8rem', color: '#F78E1E', fontWeight: 600, textTransform: 'uppercase' }}>3 BHK Luxury Unit</div>
+            <div style={{ fontSize: '0.8rem', color: '#A6462A', fontWeight: 600, textTransform: 'uppercase' }}>3 BHK Luxury Unit</div>
             <div style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: "'Josefin Sans', sans-serif" }}>1,890 sq. ft. Carpet Area</div>
             <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.25rem' }}>Base ₹2.15 Cr*</div>
           </button>
@@ -137,7 +137,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.875rem', marginBottom: '0.4rem' }}>
               <span>Down Payment ({downPaymentPercent}%)</span>
-              <strong style={{ color: '#F78E1E' }}>{formatINR(downPaymentAmount)}</strong>
+              <strong style={{ color: '#A6462A' }}>{formatINR(downPaymentAmount)}</strong>
             </div>
             <input
               type="range"
@@ -146,7 +146,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
               step="5"
               value={downPaymentPercent}
               onChange={(e) => setDownPaymentPercent(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F78E1E', cursor: 'pointer' }}
+              style={{ width: '100%', accentColor: '#A6462A', cursor: 'pointer' }}
             />
           </div>
 
@@ -162,7 +162,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
               step="1"
               value={tenureYears}
               onChange={(e) => setTenureYears(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F78E1E', cursor: 'pointer' }}
+              style={{ width: '100%', accentColor: '#A6462A', cursor: 'pointer' }}
             />
           </div>
 
@@ -178,14 +178,14 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
               step="0.1"
               value={interestRate}
               onChange={(e) => setInterestRate(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F78E1E', cursor: 'pointer' }}
+              style={{ width: '100%', accentColor: '#A6462A', cursor: 'pointer' }}
             />
           </div>
         </div>
 
         {/* RESULTS BREAKDOWN */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
-          <div style={{ padding: '1.25rem', backgroundColor: '#05172b', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)' }}>
+          <div style={{ padding: '1.25rem', backgroundColor: '#312119', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)' }}>
             <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase' }}>Estimated Total Cost</div>
             <div style={{ fontSize: '1.65rem', fontWeight: 700, color: '#FFFFFF', fontFamily: "'Josefin Sans', sans-serif", margin: '0.25rem 0' }}>
               {formatINR(totalPrice)}
@@ -195,9 +195,9 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
             </div>
           </div>
 
-          <div style={{ padding: '1.25rem', backgroundColor: '#0e3054', borderRadius: '8px', border: '1px solid #F78E1E' }}>
-            <div style={{ fontSize: '0.8rem', color: '#F78E1E', textTransform: 'uppercase', fontWeight: 600 }}>Estimated Monthly EMI</div>
-            <div style={{ fontSize: '1.65rem', fontWeight: 700, color: '#F78E1E', fontFamily: "'Josefin Sans', sans-serif", margin: '0.25rem 0' }}>
+          <div style={{ padding: '1.25rem', backgroundColor: '#563D2F', borderRadius: '8px', border: '1px solid #A6462A' }}>
+            <div style={{ fontSize: '0.8rem', color: '#A6462A', textTransform: 'uppercase', fontWeight: 600 }}>Estimated Monthly EMI</div>
+            <div style={{ fontSize: '1.65rem', fontWeight: 700, color: '#A6462A', fontFamily: "'Josefin Sans', sans-serif", margin: '0.25rem 0' }}>
               {formatINR(emi)} <span style={{ fontSize: '0.85rem', fontWeight: 400, color: '#FFF' }}>/ mo</span>
             </div>
             <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.7)' }}>
@@ -208,7 +208,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)' }}>
-            <ShieldCheck size={16} style={{ color: '#F78E1E' }} />
+            <ShieldCheck size={16} style={{ color: '#A6462A' }} />
             <span>Exact bank approval & custom payment schedules provided on request.</span>
           </div>
 

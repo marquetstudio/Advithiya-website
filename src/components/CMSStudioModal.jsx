@@ -81,21 +81,21 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
           width: '100%',
           maxWidth: '900px',
           maxHeight: '90vh',
-          backgroundColor: '#092644',
+          backgroundColor: '#4A3428',
           color: '#FFFFFF',
           borderRadius: '12px',
           display: 'flex',
           flexDirection: 'column',
           boxShadow: '0 25px 60px rgba(0,0,0,0.5)',
           overflow: 'hidden',
-          border: '1px solid rgba(247, 142, 30, 0.3)'
+          border: '1px solid rgba(166, 70, 42, 0.3)'
         }}
       >
         {/* CMS Header */}
         <div
           style={{
             padding: '1.25rem 2rem',
-            backgroundColor: '#05172b',
+            backgroundColor: '#312119',
             borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
             display: 'flex',
             alignItems: 'center',
@@ -103,7 +103,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <SlidersHorizontal size={22} style={{ color: '#F78E1E' }} />
+            <SlidersHorizontal size={22} style={{ color: '#A6462A' }} />
             <div>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.25rem' }}>Advithiya CMS Studio</h3>
               <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', margin: 0 }}>
@@ -156,7 +156,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Navigation Tabs */}
-        <div style={{ display: 'flex', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: '#092644' }}>
+        <div style={{ display: 'flex', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: '#4A3428' }}>
           {[
             { id: 'projects', label: 'Manage Projects' },
             { id: 'logs', label: 'Construction Logs' },
@@ -168,10 +168,10 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
               onClick={() => setActiveTab(tab.id)}
               style={{
                 padding: '0.9rem 1.5rem',
-                background: activeTab === tab.id ? '#0e3054' : 'transparent',
+                background: activeTab === tab.id ? '#563D2F' : 'transparent',
                 border: 'none',
-                borderBottom: activeTab === tab.id ? '2px solid #F78E1E' : '2px solid transparent',
-                color: activeTab === tab.id ? '#F78E1E' : 'rgba(255,255,255,0.7)',
+                borderBottom: activeTab === tab.id ? '2px solid #A6462A' : '2px solid transparent',
+                color: activeTab === tab.id ? '#A6462A' : 'rgba(255,255,255,0.7)',
                 fontFamily: "'Poppins', sans-serif",
                 fontSize: '0.85rem',
                 fontWeight: activeTab === tab.id ? 600 : 400,
@@ -201,7 +201,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                      <h4 style={{ color: '#F78E1E' }}>{proj.name} ({proj.type})</h4>
+                      <h4 style={{ color: '#A6462A' }}>{proj.name} ({proj.type})</h4>
                       <span className={`status-badge ${proj.statusBadgeStyle}`}>{proj.status}</span>
                     </div>
 
@@ -211,7 +211,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                         <input
                           type="text"
                           className="form-input"
-                          style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                          style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                           value={proj.status}
                           onChange={(e) => handleProjectUpdate(proj.id, { status: e.target.value })}
                         />
@@ -221,7 +221,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                         <input
                           type="text"
                           className="form-input"
-                          style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                          style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                           value={proj.pricing}
                           onChange={(e) => handleProjectUpdate(proj.id, { pricing: e.target.value })}
                         />
@@ -231,7 +231,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                         <input
                           type="text"
                           className="form-input"
-                          style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                          style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                           value={proj.reraNo}
                           onChange={(e) => handleProjectUpdate(proj.id, { reraNo: e.target.value })}
                         />
@@ -241,7 +241,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                         <input
                           type="text"
                           className="form-input"
-                          style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                          style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                           value={proj.location}
                           onChange={(e) => handleProjectUpdate(proj.id, { location: e.target.value })}
                         />
@@ -268,7 +268,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     className="form-select"
                     value={selectedProjectId}
                     onChange={(e) => setSelectedProjectId(e.target.value)}
-                    style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                    style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                   >
                     {projects.map((p) => (
                       <option key={p.id} value={p.id}>{p.name}</option>
@@ -283,7 +283,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                       type="text"
                       required
                       className="form-input"
-                      style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                      style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                       value={newLog.date}
                       onChange={(e) => setNewLog({ ...newLog, date: e.target.value })}
                     />
@@ -294,7 +294,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                       type="text"
                       required
                       className="form-input"
-                      style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                      style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                       value={newLog.milestone}
                       onChange={(e) => setNewLog({ ...newLog, milestone: e.target.value })}
                     />
@@ -307,7 +307,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     rows={3}
                     required
                     className="form-textarea"
-                    style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                    style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                     value={newLog.description}
                     onChange={(e) => setNewLog({ ...newLog, description: e.target.value })}
                   />
@@ -336,7 +336,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     type="text"
                     required
                     className="form-input"
-                    style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                    style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                     placeholder="e.g. Understanding Soil Testing & Structural Safety in Bangalore"
                     value={newArticle.title}
                     onChange={(e) => setNewArticle({ ...newArticle, title: e.target.value })}
@@ -350,7 +350,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                       className="form-select"
                       value={newArticle.category}
                       onChange={(e) => setNewArticle({ ...newArticle, category: e.target.value })}
-                      style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                      style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                     >
                       <option>Transparency</option>
                       <option>Buyers Guide</option>
@@ -363,7 +363,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     <input
                       type="text"
                       className="form-input"
-                      style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                      style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                       value={newArticle.readTime}
                       onChange={(e) => setNewArticle({ ...newArticle, readTime: e.target.value })}
                     />
@@ -376,7 +376,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     type="text"
                     required
                     className="form-input"
-                    style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                    style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                     placeholder="Brief summary for article cards..."
                     value={newArticle.excerpt}
                     onChange={(e) => setNewArticle({ ...newArticle, excerpt: e.target.value })}
@@ -389,7 +389,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     rows={5}
                     required
                     className="form-textarea"
-                    style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                    style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                     placeholder="Write article markdown or plain text content..."
                     value={newArticle.content}
                     onChange={(e) => setNewArticle({ ...newArticle, content: e.target.value })}
@@ -415,7 +415,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     <input
                       type="text"
                       className="form-input"
-                      style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                      style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                       value={companyForm.phone}
                       onChange={(e) => setCompanyForm({ ...companyForm, phone: e.target.value })}
                     />
@@ -425,7 +425,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                     <input
                       type="email"
                       className="form-input"
-                      style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                      style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                       value={companyForm.email}
                       onChange={(e) => setCompanyForm({ ...companyForm, email: e.target.value })}
                     />
@@ -437,7 +437,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                   <textarea
                     rows={2}
                     className="form-textarea"
-                    style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                    style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                     value={companyForm.address}
                     onChange={(e) => setCompanyForm({ ...companyForm, address: e.target.value })}
                   />
@@ -448,7 +448,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
                   <input
                     type="text"
                     className="form-input"
-                    style={{ backgroundColor: '#05172b', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                    style={{ backgroundColor: '#312119', color: '#FFF', borderColor: 'rgba(255,255,255,0.2)' }}
                     value={companyForm.grievanceContact}
                     onChange={(e) => setCompanyForm({ ...companyForm, grievanceContact: e.target.value })}
                   />
