@@ -167,9 +167,16 @@ button:active,
   padding-bottom: var(--space-xl);
 }
 
-.navbar-container,
 .home-hero-container {
   max-width: 1120px;
+}
+
+.navbar-container {
+  max-width: 1440px;
+}
+
+.site-navbar {
+  box-shadow: 0 3px 14px rgba(74, 52, 40, 0.03);
 }
 
 /* Keep the home hero clear of the fixed navigation on short laptop screens. */
