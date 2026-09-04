@@ -172,7 +172,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
             ) : (
               <motion.div
                 key={`${statusFilter}-${typeFilter}`}
-                style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '3rem' }}
+                style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(420px, 100%), 1fr))', gap: '3rem' }}
                 initial="hidden"
                 animate="visible"
                 exit="hidden"

@@ -48,7 +48,7 @@ export const Navbar = ({
         left: 0,
         right: 0,
         zIndex: 900,
-        backgroundColor: scrolled ? 'rgba(246, 239, 228, 0.98)' : 'rgba(246, 239, 228, 0.96)',
+        backgroundColor: scrolled ? 'rgba(246, 239, 228, 0.94)' : 'rgba(246, 239, 228, 0.85)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
         borderTop: '5px solid #A6462A',
@@ -57,7 +57,7 @@ export const Navbar = ({
         padding: scrolled ? '0.85rem 0' : '1.25rem 0'
       }}
     >
-      <div className="container navbar-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Brand Logo */}
         <div 
           onClick={() => handleNavClick('home')} 

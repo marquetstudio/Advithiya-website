@@ -171,10 +171,6 @@ button:active,
   max-width: 1120px;
 }
 
-.navbar-container {
-  max-width: 1440px;
-}
-
 .site-navbar {
   box-shadow: 0 3px 14px rgba(74, 52, 40, 0.03);
 }
@@ -615,6 +611,12 @@ button:active,
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .modal-form-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Persistent WhatsApp contact */

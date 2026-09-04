@@ -102,7 +102,7 @@ export const SpeakToTeamModal = ({ isOpen, onClose, defaultProject = '' }) => {
                 />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="modal-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div className="form-group">
                   <label className="form-label">Phone Number *</label>
                   <input
@@ -127,7 +127,7 @@ export const SpeakToTeamModal = ({ isOpen, onClose, defaultProject = '' }) => {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="modal-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div className="form-group">
                   <label className="form-label">Enquiry Type</label>
                   <select
