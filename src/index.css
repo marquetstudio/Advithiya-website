@@ -503,6 +503,84 @@ button:active,
   font-weight: 500;
 }
 
+/* Persistent WhatsApp contact */
+.whatsapp-float {
+  position: fixed;
+  right: 1.75rem;
+  bottom: 1.75rem;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp-button {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  color: #FFFFFF;
+  background: #25D366;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.3);
+  transition: transform 180ms var(--ease-out), background-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+}
+
+.whatsapp-button svg {
+  width: 34px;
+  height: 34px;
+}
+
+.whatsapp-button:hover,
+.whatsapp-button:focus-visible {
+  color: #FFFFFF;
+  background: #1EBE5D;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.38);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 0.9rem);
+  width: max-content;
+  max-width: min(260px, calc(100vw - 7.5rem));
+  padding: 0.7rem 0.95rem;
+  color: #312119;
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 52, 40, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 9px 25px rgba(49, 33, 25, 0.14);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.35;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(8px, -50%);
+  transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out), visibility 160ms var(--ease-out);
+}
+
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  width: 11px;
+  height: 11px;
+  background: #FFFFFF;
+  border-top: 1px solid rgba(74, 52, 40, 0.08);
+  border-right: 1px solid rgba(74, 52, 40, 0.08);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip,
+.whatsapp-float:focus-within .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%);
+}
+
 @media (max-width: 640px) {
   .modal-overlay {
     padding: 1rem;
@@ -521,5 +599,20 @@ button:active,
   .team-profile-headshot {
     width: 104px;
     border-radius: 10px;
+  }
+
+  .whatsapp-float {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .whatsapp-button {
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-button svg {
+    width: 30px;
+    height: 30px;
   }
 }
