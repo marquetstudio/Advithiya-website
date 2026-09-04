@@ -69,7 +69,7 @@ export const ContactPage = ({ setActivePage }) => {
       </section>
 
       {/* 02. GET IN TOUCH & 04. CORPORATE OFFICE */}
-      <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
+      <section className="section-padding" style={{ backgroundColor: '#FFFFFF', paddingTop: '5.5rem', paddingBottom: '5.5rem' }}>
         <div className="container">
           <div className="editorial-grid" style={{ alignItems: 'start' }}>
             {/* 02. GET IN TOUCH FORM */}
@@ -262,7 +262,7 @@ export const ContactPage = ({ setActivePage }) => {
                   For customer questions, complaints or escalation, please contact our team through the appropriate channel.
                 </p>
                 <div style={{ fontSize: '0.85rem', color: '#4A3428', fontWeight: 600 }}>
-                  Grievance Contact: <span style={{ color: '#626E7A' }}>[To be confirmed] | Reach out to <a href={`mailto:${company.email}`} style={{ color: '#A6462A' }}>{company.email}</a></span>
+                  Customer Support: <span style={{ color: '#626E7A' }}>Reach out to <a href={`mailto:${company.email}`} style={{ color: '#A6462A' }}>{company.email}</a></span>
                 </div>
               </div>
             </div>

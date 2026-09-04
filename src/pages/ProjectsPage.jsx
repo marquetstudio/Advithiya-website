@@ -59,7 +59,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
       >
         <motion.div
           initial={{ scale: 1.15, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.28 }}
+          animate={{ scale: 1, opacity: 0.34 }}
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
           style={{
             position: 'absolute',
@@ -219,7 +219,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
 
                     <div style={{ padding: '2.25rem' }}>
                       <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
-                        {project.id === 'shreyas' ? '[Verified Location] | Residential | Launching Soon' : `${project.location} | Residential | Delivered`}
+                        {project.id === 'shreyas' ? `${project.location} | Residential | Launching Soon` : `${project.location} | ${project.type} | ${project.status}`}
                       </div>
 
                       <h2 style={{ fontSize: '1.85rem', marginBottom: '0.4rem', color: '#4A3428' }}>

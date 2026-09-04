@@ -43,7 +43,7 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
               {company.tagline || "Thoughtfully built. Transparently delivered."}
             </div>
             <p style={{ marginTop: '0.5rem', color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.9rem', maxWidth: '320px', lineHeight: 1.6 }}>
-              {company.subtagline || "Creating thoughtfully designed residential and Commercial communities in Bangalore."}
+              {company.subtagline || "Creating thoughtfully designed residential and commercial communities in Bangalore."}
             </p>
           </div>
 

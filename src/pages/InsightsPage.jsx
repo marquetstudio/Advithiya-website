@@ -5,6 +5,46 @@ import { ArrowLeft, ArrowRight, Share2, BookOpen, MessageSquare } from 'lucide-r
 import { toast } from 'sonner';
 import { assetPath } from '../utils/assetPath';
 
+const renderInlineFormatting = (text) =>
+  text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
+    part.startsWith('**') && part.endsWith('**') ? (
+      <strong key={index} style={{ color: '#4A3428', fontWeight: 600 }}>
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      <React.Fragment key={index}>{part}</React.Fragment>
+    )
+  );
+
+const ArticleBody = ({ content }) => {
+  const blocks = content.trim().split(/\n\s*\n/);
+
+  return blocks.map((block, blockIndex) => {
+    const lines = block.split('\n');
+    const isOrderedList = lines.every((line) => /^\d+\.\s/.test(line));
+    const isUnorderedList = lines.every((line) => /^-\s/.test(line));
+
+    if (isOrderedList || isUnorderedList) {
+      const ListTag = isOrderedList ? 'ol' : 'ul';
+      return (
+        <ListTag key={blockIndex} style={{ margin: '0 0 1.75rem 1.4rem', display: 'grid', gap: '0.85rem' }}>
+          {lines.map((line, lineIndex) => (
+            <li key={lineIndex}>
+              {renderInlineFormatting(line.replace(isOrderedList ? /^\d+\.\s/ : /^-\s/, ''))}
+            </li>
+          ))}
+        </ListTag>
+      );
+    }
+
+    return (
+      <p key={blockIndex} style={{ marginBottom: blockIndex === blocks.length - 1 ? 0 : '1.75rem' }}>
+        {renderInlineFormatting(block)}
+      </p>
+    );
+  });
+};
+
 export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal }) => {
   const { articles } = useCMS();
 
@@ -82,10 +122,10 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
                 fontSize: '1.15rem',
                 color: '#626E7A',
                 lineHeight: 1.85,
-                whiteSpace: 'pre-line'
+                whiteSpace: 'normal'
               }}
             >
-              {activeArticle.content}
+              <ArticleBody content={activeArticle.content} />
             </div>
 
             <div style={{ marginTop: '4rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(74, 52, 40, 0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>

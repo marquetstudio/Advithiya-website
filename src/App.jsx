@@ -8,6 +8,7 @@ import ScrollProgressBar from './components/ScrollProgressBar';
 import SpeakToTeamModal from './components/SpeakToTeamModal';
 import CustomerCharterModal from './components/CustomerCharterModal';
 import CostCalculatorModal from './components/CostCalculatorModal';
+import WhatsAppButton from './components/WhatsAppButton';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -146,6 +147,8 @@ export function AppContent() {
             toast.info('Opened Advithiya Customer Charter modal');
           }}
         />
+
+        <WhatsAppButton />
 
         {/* MODALS */}
         <SpeakToTeamModal

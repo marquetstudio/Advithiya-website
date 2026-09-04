@@ -256,7 +256,7 @@ export const HomePage = ({
 
               <div style={{ padding: '2rem' }}>
                 <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
-                  [Verified Location] | Residential | Launching Soon
+                  {shreyas.location} | Residential | Launching Soon
                 </div>
                 <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: '#4A3428' }}>
                   {shreyas.name}
@@ -331,7 +331,7 @@ export const HomePage = ({
 
                 <div style={{ padding: '2rem' }}>
                   <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
-                    Dasarahalli Main Road, Kempapura | Residential | Delivered
+                    {urbanChalet.location} | Residential | Delivered
                   </div>
                   <h3 style={{ fontSize: '1.75rem', marginBottom: '0.25rem', color: '#4A3428' }}>
                     {urbanChalet.name}

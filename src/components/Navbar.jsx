@@ -102,10 +102,10 @@ export const Navbar = ({
         </nav>
 
         {/* Right Action Trigger */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+        <div className="navbar-actions" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
           {/* Speak to Our Team CTA Button */}
           <button 
-            className="btn btn-orange"
+            className="btn btn-orange navbar-primary-cta"
             onClick={onOpenSpeakModal}
             style={{ padding: '0.65rem 1.35rem', fontSize: '0.85rem' }}
           >
@@ -126,6 +126,7 @@ export const Navbar = ({
               display: 'none'
             }}
             aria-label="Toggle Mobile Menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -177,6 +178,18 @@ export const Navbar = ({
           }
           .mobile-menu-toggle {
             display: flex !important;
+            flex-shrink: 0;
+          }
+          .navbar-actions {
+            gap: 0.5rem !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .navbar-primary-cta {
+            display: none !important;
+          }
+          .navbar-actions {
+            margin-left: auto;
           }
         }
       `}</style>
