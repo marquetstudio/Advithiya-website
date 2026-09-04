@@ -41,15 +41,17 @@ export const Navbar = ({
 
   return (
     <header 
+      className="site-navbar"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 900,
-        backgroundColor: scrolled ? 'rgba(246, 239, 228, 0.94)' : 'rgba(246, 239, 228, 0.85)',
+        backgroundColor: scrolled ? 'rgba(246, 239, 228, 0.98)' : 'rgba(246, 239, 228, 0.96)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
+        borderTop: '5px solid #A6462A',
         borderBottom: '1px solid rgba(74, 52, 40, 0.08)',
         transition: 'all 0.35s ease',
         padding: scrolled ? '0.85rem 0' : '1.25rem 0'
