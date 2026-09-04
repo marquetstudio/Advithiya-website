@@ -3,18 +3,15 @@ import { assetPath } from '../utils/assetPath';
 
 export const BrandLogo = ({
   variant = 'full', // 'full', 'inverted', 'mark-only', 'dark-brown'
+  type = 'horizontal', // 'horizontal', 'vertical'
   size = 100,
   className = ''
 }) => {
   // On dark backgrounds use the same image but with a brightness/invert filter
   // so the logo is always legible.
-  let filterStyle = {};
-  if (variant === 'inverted') {
-    filterStyle = { filter: 'brightness(0) invert(1)' };
-  } else if (variant === 'dark-brown') {
-    // Filter to turn the logo into roughly #4A3428
-    filterStyle = { filter: 'brightness(0) invert(21%) sepia(13%) saturate(1394%) hue-rotate(345deg) brightness(97%) contrast(92%)' };
-  }
+  // Filters removed to preserve original logo colors (orange sun, etc)
+
+  const logoFile = type === 'vertical' ? 'advithiya_logo_white_vertical.png' : 'advithiya_logo_horizontal.png';
 
   return (
     <div
@@ -22,14 +19,13 @@ export const BrandLogo = ({
       style={{ display: 'inline-flex', alignItems: 'center' }}
     >
       <img
-        src={assetPath('images/brand_logo.png')}
+        src={assetPath(`images/${logoFile}`)}
         alt="Advithiya – Crafting Possibilities"
         style={{
           height: `${size}px`,
           width: 'auto',
           display: 'block',
-          objectFit: 'contain',
-          ...filterStyle
+          objectFit: 'contain'
         }}
       />
     </div>

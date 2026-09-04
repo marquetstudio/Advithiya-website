@@ -25,7 +25,7 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
       }}
     >
       {/* Subtle Pattern Texture */}
-      <BrandPattern opacity={0.04} />
+      <BrandPattern opacity={0.15} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div
@@ -38,7 +38,7 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
         >
           {/* Brand */}
           <div>
-            <BrandLogo variant="inverted" size={80} />
+            <BrandLogo variant="inverted" type="vertical" size={120} />
             <div style={{ marginTop: '1.25rem', color: '#A6462A', fontWeight: 600, fontSize: '1rem' }}>
               {company.tagline || "Thoughtfully built. Transparently delivered."}
             </div>

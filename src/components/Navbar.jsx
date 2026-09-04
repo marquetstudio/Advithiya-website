@@ -63,7 +63,7 @@ export const Navbar = ({
           onClick={() => handleNavClick('home')} 
           style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
         >
-          <BrandLogo variant="dark-brown" size={80} />
+          <BrandLogo variant="dark-brown" size={45} />
         </div>
 
         {/* Desktop Navigation Links */}

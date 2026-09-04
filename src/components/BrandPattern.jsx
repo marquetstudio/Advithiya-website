@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { assetPath } from '../utils/assetPath';
 export const BrandPattern = ({ opacity = 0.05, className = '' }) => {
   return (
     <div
@@ -16,18 +16,17 @@ export const BrandPattern = ({ opacity = 0.05, className = '' }) => {
         overflow: 'hidden'
       }}
     >
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="AdvithiyaLogoPattern" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
-            <g fill="none" stroke="#FFFFFF" strokeWidth="1.5">
-              <polygon points="60,10 100,85 20,85" />
-              <polyline points="40,65 60,35 80,65" />
-              <line x1="50" y1="50" x2="70" y2="50" />
-            </g>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#AdvithiyaLogoPattern)" />
-      </svg>
+      <img 
+        src={assetPath('images/advithiya_logo_monogram.png')} 
+        alt="" 
+        style={{
+          width: '120%',
+          height: '120%',
+          objectFit: 'contain',
+          objectPosition: 'center',
+          transform: 'translate(0, 0)'
+        }} 
+      />
     </div>
   );
 };
