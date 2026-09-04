@@ -198,7 +198,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
           <span className="section-tag">Architectural Gallery</span>
           <h2 style={{ marginBottom: '2.5rem' }}>Space, Texture & Daylight</h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1.75rem' }}>
             {imagesList.map((img, idx) => (
               <motion.div
                 key={idx}
@@ -327,7 +327,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: '2rem' }}>
             {project.constructionLogs?.map((log, idx) => (
               <motion.div
                 key={idx}

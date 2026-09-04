@@ -79,7 +79,7 @@ export const PartnerPage = () => {
       {/* 02. LANDOWNERS, 03. CHANNEL PARTNERS, 04. VENDORS & CONSULTANTS */}
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: '2.5rem', marginBottom: '4rem' }}>
             {/* 02. LANDOWNERS */}
             <motion.div
               whileHover={{ y: -6 }}

@@ -196,7 +196,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
       {/* 02. FEATURED ARTICLES */}
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))', gap: '2.5rem' }}>
             {articles.map((art) => (
               <motion.div
                 key={art.id}

@@ -92,7 +92,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
         </p>
 
         {/* UNIT SELECTOR */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
+        <div className="modal-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           <button
             onClick={() => setUnitType('2bhk')}
             style={{
@@ -184,7 +184,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
         </div>
 
         {/* RESULTS BREAKDOWN */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
+        <div className="modal-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
           <div style={{ padding: '1.25rem', backgroundColor: '#312119', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)' }}>
             <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase' }}>Estimated Total Cost</div>
             <div style={{ fontSize: '1.65rem', fontWeight: 700, color: '#FFFFFF', fontFamily: "'Josefin Sans', sans-serif", margin: '0.25rem 0' }}>

@@ -249,7 +249,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))',
                 gap: '4rem',
                 alignItems: 'center'
               }}
