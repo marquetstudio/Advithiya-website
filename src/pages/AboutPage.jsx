@@ -126,7 +126,19 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
   };
 
   const profileModal = selectedMember ? createPortal(
-    <div className="modal-overlay" onClick={() => setSelectedMember(null)}>
+    <div 
+      className="modal-overlay" 
+      onClick={() => setSelectedMember(null)}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        backgroundColor: 'rgba(49, 33, 25, 0.6)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1000
+      }}
+    >
       <motion.div
         role="dialog"
         aria-modal="true"
@@ -163,11 +175,18 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
               {selectedMember.title}
             </p>
 
-            <div className="team-profile-details" aria-label="Areas of focus">
-              {selectedMember.details.map((detail) => (
-                <span key={detail}>{detail}</span>
-              ))}
-            </div>
+            {selectedMember.details && (
+              <div className="team-profile-details" aria-label="Areas of focus">
+                {selectedMember.details.map((detail) => (
+                  <span key={detail}>{detail}</span>
+                ))}
+              </div>
+            )}
+            {!selectedMember.details && selectedMember.experience && (
+              <p style={{ fontSize: '0.9rem', color: '#8A7563', letterSpacing: '0.05em' }}>
+                {selectedMember.experience}
+              </p>
+            )}
 
             <h3 style={{ fontSize: '1rem', margin: '1.6rem 0 0.6rem' }}>Profile</h3>
             <p style={{ color: '#626E7A', fontSize: '0.98rem', lineHeight: 1.75, margin: 0 }}>
