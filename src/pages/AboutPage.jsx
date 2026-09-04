@@ -1,11 +1,80 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
-import { ArrowRight, ShieldCheck, Heart, Sparkles, Compass, CheckCircle2, Eye, Award } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Heart, Sparkles, Compass, CheckCircle2, Eye, Award, X } from 'lucide-react';
 import { assetPath } from '../utils/assetPath';
+
+const editorialLeadershipData = [
+  {
+    name: 'Mr. Srinivas Raju',
+    title: 'Managing Director',
+    experience: '30+ Years of Experience',
+    bio: 'With over three decades of experience across procurement, project delivery and operations, Srinivas Raju brings broad industry knowledge and a strong focus on execution. His approach combines practical decision-making with an emphasis on quality, accountability and long-term value.',
+    image: assetPath('images/team_member.png')
+  },
+  {
+    name: 'Mr. Deepak',
+    title: 'Head of Construction',
+    experience: '25+ Years of Experience',
+    bio: 'With more than 25 years of experience in construction, Deepak brings extensive knowledge of site execution, coordination and project delivery. His role focuses on maintaining construction standards while ensuring projects progress with discipline, efficiency and attention to detail.',
+    image: assetPath('images/team_member.png')
+  },
+  {
+    name: 'Mr. Prakash',
+    title: 'Head - Land & Legal',
+    experience: '20 Years of Experience',
+    bio: 'With two decades of experience across land and legal matters, Prakash oversees the processes that support secure and well-structured development. His experience helps ensure that projects move forward with clarity, diligence and sound documentation.',
+    image: assetPath('images/team_member.png')
+  },
+  {
+    name: 'Mrs. Swetha',
+    title: 'Chief Marketing Officer',
+    experience: '10+ Years of Experience',
+    bio: 'With more than 10 years of experience in marketing and brand development, Swetha focuses on building clear, consistent and meaningful communication around the company and its projects. Her role connects the brand\'s vision with the people it serves.',
+    image: assetPath('images/team_member.png')
+  },
+  {
+    name: 'Mrs. Vyshali S Raju',
+    title: 'Managing Partner',
+    experience: '',
+    bio: 'As Managing Partner, Vyshali contributes to the company\'s strategic direction and day-to-day development. Her approach combines a close understanding of the business with a focus on building a strong and sustainable foundation for future growth.',
+    image: assetPath('images/team_member.png')
+  },
+  {
+    name: 'Ms. Lekhana',
+    title: 'Admin & Operations',
+    experience: '',
+    bio: 'Lekhana supports the organisation across administration and operations, helping maintain the coordination and processes that keep the business running smoothly. Her role brings structure, responsiveness and consistency to everyday operations.',
+    image: assetPath('images/team_member.png')
+  },
+  {
+    name: 'Sai Charan A',
+    title: 'Procurement & Logistics',
+    experience: '',
+    bio: 'Sai Charan oversees procurement and logistics, supporting the timely movement of materials, resources and requirements across projects. His role focuses on coordination, efficiency and dependable execution.',
+    image: assetPath('images/team_member.png')
+  }
+];
 
 export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
   const { leadership, values } = useCMS();
+  const [selectedMember, setSelectedMember] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setSelectedMember(null);
+    };
+    if (selectedMember) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedMember]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -71,7 +140,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
       </section>
 
       {/* 02. WHO WE ARE */}
-      <section className="section-padding" style={{ backgroundColor: '#F8F9FA' }}>
+      <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
           <div
             style={{
@@ -177,78 +246,167 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '2rem' }}>
-            {[
-              {
-                name: 'Team Member 1',
-                title: 'Director | Construction Strategy & CEO | Bespoke',
-                image: assetPath('images/team_member.png')
-              },
-              {
-                name: 'Team Member 2',
-                title: 'Vice President | Commercial & Development Strategy',
-                image: assetPath('images/team_member.png')
-              },
-              {
-                name: 'Team Member 3',
-                title: 'Vice President & Business Head | Advithiya',
-                image: assetPath('images/team_member.png')
-              }
-            ].map((member, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3 }}
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  boxShadow: '0 4px 20px rgba(74, 52, 40, 0.07)',
-                  border: '1px solid rgba(74, 52, 40, 0.06)'
-                }}
-              >
-                {/* Headshot Image */}
-                <div
+          <div className="leadership-grid">
+            {editorialLeadershipData.map((member, index) => {
+              const formattedNumber = `0${index + 1}`;
+              const isLead = index === 0;
+              return (
+                <motion.div
+                  key={index}
+                  onClick={() => setSelectedMember(member)}
                   style={{
-                    width: '100%',
-                    aspectRatio: '4 / 4',
-                    backgroundColor: '#D8E3EE',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '24px',
                     overflow: 'hidden',
-                    position: 'relative'
+                    height: '100%',
+                    boxShadow: '0 8px 32px rgba(74, 52, 40, 0.05)'
                   }}
+                  className="leadership-card group"
                 >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    onError={(e) => { e.target.style.display = 'none'; }}
+                  {/* Image Container */}
+                  <div
                     style={{
                       width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'top center',
-                      display: 'block'
+                      aspectRatio: isLead ? '4/5' : '4/3',
+                      backgroundColor: '#F6EFE4',
+                      overflow: 'hidden',
+                      position: 'relative'
                     }}
-                  />
+                  >
+                    <motion.img
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                      src={member.image}
+                      alt={member.name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'top center',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+
+                  {/* Typography Container */}
+                  <div style={{ padding: isLead ? '3rem 2.5rem' : '1.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'center' }}>
+                    <div style={{ color: '#A6462A', fontSize: isLead ? '1.25rem' : '1.1rem', fontWeight: 700, marginBottom: '0.75rem', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+                      <motion.span 
+                        className="plus-cue"
+                        style={{ opacity: 0, transition: 'opacity 0.3s ease' }}
+                      >+</motion.span>
+                    </div>
+                    <h3 
+                      style={{ 
+                        fontSize: isLead ? '2rem' : '1.25rem', 
+                        color: '#4A3428', 
+                        fontWeight: 700, 
+                        marginBottom: '0.5rem',
+                        fontFamily: "'Josefin Sans', sans-serif",
+                        transition: 'color 0.3s ease'
+                      }}
+                    >
+                      {member.name}
+                    </h3>
+                    <p style={{ fontSize: isLead ? '1.1rem' : '0.95rem', color: '#626E7A', margin: 0 }}>
+                      {member.title}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Profile Modal */}
+        <AnimatePresence>
+          {selectedMember && (
+            <div style={{ position: 'fixed', inset: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {/* Overlay */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(49, 33, 25, 0.6)' }}
+                onClick={() => setSelectedMember(null)}
+              />
+              
+              {/* Modal Box */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                style={{
+                  position: 'relative',
+                  width: '90%',
+                  maxWidth: '800px',
+                  maxHeight: '90vh',
+                  overflowY: 'auto',
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: '8px',
+                  padding: '3rem',
+                  boxShadow: '0 25px 50px rgba(0,0,0,0.15)',
+                  zIndex: 101,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '2.5rem'
+                }}
+              >
+                <button 
+                  onClick={() => setSelectedMember(null)}
+                  style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'none', border: 'none', cursor: 'pointer', color: '#4A3428' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#A6462A'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#4A3428'}
+                >
+                  <X size={24} />
+                </button>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '3rem' }}>
+                  {/* Portrait */}
+                  <div style={{ aspectRatio: '3/4', backgroundColor: '#F6EFE4', overflow: 'hidden' }}>
+                    <img src={selectedMember.image} alt={selectedMember.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  
+                  {/* Header Info */}
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#A6462A', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+                      01 / LEADERSHIP
+                    </span>
+                    <h2 style={{ fontSize: '2.25rem', color: '#4A3428', fontFamily: "'Josefin Sans', sans-serif", fontWeight: 700, margin: 0, marginBottom: '0.5rem' }}>
+                      {selectedMember.name}
+                    </h2>
+                    <p style={{ fontSize: '1.1rem', color: '#6A4B3A', marginBottom: '1rem', fontWeight: 500 }}>
+                      {selectedMember.title}
+                    </p>
+                    <p style={{ fontSize: '0.9rem', color: '#8A7563', letterSpacing: '0.05em' }}>
+                      {selectedMember.experience}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Name & Role */}
-                <div style={{ padding: '1.5rem 1.75rem 1.75rem' }}>
-                  <h3 style={{ fontSize: '1.2rem', color: '#4A3428', fontWeight: 700, marginBottom: '0.4rem' }}>
-                    {member.name}
-                  </h3>
-                  <p style={{ fontSize: '0.9rem', color: '#626E7A', lineHeight: 1.5, margin: 0 }}>
-                    {member.title}
+                {/* Bio */}
+                <div style={{ borderTop: '1px solid rgba(74, 52, 40, 0.1)', paddingTop: '2.5rem' }}>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#4A3428', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '1rem' }}>
+                    ABOUT
+                  </span>
+                  <p style={{ fontSize: '1.05rem', color: '#6A4B3A', lineHeight: 1.7, margin: 0 }}>
+                    {selectedMember.bio}
                   </p>
                 </div>
               </motion.div>
-            ))}
-          </div>
-        </div>
+            </div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* 04. OUR VALUES */}
-      <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="container" style={{ maxWidth: '880px' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F6EFE4' }}>
+        <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="section-tag">Our Values</span>
             <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428' }}>
@@ -256,51 +414,62 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
             </h2>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div className="values-grid">
             {[
               {
-                title: "Thoughtfulness",
-                desc: "Consider the way spaces are experienced and used."
+                title: "Thoughtful Design",
+                desc: "Spaces considered around how people live.",
+                image: assetPath('images/thoughtful_design.png')
               },
               {
                 title: "Integrity",
-                desc: "Communicate clearly. Act with accountability."
+                desc: "Communicate clearly. Act with accountability.",
+                image: assetPath('images/integrity.png')
               },
               {
                 title: "Quality",
-                desc: "Pay attention to the details that matter."
+                desc: "Attention to detail from planning through delivery.",
+                image: assetPath('images/quality.png')
+              },
+              {
+                title: "Responsible Development",
+                desc: "Considered choices around resources, materials and long-term community well-being.",
+                image: assetPath('images/responsible_development.png')
               },
               {
                 title: "Transparency",
-                desc: "Make relevant information clear and accessible."
-              },
-              {
-                title: "Responsibility",
-                desc: "Consider the long-term impact of development decisions."
+                desc: "Clear information, respectful guidance and accountable delivery.",
+                image: assetPath('images/transparency.png')
               }
             ].map((val, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ x: 6 }}
+                whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(74, 52, 40, 0.15)' }}
+                transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1.5rem',
-                  padding: '1.75rem 2rem',
                   backgroundColor: '#F8F9FA',
-                  borderRadius: '8px',
-                  borderLeft: '4px solid #A6462A',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  boxShadow: '0 10px 30px rgba(74, 52, 40, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
                   border: '1px solid rgba(74, 52, 40, 0.08)'
                 }}
               >
-                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#4A3428', minWidth: '40px' }}>
-                  0{idx + 1}.
+                <div style={{ width: '100%', height: '240px', overflow: 'hidden' }}>
+                  <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.5 }}
+                    src={val.image}
+                    alt={val.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
                 </div>
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', color: '#4A3428', marginBottom: '0.25rem' }}>
+                <div style={{ padding: '2rem' }}>
+                  <h3 style={{ fontSize: '1.25rem', color: '#4A3428', marginBottom: '0.75rem', fontWeight: 700 }}>
                     {val.title}
                   </h3>
-                  <p style={{ fontSize: '0.95rem', color: '#626E7A', margin: 0 }}>
+                  <p style={{ fontSize: '1rem', color: '#626E7A', lineHeight: 1.6, margin: 0 }}>
                     {val.desc}
                   </p>
                 </div>

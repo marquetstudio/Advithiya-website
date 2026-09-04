@@ -429,3 +429,61 @@ button:active,
   padding: 1.5rem;
   animation: scaleFadeIn 0.25s var(--ease-out);
 }
+/* Values Grid Layout */
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.values-grid > div {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .values-grid > div {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .values-grid > div {
+    width: calc(33.333% - 1.333rem);
+  }
+}
+
+
+/* Leadership Card Hover Effects */
+.leadership-card:hover h3 {
+  color: #A6462A !important;
+}
+.leadership-card:hover .plus-cue {
+  opacity: 1 !important;
+}
+
+
+/* Leadership Grid */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .leadership-grid {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 4rem 2rem;
+  }
+  .leadership-grid .leadership-card:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+}
+

@@ -404,12 +404,17 @@ export const HomePage = ({
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
+          <div className="values-grid" style={{ marginBottom: '3.5rem' }}>
             {[
               {
                 title: "Thoughtful Design",
                 desc: "Spaces considered around how people live.",
                 image: assetPath('images/thoughtful_design.png')
+              },
+              {
+                title: "Integrity",
+                desc: "Communicate clearly. Act with accountability.",
+                image: assetPath('images/integrity.png')
               },
               {
                 title: "Quality",
