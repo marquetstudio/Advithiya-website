@@ -15,7 +15,7 @@ export const TextToImageHero = ({
   const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
   const textScale = useTransform(scrollY, [0, 300], [1, 0.94]);
   const textBlur = useTransform(scrollY, [0, 300], ['blur(0px)', 'blur(8px)']);
-  const bgScale = useTransform(scrollY, [0, 500], [1.04, 1.0]);
+  const bgScale = useTransform(scrollY, [0, 500], [1.1, 1.0]);
 
   return (
     <section
@@ -69,7 +69,7 @@ export const TextToImageHero = ({
         <motion.div
           className="home-hero-content"
           style={{
-            maxWidth: '760px',
+            maxWidth: '880px',
             opacity: textOpacity,
             scale: textScale,
             filter: textBlur
@@ -89,7 +89,7 @@ export const TextToImageHero = ({
                 backgroundPosition: 'center',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
-                fontSize: 'clamp(3rem, 6.2vw, 5rem)',
+                fontSize: 'clamp(3.5rem, 7.5vw, 6.25rem)',
                 lineHeight: 1.02,
                 fontWeight: 700,
                 letterSpacing: '-0.02em',
@@ -104,9 +104,9 @@ export const TextToImageHero = ({
               className="home-hero-heading"
               style={{
                 color: '#4A3428',
-                fontSize: 'clamp(2.15rem, 3.8vw, 3.15rem)',
-                lineHeight: 1.1,
-                marginTop: '0.25rem',
+                fontSize: 'clamp(2.5rem, 4.6vw, 3.85rem)',
+                lineHeight: 1.12,
+                marginTop: '0.35rem',
                 fontWeight: 600
               }}
             >
@@ -118,12 +118,12 @@ export const TextToImageHero = ({
           <p
             className="home-hero-copy"
             style={{
-              fontSize: 'clamp(1rem, 1.4vw, 1.1rem)',
+              fontSize: 'clamp(1.1rem, 1.6vw, 1.25rem)',
               color: '#7A6355',
-              marginBottom: '2rem',
-              maxWidth: '640px',
+              marginBottom: '2.25rem',
+              maxWidth: '720px',
               fontWeight: 400,
-              lineHeight: 1.65
+              lineHeight: 1.7
             }}
           >
             Advithiya creates future-ready homes and commercial communities in Bangalore, combining practical design, responsible development and experienced leadership.
@@ -137,7 +137,9 @@ export const TextToImageHero = ({
               style={{
                 backgroundColor: '#A6462A',
                 color: '#FFFFFF',
-                border: '1px solid #A6462A'
+                border: '1px solid #A6462A',
+                fontSize: '1.05rem',
+                padding: '0.95rem 2rem'
               }}
               onClick={() => {
                 setActivePage('projects');
@@ -155,7 +157,9 @@ export const TextToImageHero = ({
               style={{
                 backgroundColor: 'transparent',
                 color: '#4A3428',
-                border: '1px solid #4A3428'
+                border: '1.5px solid #4A3428',
+                fontSize: '1.05rem',
+                padding: '0.95rem 2rem'
               }}
               onClick={onOpenSpeakModal}
             >

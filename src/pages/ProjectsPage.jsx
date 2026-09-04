@@ -12,9 +12,9 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
   const filteredProjects = projects.filter((p) => {
     const matchesStatus =
       statusFilter === 'All' ||
-      (statusFilter === 'Ongoing' && (p.status.includes('Launching') || p.status.includes('Ongoing'))) ||
-      (statusFilter === 'Upcoming' && (p.status.includes('Upcoming') || p.status.includes('Launching'))) ||
-      (statusFilter === 'Delivered' && p.status.includes('Delivered'));
+      (statusFilter === 'Ongoing' && p.status === 'Ongoing') ||
+      (statusFilter === 'Upcoming' && p.status === 'Upcoming') ||
+      (statusFilter === 'Delivered' && p.status === 'Delivered');
 
     const matchesType =
       typeFilter === 'All' ||

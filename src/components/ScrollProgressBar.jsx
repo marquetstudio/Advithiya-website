@@ -11,16 +11,19 @@ export const ScrollProgressBar = () => {
 
   return (
     <motion.div
+      className="scroll-progress-bar"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
-        height: '3px',
-        backgroundColor: '#A6462A',
+        height: '4px',
+        background: 'linear-gradient(90deg, #A6462A 0%, #E06C42 50%, #F78E1E 100%)',
+        boxShadow: '0 0 10px rgba(247, 142, 30, 0.5), 0 1px 4px rgba(166, 70, 42, 0.4)',
         transformOrigin: '0%',
         scaleX,
-        zIndex: 1000
+        zIndex: 9999,
+        pointerEvents: 'none'
       }}
     />
   );

@@ -331,7 +331,7 @@ export const HomePage = ({
 
                 <div style={{ padding: '2rem' }}>
                   <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
-                    {urbanChalet.location} | Residential | Delivered
+                    {urbanChalet.location} | Residential | {urbanChalet.status}
                   </div>
                   <h3 style={{ fontSize: '1.75rem', marginBottom: '0.25rem', color: '#4A3428' }}>
                     {urbanChalet.name}

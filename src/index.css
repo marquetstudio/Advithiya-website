@@ -183,7 +183,7 @@ button:active,
   }
 
   .home-hero-content {
-    max-width: 800px !important;
+    max-width: 860px !important;
   }
 
   .home-hero-title-group {
@@ -191,24 +191,24 @@ button:active,
   }
 
   .home-hero-wordmark {
-    font-size: clamp(3.25rem, 5.6vw, 4.75rem) !important;
+    font-size: clamp(3.5rem, 6.8vw, 5.25rem) !important;
   }
 
   .home-hero-heading {
     margin-top: 0.1rem !important;
-    font-size: clamp(2.15rem, 3.55vw, 3rem) !important;
-    line-height: 1.05 !important;
+    font-size: clamp(2.35rem, 4.2vw, 3.4rem) !important;
+    line-height: 1.08 !important;
   }
 
   .home-hero-copy {
-    max-width: 680px !important;
-    margin-bottom: 1.35rem !important;
-    font-size: 1rem !important;
-    line-height: 1.55 !important;
+    max-width: 720px !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
   }
 
   .home-hero-actions {
-    gap: 0.9rem !important;
+    gap: 1rem !important;
   }
 }
 
@@ -730,5 +730,280 @@ button:active,
   .whatsapp-button svg {
     width: 30px;
     height: 30px;
+  }
+}
+
+/* Project gallery and gated floor-plan download */
+.architectural-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1.75rem;
+}
+
+.architectural-gallery-grid--featured {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.architectural-gallery-card {
+  height: 280px;
+  border-radius: 10px;
+  background: #e8e1d8;
+}
+
+.architectural-gallery-grid--featured .architectural-gallery-card {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+}
+
+.project-gallery-lightbox {
+  z-index: 2600;
+  overflow: hidden;
+}
+
+.project-gallery-lightbox__content {
+  position: relative;
+  display: grid;
+  place-items: center;
+  max-width: calc(100vw - 3rem);
+  max-height: calc(100dvh - 3rem);
+}
+
+.project-gallery-lightbox__content img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 3rem);
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.project-gallery-lightbox__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #a6462a;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.floor-plans-section {
+  background: #fff;
+}
+
+.floor-plans-heading-row {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.floor-plans-heading-row h2 {
+  margin-bottom: 0.7rem;
+}
+
+.floor-plans-heading-row p {
+  margin: 0;
+  color: #626e7a;
+}
+
+.floor-plan-card {
+  width: min(100%, 620px);
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(74, 52, 40, 0.14);
+  border-radius: 16px;
+  background: #fff;
+  color: #4a3428;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 16px 45px rgba(74, 52, 40, 0.08);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.floor-plan-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(166, 70, 42, 0.35);
+  box-shadow: 0 22px 55px rgba(74, 52, 40, 0.14);
+}
+
+.floor-plan-card:focus-visible {
+  outline: 3px solid rgba(166, 70, 42, 0.3);
+  outline-offset: 4px;
+}
+
+.floor-plan-card__preview {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: #4a3428;
+  color: #fff;
+}
+
+.floor-plan-card__preview span {
+  color: #d9b5a7;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.floor-plan-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.7rem;
+}
+
+.floor-plan-card__eyebrow {
+  margin-bottom: 0.45rem;
+  color: #a6462a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.floor-plan-card__content strong {
+  margin-bottom: 0.45rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.35rem;
+}
+
+.floor-plan-card__content > span:not(.floor-plan-card__eyebrow):not(.floor-plan-card__cta) {
+  color: #626e7a;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.floor-plan-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  color: #a6462a;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.floor-plan-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  overflow-y: auto;
+  background: rgba(31, 21, 16, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.floor-plan-modal__panel {
+  position: relative;
+  width: min(100%, 610px);
+  padding: clamp(1.6rem, 4vw, 2.7rem);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+}
+
+.floor-plan-modal__panel h2 {
+  margin: 0.25rem 2rem 0.6rem 0;
+  color: #4a3428;
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+}
+
+.floor-plan-modal__panel > p {
+  margin-bottom: 1.6rem;
+  color: #626e7a;
+}
+
+.floor-plan-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #f3eee8;
+  color: #4a3428;
+  cursor: pointer;
+}
+
+.floor-plan-modal__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.floor-plan-modal__submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.floor-plan-modal__panel small {
+  display: block;
+  margin-top: 0.85rem;
+  color: #7b716b;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .architectural-gallery-grid--featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .architectural-gallery-grid--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .floor-plan-card {
+    grid-template-columns: 1fr;
+  }
+
+  .floor-plan-card__preview {
+    min-height: 145px;
+  }
+
+  .floor-plan-modal {
+    align-items: end;
+    padding: 0;
+  }
+
+  .floor-plan-modal__panel {
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .floor-plan-modal__fields {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .project-gallery-lightbox__content {
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100dvh - 2rem);
+  }
+
+  .project-gallery-lightbox__content img {
+    max-height: calc(100dvh - 2rem);
   }
 }

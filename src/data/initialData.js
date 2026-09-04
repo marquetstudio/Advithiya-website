@@ -1,4 +1,5 @@
 const img = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
+const urbanChaletAsset = (filename) => `${import.meta.env.BASE_URL}assets/urbanChalet/${filename}`;
 
 export const initialData = {
   company: {
@@ -70,8 +71,8 @@ export const initialData = {
       name: "Advithiya Urban Chalet",
       tagline: "Boutique design homes. Limited by design.",
       subheadline: "A boutique collection of 3 BHK homes across two towers, created for just 10 families.",
-      status: "Delivered",
-      statusBadgeStyle: "delivered",
+      status: "Ongoing",
+      statusBadgeStyle: "ongoing",
       type: "Residential",
       location: "Hebbal Kempapura, Bengaluru",
       locationSubtitle: "Hebbal Kempapura, Bengaluru",
@@ -96,6 +97,14 @@ export const initialData = {
       heroImage: img("urban_chalet.jpg"),
       interiorImage: img("hero_architecture.jpg"),
       textureImage: img("material_texture.jpg"),
+      galleryImages: [
+        { title: "Front Elevation", src: urbanChaletAsset("1_1 - Photo.jpg.jpeg") },
+        { title: "Corner Perspective", src: urbanChaletAsset("1_6 - Photo.jpg.jpeg") },
+        { title: "Balcony & Facade Detail", src: urbanChaletAsset("1_4 - Photo.jpg.jpeg") },
+        { title: "Landscaped Arrival", src: urbanChaletAsset("1_2 - Photo.jpg.jpeg") }
+      ],
+      floorPlanPdf: urbanChaletAsset("URBAN CHALET_REVISED PLAN RENDERS (R2)_12.07.25.pdf"),
+      floorPlanDownloadName: "Advithiya-Urban-Chalet-Floor-Plans.pdf",
       description: "A boutique collection of 3 BHK homes across two towers, created for just 10 families.",
       vision: "Boutique design homes limited by design. Featuring two towers across five stories with two parking spaces per apartment and elevator access in Hebbal Kempapura.",
       pricing: "Delivered & Occupied",

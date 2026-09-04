@@ -167,8 +167,8 @@ export const ContactPage = ({ setActivePage }) => {
                         className="form-select"
                         style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', backgroundColor: '#FFFFFF', borderColor: 'rgba(74, 52, 40,0.15)' }}
                       >
-                        <option value="Advithiya Shreyas">Advithiya Shreyas (Launching Soon)</option>
-                        <option value="Advithiya Urban Chalet">Advithiya Urban Chalet (Delivered)</option>
+                        <option value="Advithiya Shreyas">Advithiya Shreyas (Upcoming)</option>
+                        <option value="Advithiya Urban Chalet">Advithiya Urban Chalet (Ongoing)</option>
                         <option value="All / General">General</option>
                       </select>
                     </div>

@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import {
   ShieldCheck, MapPin, Layers, CheckCircle2,
-  Send, Eye, ArrowLeft, ExternalLink, Phone, Calendar
+  Send, Eye, ArrowLeft, ExternalLink, Phone, Calendar,
+  Download, FileText, X
 } from 'lucide-react';
 import { useCMS } from '../context/CMSContext';
 
 export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
   const { company } = useCMS();
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isFloorPlanFormOpen, setIsFloorPlanFormOpen] = useState(false);
+  const [floorPlanForm, setFloorPlanForm] = useState({ name: '', phone: '', email: '' });
+  const floorPlanNameRef = useRef(null);
 
   const [formState, setFormState] = useState({
     name: '',
@@ -19,6 +24,29 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  useEffect(() => {
+    if (!isFloorPlanFormOpen && !selectedImage) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    if (isFloorPlanFormOpen) {
+      window.setTimeout(() => floorPlanNameRef.current?.focus(), 50);
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedImage(null);
+        setIsFloorPlanFormOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isFloorPlanFormOpen, selectedImage]);
+
   if (!project) return null;
 
   const handleFormSubmit = (e) => {
@@ -26,11 +54,27 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
     setFormSubmitted(true);
   };
 
-  const imagesList = [
+  const fallbackImages = [
     { title: 'Exterior Facade & Teak Louvers', src: project.heroImage },
     { title: 'Double Height Living & Garden', src: project.interiorImage },
     { title: 'Tactile Material Texture', src: project.textureImage }
   ];
+  const imagesList = project.galleryImages?.length ? project.galleryImages : fallbackImages;
+
+  const handleFloorPlanSubmit = (event) => {
+    event.preventDefault();
+    if (!project.floorPlanPdf) return;
+
+    const downloadLink = document.createElement('a');
+    downloadLink.href = project.floorPlanPdf;
+    downloadLink.download = project.floorPlanDownloadName || `${project.name}-Floor-Plans.pdf`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    downloadLink.remove();
+
+    setIsFloorPlanFormOpen(false);
+    setFloorPlanForm({ name: '', phone: '', email: '' });
+  };
 
   return (
     <div className="project-detail-page animate-fade-in" style={{ paddingTop: '4.5rem' }}>
@@ -198,14 +242,13 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
           <span className="section-tag">Architectural Gallery</span>
           <h2 style={{ marginBottom: '2.5rem' }}>Space, Texture & Daylight</h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1.75rem' }}>
+          <div className={`architectural-gallery-grid${project.galleryImages?.length ? ' architectural-gallery-grid--featured' : ''}`}>
             {imagesList.map((img, idx) => (
               <motion.div
                 key={idx}
+                className="architectural-gallery-card"
                 style={{
                   position: 'relative',
-                  height: '280px',
-                  borderRadius: '8px',
                   overflow: 'hidden',
                   cursor: 'pointer',
                   border: '1px solid rgba(74, 52, 40,0.1)'
@@ -245,39 +288,149 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
       </section>
 
       {/* LIGHTBOX MODAL WITH ZOOM PHYSICS */}
-      {selectedImage && (
-        <div className="modal-overlay" onClick={() => setSelectedImage(null)}>
+      {selectedImage && createPortal(
+        <div
+          className="modal-overlay project-gallery-lightbox"
+          role="presentation"
+          onMouseDown={() => setSelectedImage(null)}
+        >
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Expanded architectural gallery image"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ position: 'relative', maxWidth: '90vw', maxHeight: '90vh' }}
-            onClick={(e) => e.stopPropagation()}
+            className="project-gallery-lightbox__content"
+            onMouseDown={(e) => e.stopPropagation()}
           >
-            <img src={selectedImage} alt="Expanded View" style={{ maxWidth: '100%', maxHeight: '85vh', borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }} />
+            <img src={selectedImage} alt="Expanded architectural view" />
             <button
+              type="button"
               onClick={() => setSelectedImage(null)}
-              style={{
-                position: 'absolute',
-                top: '-1rem',
-                right: '-1rem',
-                backgroundColor: '#A6462A',
-                color: '#FFF',
-                border: 'none',
-                borderRadius: '50%',
-                width: '36px',
-                height: '36px',
-                cursor: 'pointer'
-              }}
+              className="project-gallery-lightbox__close"
+              aria-label="Close expanded image"
             >
-              ✕
+              <X size={20} />
             </button>
           </motion.div>
-        </div>
+        </div>,
+        document.body
       )}
 
-      {/* 5. SPECIFICATIONS & AMENITIES */}
+      {/* 5. GATED FLOOR PLAN DOWNLOAD */}
+      {project.floorPlanPdf && (
+        <section className="section-padding floor-plans-section">
+          <div className="container">
+            <span className="section-tag">Floor Plans</span>
+            <div className="floor-plans-heading-row">
+              <h2>Explore the plans in detail</h2>
+              <p>Six detailed architectural drawings covering parking, residences, terrace and area schedules.</p>
+            </div>
+
+            <button
+              type="button"
+              className="floor-plan-card"
+              onClick={() => setIsFloorPlanFormOpen(true)}
+              aria-haspopup="dialog"
+            >
+              <span className="floor-plan-card__preview" aria-hidden="true">
+                <FileText size={52} strokeWidth={1.4} />
+                <span>PDF</span>
+              </span>
+              <span className="floor-plan-card__content">
+                <span className="floor-plan-card__eyebrow">Urban Chalet</span>
+                <strong>Complete Floor Plans</strong>
+                <span>Ground, typical, terrace and area-table drawings · 6 pages</span>
+                <span className="floor-plan-card__cta">
+                  Download floor plans <Download size={17} />
+                </span>
+              </span>
+            </button>
+          </div>
+        </section>
+      )}
+
+      {isFloorPlanFormOpen && createPortal(
+        <div className="floor-plan-modal" role="presentation" onMouseDown={() => setIsFloorPlanFormOpen(false)}>
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="floor-plan-dialog-title"
+            className="floor-plan-modal__panel"
+            initial={{ opacity: 0, y: 22, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="floor-plan-modal__close"
+              onClick={() => setIsFloorPlanFormOpen(false)}
+              aria-label="Close floor plan download form"
+            >
+              <X size={20} />
+            </button>
+
+            <span className="section-tag">Floor Plans</span>
+            <h2 id="floor-plan-dialog-title">Enter your details to download</h2>
+            <p>Complete the short form to unlock the Urban Chalet floor-plan PDF.</p>
+
+            <form onSubmit={handleFloorPlanSubmit}>
+              <div className="form-group">
+                <label className="form-label" htmlFor="floor-plan-name">Name *</label>
+                <input
+                  ref={floorPlanNameRef}
+                  id="floor-plan-name"
+                  type="text"
+                  required
+                  autoComplete="name"
+                  className="form-input"
+                  value={floorPlanForm.name}
+                  onChange={(event) => setFloorPlanForm({ ...floorPlanForm, name: event.target.value })}
+                />
+              </div>
+              <div className="floor-plan-modal__fields">
+                <div className="form-group">
+                  <label className="form-label" htmlFor="floor-plan-phone">Phone *</label>
+                  <input
+                    id="floor-plan-phone"
+                    type="tel"
+                    required
+                    autoComplete="tel"
+                    inputMode="tel"
+                    className="form-input"
+                    value={floorPlanForm.phone}
+                    onChange={(event) => setFloorPlanForm({ ...floorPlanForm, phone: event.target.value })}
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="floor-plan-email">Email *</label>
+                  <input
+                    id="floor-plan-email"
+                    type="email"
+                    required
+                    autoComplete="email"
+                    inputMode="email"
+                    className="form-input"
+                    value={floorPlanForm.email}
+                    onChange={(event) => setFloorPlanForm({ ...floorPlanForm, email: event.target.value })}
+                  />
+                </div>
+              </div>
+              <button type="submit" className="btn btn-orange floor-plan-modal__submit">
+                <span>Submit &amp; Download PDF</span>
+                <Download size={17} />
+              </button>
+              <small>Demo mode: your details are validated in the browser and are not yet sent or stored.</small>
+            </form>
+          </motion.div>
+        </div>,
+        document.body
+      )}
+
+      {/* 6. SPECIFICATIONS & AMENITIES */}
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
           <div className="editorial-grid">
