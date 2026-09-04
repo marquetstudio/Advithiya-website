@@ -1,11 +1,56 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
-import { ArrowRight, ShieldCheck, Heart, Sparkles, Compass, CheckCircle2, Eye, Award } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Heart, Sparkles, Compass, CheckCircle2, Eye, Award, X } from 'lucide-react';
 import { assetPath } from '../utils/assetPath';
 
 export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
   const { leadership, values } = useCMS();
+  const [selectedMember, setSelectedMember] = useState(null);
+  const profileTriggerRef = useRef(null);
+
+  const teamMembers = [
+    {
+      name: 'Construction & Project Delivery',
+      title: 'Director | Construction Strategy & CEO | Bespoke',
+      image: assetPath('images/team_member.png'),
+      details: ['Project planning', 'Construction controls', 'Quality handover'],
+      bio: leadership[1]?.bio || 'Guides project execution from early planning through construction and handover, with a focus on dependable delivery and quality control.'
+    },
+    {
+      name: 'Commercial & Development',
+      title: 'Vice President | Commercial & Development Strategy',
+      image: assetPath('images/team_member.png'),
+      details: ['Development strategy', 'Commercial planning', 'Procurement'],
+      bio: leadership[2]?.bio || 'Shapes development and commercial strategy by connecting design intent, responsible material choices and long-term project value.'
+    },
+    {
+      name: 'Business & Customer Experience',
+      title: 'Vice President & Business Head | Advithiya',
+      image: assetPath('images/team_member.png'),
+      details: ['Business operations', 'Customer relationships', 'Transparent communication'],
+      bio: leadership[3]?.bio || 'Leads business operations and customer experience, ensuring clear communication and accountable support throughout the customer journey.'
+    }
+  ];
+
+  useEffect(() => {
+    if (!selectedMember) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') setSelectedMember(null);
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleEscape);
+      window.requestAnimationFrame(() => profileTriggerRef.current?.focus());
+    };
+  }, [selectedMember]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -27,8 +72,64 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
     }
   };
 
+  const profileModal = selectedMember ? createPortal(
+    <div className="modal-overlay" onClick={() => setSelectedMember(null)}>
+      <motion.div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="team-profile-title"
+        initial={{ opacity: 0, scale: 0.96, y: 18 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+        onClick={(event) => event.stopPropagation()}
+        className="team-profile-modal"
+      >
+        <button
+          type="button"
+          autoFocus
+          onClick={() => setSelectedMember(null)}
+          aria-label="Close team profile"
+          className="team-profile-close"
+        >
+          <X size={20} />
+        </button>
+
+        <div className="team-profile-layout">
+          <img
+            src={selectedMember.image}
+            alt={selectedMember.name}
+            className="team-profile-headshot"
+          />
+
+          <div>
+            <span className="section-tag">Leadership Profile</span>
+            <h2 id="team-profile-title" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', marginBottom: '0.65rem' }}>
+              {selectedMember.name}
+            </h2>
+            <p style={{ color: '#A6462A', fontSize: '0.95rem', fontWeight: 600, lineHeight: 1.55, marginBottom: '1.35rem' }}>
+              {selectedMember.title}
+            </p>
+
+            <div className="team-profile-details" aria-label="Areas of focus">
+              {selectedMember.details.map((detail) => (
+                <span key={detail}>{detail}</span>
+              ))}
+            </div>
+
+            <h3 style={{ fontSize: '1rem', margin: '1.6rem 0 0.6rem' }}>Profile</h3>
+            <p style={{ color: '#626E7A', fontSize: '0.98rem', lineHeight: 1.75, margin: 0 }}>
+              {selectedMember.bio}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>,
+    document.body
+  ) : null;
+
   return (
-    <div className="about-page animate-fade-in" style={{ paddingTop: '5rem' }}>
+    <>
+      <div className="about-page animate-fade-in" style={{ paddingTop: '5rem' }}>
       {/* 01. HERO */}
       <section
         style={{
@@ -178,33 +279,28 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '2rem' }}>
-            {[
-              {
-                name: 'Team Member 1',
-                title: 'Director | Construction Strategy & CEO | Bespoke',
-                image: assetPath('images/team_member.png')
-              },
-              {
-                name: 'Team Member 2',
-                title: 'Vice President | Commercial & Development Strategy',
-                image: assetPath('images/team_member.png')
-              },
-              {
-                name: 'Team Member 3',
-                title: 'Vice President & Business Head | Advithiya',
-                image: assetPath('images/team_member.png')
-              }
-            ].map((member, index) => (
-              <motion.div
-                key={index}
+            {teamMembers.map((member) => (
+              <motion.button
+                key={member.name}
+                type="button"
+                onClick={(event) => {
+                  profileTriggerRef.current = event.currentTarget;
+                  setSelectedMember(member);
+                }}
+                aria-label={`View profile for ${member.name}`}
                 whileHover={{ y: -6 }}
+                whileTap={{ scale: 0.99 }}
                 transition={{ duration: 0.3 }}
                 style={{
                   backgroundColor: '#FFFFFF',
                   borderRadius: '12px',
                   overflow: 'hidden',
                   boxShadow: '0 4px 20px rgba(74, 52, 40, 0.07)',
-                  border: '1px solid rgba(74, 52, 40, 0.06)'
+                  border: '1px solid rgba(74, 52, 40, 0.06)',
+                  padding: 0,
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  font: 'inherit'
                 }}
               >
                 {/* Headshot Image */}
@@ -236,11 +332,14 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                   <h3 style={{ fontSize: '1.2rem', color: '#4A3428', fontWeight: 700, marginBottom: '0.4rem' }}>
                     {member.name}
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: '#626E7A', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: '0.9rem', color: '#626E7A', lineHeight: 1.5, margin: '0 0 0.9rem' }}>
                     {member.title}
                   </p>
+                  <span style={{ color: '#A6462A', fontSize: '0.82rem', fontWeight: 600 }}>
+                    View profile →
+                  </span>
                 </div>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
         </div>
@@ -357,7 +456,10 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
           </button>
         </div>
       </section>
-    </div>
+
+      </div>
+      {profileModal}
+    </>
   );
 };
 

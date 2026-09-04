@@ -129,7 +129,7 @@ h4 {
 p {
   font-size: 1.05rem;
   color: var(--color-text-muted);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 a {
@@ -304,8 +304,15 @@ button:active,
   border: 1px solid var(--color-navy);
 }
 
+.status-badge.delivered {
+  background-color: #6F7657;
+  color: var(--color-white);
+  border: 1px solid #6F7657;
+}
+
 .dark-section .status-badge.ongoing,
-.dark-section .status-badge.upcoming {
+.dark-section .status-badge.upcoming,
+.dark-section .status-badge.delivered {
   background-color: rgba(255, 255, 255, 0.15);
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.25);
@@ -427,5 +434,92 @@ button:active,
   justify-content: center;
   z-index: 1000;
   padding: 1.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   animation: scaleFadeIn 0.25s var(--ease-out);
+}
+
+.team-profile-modal {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: min(88vh, 88dvh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding: 2.5rem;
+  background: #F8F9FA;
+  border: 1px solid rgba(74, 52, 40, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 28px 70px rgba(35, 23, 17, 0.35);
+}
+
+.team-profile-layout {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.team-profile-headshot {
+  width: 170px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 12px;
+  border: 1px solid rgba(74, 52, 40, 0.1);
+  box-shadow: 0 10px 24px rgba(74, 52, 40, 0.1);
+}
+
+.team-profile-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: #4A3428;
+  background: #F6EFE4;
+  border: 1px solid rgba(74, 52, 40, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.team-profile-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.team-profile-details span {
+  padding: 0.45rem 0.7rem;
+  color: #4A3428;
+  background: #F6EFE4;
+  border: 1px solid rgba(74, 52, 40, 0.1);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 1rem;
+  }
+
+  .team-profile-modal {
+    padding: 1.5rem;
+    max-height: calc(100dvh - 2rem);
+  }
+
+  .team-profile-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .team-profile-headshot {
+    width: 104px;
+    border-radius: 10px;
+  }
 }

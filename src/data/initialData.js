@@ -5,13 +5,13 @@ export const initialData = {
     name: "Advithiya",
     corporateName: "Advithiya Developers",
     tagline: "Thoughtfully built. Transparently delivered.",
-    subtagline: "Creating thoughtfully designed residential and Commercial communities in Bangalore.",
+    subtagline: "Creating thoughtfully designed residential and commercial communities in Bangalore.",
     phone: "+91 9886036366",
     phoneDisplay: "+91 98860 36366",
     email: "shwetha@Advithiyaa.com",
     address: "RC Heights, No. 5, 3rd Floor, 4th Cross, New BEL Road, RMV 2nd Stage, Bangalore - 560094",
     reraReg: "PRM/KA/RERA/1251/309/AG/190212/001205",
-    grievanceContact: "Grievance Contact: [To be confirmed] | Reach out to shwetha@Advithiyaa.com"
+    grievanceContact: "Customer Support | Reach out to shwetha@Advithiyaa.com"
   },
   projects: [
     {
@@ -22,8 +22,14 @@ export const initialData = {
       status: "Upcoming",
       statusBadgeStyle: "upcoming",
       type: "Residential",
-      location: "[Verified Location]",
+      location: "Bangalore",
       locationSubtitle: "Bangalore",
+      neighborhoodDescription: "Located in Bangalore with convenient access to established residential, employment and everyday-service corridors.",
+      neighborhoodHighlights: [
+        "Well connected to key North Bangalore corridors",
+        "Access to established schools, healthcare and retail",
+        "Detailed site location shared during a project enquiry"
+      ],
       units: "16 Homes",
       floors: "4 Floors",
       typology: "2 & 3 BHK",
@@ -64,11 +70,20 @@ export const initialData = {
       name: "Advithiya Urban Chalet",
       tagline: "Boutique design homes. Limited by design.",
       subheadline: "A boutique collection of 3 BHK homes across two towers, created for just 10 families.",
-      status: "Ongoing",
-      statusBadgeStyle: "ongoing",
+      status: "Delivered",
+      statusBadgeStyle: "delivered",
       type: "Residential",
-      location: "Dasarahalli Main Road, Kempapura",
-      locationSubtitle: "Kempapura, Bangalore",
+      location: "Hebbal Kempapura, Bengaluru",
+      locationSubtitle: "Hebbal Kempapura, Bengaluru",
+      fullAddress: "24, 14th Cross Road, Sonnappa Layout, H A Farm Post, Maruthi Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024",
+      mapUrl: "https://maps.app.goo.gl/2YNzNfXCYog362gY8?g_st=aw",
+      mapEmbedUrl: "https://www.google.com/maps?q=Advithiya+Urban+Chalet,+24,+14th+Cross+Rd,+Sonnappa+Layout,+H+A+Farm+Post,+Maruthi+Layout,+Hebbal+Kempapura,+Bengaluru,+Karnataka+560024&output=embed",
+      neighborhoodDescription: "Located in Hebbal Kempapura, with convenient access to North Bangalore's major employment, healthcare and transport corridors.",
+      neighborhoodHighlights: [
+        "Established residential neighborhood",
+        "Convenient access to Bellary Road",
+        "Close to healthcare, retail and employment hubs"
+      ],
       units: "10 Families",
       floors: "5 Stories (2 Towers)",
       towers: "2 Towers",
@@ -82,7 +97,7 @@ export const initialData = {
       interiorImage: img("hero_architecture.jpg"),
       textureImage: img("material_texture.jpg"),
       description: "A boutique collection of 3 BHK homes across two towers, created for just 10 families.",
-      vision: "Boutique design homes limited by design. Featuring two towers across five stories with two parking spaces per apartment and elevator access on Dasarahalli Main Road, Kempapura.",
+      vision: "Boutique design homes limited by design. Featuring two towers across five stories with two parking spaces per apartment and elevator access in Hebbal Kempapura.",
       pricing: "Delivered & Occupied",
       pricingNote: "Successfully completed and handed over to 10 families.",
       amenities: [
@@ -91,7 +106,7 @@ export const initialData = {
         { title: "Elevator & Security", desc: "Modern vertical mobility and private gated community access." }
       ],
       specifications: [
-        { category: "Location Context", detail: "Dasarahalli Main Road, Kempapura, Bangalore." },
+        { category: "Location Context", detail: "Hebbal Kempapura, Bengaluru." },
         { category: "Configuration", detail: "3 BHK spacious residences across 2 towers." },
         { category: "Parking & Access", detail: "2 reserved car parking spaces per home, elevator infrastructure." }
       ],
@@ -99,7 +114,7 @@ export const initialData = {
         {
           date: "Completed & Delivered",
           milestone: "Handover to 10 Families",
-          description: "All residences completed and handed over on Dasarahalli Main Road, Kempapura.",
+          description: "All residences completed and handed over in Hebbal Kempapura, Bengaluru.",
           image: img("urban_chalet.jpg")
         }
       ],

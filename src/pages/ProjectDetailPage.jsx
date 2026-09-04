@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   ShieldCheck, MapPin, Layers, CheckCircle2,
-  Send, Eye, ArrowLeft, Download, Phone, Calendar
+  Send, Eye, ArrowLeft, ExternalLink, Phone, Calendar
 } from 'lucide-react';
 import { useCMS } from '../context/CMSContext';
 
@@ -380,13 +380,18 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
           >
             <div>
               <h3 style={{ color: '#FFFFFF', marginBottom: '1rem' }}>{project.location}</h3>
+              {project.fullAddress && (
+                <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.9rem', marginBottom: '0.75rem' }}>
+                  {project.fullAddress}
+                </p>
+              )}
               <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Strategically positioned in North Bangalore's prime residential corridor. 15 minutes from Manyata Tech Park, 25 minutes from Kempegowda International Airport.
+                {project.neighborhoodDescription}
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.9rem', color: '#A6462A' }}>
-                <li>✓ 5 Mins to Sahakarnagar Main Commercial Boulevard</li>
-                <li>✓ 10 Mins to Aster CMI Hospital</li>
-                <li>✓ Direct connectivity to Bellary Road Highway</li>
+                {project.neighborhoodHighlights?.map((highlight) => (
+                  <li key={highlight}>✓ {highlight}</li>
+                ))}
               </ul>
             </div>
 
@@ -396,6 +401,8 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                 backgroundColor: 'rgba(255,255,255,0.06)',
                 borderRadius: '8px',
                 border: '1px solid rgba(255,255,255,0.15)',
+                overflow: 'hidden',
+                position: 'relative',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -405,11 +412,52 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                 padding: '1.5rem'
               }}
             >
-              <MapPin size={36} style={{ color: '#A6462A' }} />
-              <div style={{ fontWeight: 600 }}>Interactive Map View</div>
-              <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', margin: 0 }}>
-                Exact GPS coordinates & site location plan shared upon request.
-              </p>
+              {project.mapEmbedUrl ? (
+                <>
+                  <iframe
+                    title={`${project.name} location on Google Maps`}
+                    src={project.mapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ position: 'absolute', inset: 0, border: 0 }}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                  <a
+                    href={project.mapUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="map-external-link"
+                    style={{
+                      position: 'absolute',
+                      right: '0.75rem',
+                      bottom: '0.75rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      padding: '0.65rem 0.85rem',
+                      borderRadius: '4px',
+                      backgroundColor: '#4A3428',
+                      color: '#FFFFFF',
+                      boxShadow: '0 6px 18px rgba(0,0,0,0.25)',
+                      fontSize: '0.78rem',
+                      fontWeight: 600
+                    }}
+                  >
+                    Open in Google Maps
+                    <ExternalLink size={14} />
+                  </a>
+                </>
+              ) : (
+                <>
+                  <MapPin size={36} style={{ color: '#A6462A' }} />
+                  <div style={{ fontWeight: 600 }}>Location details available on request</div>
+                  <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', margin: 0 }}>
+                    Contact our team for the exact site location and visit details.
+                  </p>
+                </>
+              )}
             </div>
           </div>
         </div>

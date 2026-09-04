@@ -47,7 +47,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
       >
         <motion.div
           initial={{ scale: 1.15, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.28 }}
+          animate={{ scale: 1, opacity: 0.34 }}
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
           style={{
             position: 'absolute',
@@ -78,7 +78,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
       </section>
 
       {/* 02. QUALITY */}
-      <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
+      <section className="section-padding" style={{ backgroundColor: '#FFFFFF', paddingTop: '5.5rem', paddingBottom: '5.5rem' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <span className="section-tag">Quality</span>
           <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: '#4A3428', marginBottom: '1.5rem' }}>
