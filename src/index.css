@@ -164,6 +164,48 @@ button:active,
   padding-bottom: var(--space-xl);
 }
 
+.navbar-container,
+.home-hero-container {
+  max-width: 1120px;
+}
+
+/* Keep the home hero clear of the fixed navigation on short laptop screens. */
+@media (min-width: 769px) and (max-height: 720px) {
+  .home-hero {
+    min-height: 100svh !important;
+    padding-top: 7rem !important;
+  }
+
+  .home-hero-content {
+    max-width: 800px !important;
+  }
+
+  .home-hero-title-group {
+    margin: 0 0 0.9rem !important;
+  }
+
+  .home-hero-wordmark {
+    font-size: clamp(3.25rem, 5.6vw, 4.75rem) !important;
+  }
+
+  .home-hero-heading {
+    margin-top: 0.1rem !important;
+    font-size: clamp(2.15rem, 3.55vw, 3rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .home-hero-copy {
+    max-width: 680px !important;
+    margin-bottom: 1.35rem !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .home-hero-actions {
+    gap: 0.9rem !important;
+  }
+}
+
 @media (max-width: 768px) {
   .section-padding {
     padding-top: 4rem;

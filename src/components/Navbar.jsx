@@ -55,7 +55,7 @@ export const Navbar = ({
         padding: scrolled ? '0.85rem 0' : '1.25rem 0'
       }}
     >
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="container navbar-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Brand Logo */}
         <div 
           onClick={() => handleNavClick('home')} 

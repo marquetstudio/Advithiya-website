@@ -15,13 +15,14 @@ export const TextToImageHero = ({
   const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
   const textScale = useTransform(scrollY, [0, 300], [1, 0.94]);
   const textBlur = useTransform(scrollY, [0, 300], ['blur(0px)', 'blur(8px)']);
-  const bgScale = useTransform(scrollY, [0, 500], [1.1, 1.0]);
+  const bgScale = useTransform(scrollY, [0, 500], [1.04, 1.0]);
 
   return (
     <section
+      className="home-hero"
       style={{
         position: 'relative',
-        minHeight: '94vh',
+        minHeight: '100svh',
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#F6EFE4',
@@ -64,10 +65,11 @@ export const TextToImageHero = ({
       />
 
       {/* 3. HERO CONTENT WITH VANISHING TEXT EFFECT */}
-      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+      <div className="container home-hero-container" style={{ position: 'relative', zIndex: 2 }}>
         <motion.div
+          className="home-hero-content"
           style={{
-            maxWidth: '880px',
+            maxWidth: '760px',
             opacity: textOpacity,
             scale: textScale,
             filter: textBlur
@@ -77,8 +79,9 @@ export const TextToImageHero = ({
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
         >
           {/* GIANT ARCHITECTURAL IMAGE-MASKED BRAND WORDMARK */}
-          <div style={{ position: 'relative', margin: '0.5rem 0 1.5rem 0' }}>
+          <div className="home-hero-title-group" style={{ position: 'relative', margin: '0.5rem 0 1.5rem 0' }}>
             <h1
+              className="home-hero-wordmark"
               style={{
                 color: 'transparent',
                 backgroundImage: `url(${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')})`,
@@ -86,7 +89,7 @@ export const TextToImageHero = ({
                 backgroundPosition: 'center',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
-                fontSize: 'clamp(3rem, 7.5vw, 6rem)',
+                fontSize: 'clamp(3rem, 6.2vw, 5rem)',
                 lineHeight: 1.02,
                 fontWeight: 700,
                 letterSpacing: '-0.02em',
@@ -98,9 +101,10 @@ export const TextToImageHero = ({
               ADVITHIYA
             </h1>
             <h2
+              className="home-hero-heading"
               style={{
                 color: '#4A3428',
-                fontSize: 'clamp(2.25rem, 4.5vw, 3.85rem)',
+                fontSize: 'clamp(2.15rem, 3.8vw, 3.15rem)',
                 lineHeight: 1.1,
                 marginTop: '0.25rem',
                 fontWeight: 600
@@ -112,11 +116,12 @@ export const TextToImageHero = ({
           </div>
 
           <p
+            className="home-hero-copy"
             style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+              fontSize: 'clamp(1rem, 1.4vw, 1.1rem)',
               color: '#7A6355',
-              marginBottom: '2.5rem',
-              maxWidth: '720px',
+              marginBottom: '2rem',
+              maxWidth: '640px',
               fontWeight: 400,
               lineHeight: 1.65
             }}
@@ -124,7 +129,7 @@ export const TextToImageHero = ({
             Advithiya creates future-ready homes and commercial communities in Bangalore, combining practical design, responsible development and experienced leadership.
           </p>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>
+          <div className="home-hero-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}

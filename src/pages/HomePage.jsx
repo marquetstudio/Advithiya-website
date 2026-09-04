@@ -64,10 +64,10 @@ export const HomePage = ({
           >
             {/* Left Column: Text Content */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+              initial={{ opacity: 0, x: -18, y: 8 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, amount: 0.2, margin: "-90px" }}
+              transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
             >
               <div
                 style={{
@@ -159,10 +159,10 @@ export const HomePage = ({
 
             {/* Right Column: Architectural Photography */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "30px" }}
-              transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
+              initial={{ opacity: 0, x: 18, y: 8 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, amount: 0.2, margin: "-90px" }}
+              transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
               style={{
                 position: 'relative',
                 borderRadius: '8px',
