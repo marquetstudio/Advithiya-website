@@ -7,12 +7,12 @@ export const initialData = {
     corporateName: "Advithiya Developers",
     tagline: "Thoughtfully built. Transparently delivered.",
     subtagline: "Creating thoughtfully designed residential and commercial communities in Bangalore.",
-    phone: "+91 9886036366",
-    phoneDisplay: "+91 98860 36366",
-    email: "shwetha@Advithiyaa.com",
+    phone: "+91 7406159159",
+    phoneDisplay: "+91 74061 59159",
+    email: "shwetha@advithiya.co.in",
     address: "RC Heights, No. 5, 3rd Floor, 4th Cross, New BEL Road, RMV 2nd Stage, Bangalore - 560094",
     reraReg: "PRM/KA/RERA/1251/309/AG/190212/001205",
-    grievanceContact: "Customer Support | Reach out to shwetha@Advithiyaa.com"
+    grievanceContact: "Customer Support | Reach out to shwetha@advithiya.co.in"
   },
   projects: [
     {
@@ -94,7 +94,8 @@ export const initialData = {
       landExtent: "Boutique Enclave",
       carpetArea: "3 BHK Boutique Residences",
       reraNo: "PRM/KA/RERA/1251/309/PR/210515/004120",
-      heroImage: img("urban_chalet.jpg"),
+      cardImage: urbanChaletAsset("UC_hero image.png"),
+      heroImage: urbanChaletAsset("UC_hero image2.png"),
       interiorImage: img("hero_architecture.jpg"),
       textureImage: img("material_texture.jpg"),
       galleryImages: [

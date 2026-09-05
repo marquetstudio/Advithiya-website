@@ -101,7 +101,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(${project.heroImage})`,
+            backgroundImage: `url("${project.heroImage}")`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             zIndex: 0

@@ -39,7 +39,7 @@ export const TextToImageHero = ({
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url(${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')})`,
+          backgroundImage: `url("${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 35%',
           scale: bgScale,
@@ -84,7 +84,7 @@ export const TextToImageHero = ({
               className="home-hero-wordmark"
               style={{
                 color: 'transparent',
-                backgroundImage: `url(${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')})`,
+                backgroundImage: `url("${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')}")`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 WebkitBackgroundClip: 'text',

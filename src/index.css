@@ -879,7 +879,7 @@ button:active,
   font-size: 1.35rem;
 }
 
-.floor-plan-card__content > span:not(.floor-plan-card__eyebrow):not(.floor-plan-card__cta) {
+.floor-plan-card__content>span:not(.floor-plan-card__eyebrow):not(.floor-plan-card__cta) {
   color: #626e7a;
   font-size: 0.86rem;
   line-height: 1.6;
@@ -922,7 +922,7 @@ button:active,
   font-size: clamp(1.65rem, 4vw, 2.25rem);
 }
 
-.floor-plan-modal__panel > p {
+.floor-plan-modal__panel>p {
   margin-bottom: 1.6rem;
   color: #626e7a;
 }
@@ -1005,5 +1005,3 @@ button:active,
     max-height: calc(100dvh - 2rem);
   }
 }
-. h i d e - s c r o l l b a r : : - w e b k i t - s c r o l l b a r   {   d i s p l a y :   n o n e ;   }  
- 

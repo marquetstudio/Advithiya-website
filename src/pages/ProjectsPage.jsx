@@ -206,7 +206,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                       <motion.img
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.5 }}
-                        src={project.heroImage}
+                        src={project.cardImage || project.heroImage}
                         alt={project.name}
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />

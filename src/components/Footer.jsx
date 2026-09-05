@@ -2,7 +2,7 @@ import React from 'react';
 import BrandLogo from './BrandLogo';
 import BrandPattern from './BrandPattern';
 import { useCMS } from '../context/CMSContext';
-import { MapPin, Phone, Mail, ShieldCheck, ExternalLink, Linkedin, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, ShieldCheck, ExternalLink, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react';
 
 export const Footer = ({ setActivePage, onOpenCharterModal }) => {
   const { company } = useCMS();
@@ -39,8 +39,9 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
           {/* Brand */}
           <div>
             <BrandLogo variant="inverted" type="vertical" size={120} />
-            <div style={{ marginTop: '1.25rem', color: '#A6462A', fontWeight: 600, fontSize: '1rem' }}>
-              {company.tagline || "Thoughtfully built. Transparently delivered."}
+            <div style={{ marginTop: '1.25rem', color: '#A6462A', fontWeight: 600, fontSize: '1rem', lineHeight: 1.4 }}>
+              Thoughtfully built.<br />
+              Transparently delivered.
             </div>
             <p style={{ marginTop: '0.5rem', color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.9rem', maxWidth: '320px', lineHeight: 1.6 }}>
               {company.subtagline || "Creating thoughtfully designed residential and commercial communities in Bangalore."}
@@ -165,6 +166,24 @@ export const Footer = ({ setActivePage, onOpenCharterModal }) => {
                 style={{ width: '36px', height: '36px', borderRadius: '4px', backgroundColor: 'rgba(255, 255, 255, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', transition: 'all 0.2s ease' }}
               >
                 <Instagram size={18} />
+              </a>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                style={{ width: '36px', height: '36px', borderRadius: '4px', backgroundColor: 'rgba(255, 255, 255, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', transition: 'all 0.2s ease' }}
+              >
+                <Facebook size={18} />
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube"
+                style={{ width: '36px', height: '36px', borderRadius: '4px', backgroundColor: 'rgba(255, 255, 255, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', transition: 'all 0.2s ease' }}
+              >
+                <Youtube size={18} />
               </a>
             </div>
           </div>

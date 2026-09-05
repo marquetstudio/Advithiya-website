@@ -286,7 +286,7 @@ export const ContactPage = ({ setActivePage }) => {
           <div style={{ width: '100%', height: '360px', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(74, 52, 40,0.12)', boxShadow: '0 10px 25px rgba(74, 52, 40,0.06)' }}>
             <iframe
               title="Advithiya Developers Office Location"
-              src="https://maps.google.com/maps?q=New+BEL+Road,+RMV+2nd+Stage,+Bangalore+560094&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Advithiya+Developers,+RC+Heights,+No.5,+3rd+Floor,+4th+cross,+New+BEL+road,+RMV+2nd+stage,+Bengaluru,+Karnataka+560094&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
