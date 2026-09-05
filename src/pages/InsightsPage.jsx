@@ -1,9 +1,46 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
 import { ArrowLeft, ArrowRight, Share2, BookOpen, MessageSquare } from 'lucide-react';
 import { toast } from 'sonner';
 import { assetPath } from '../utils/assetPath';
+
+const InsightsFaqItem = ({ q, a }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <div style={{ borderBottom: '1px solid rgba(74, 52, 40, 0.1)', padding: '1.25rem 0' }}>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          width: '100%', cursor: 'pointer',
+          color: '#4A3428', fontSize: '1.05rem', fontWeight: 600,
+          fontFamily: "'Josefin Sans', sans-serif", userSelect: 'none'
+        }}
+      >
+        <span style={{ paddingRight: '1rem', flex: 1 }}>{q}</span>
+        <span style={{ fontSize: '1.5rem', color: '#A6462A', lineHeight: 1, width: '24px', textAlign: 'center' }}>
+          {isOpen ? '−' : '+'}
+        </span>
+      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            style={{ overflow: 'hidden' }}
+          >
+            <p style={{ margin: '1rem 0 0 0', color: '#626E7A', fontSize: '0.95rem', lineHeight: 1.6 }}>
+              {a}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const renderInlineFormatting = (text) =>
   text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
@@ -241,7 +278,63 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
         </div>
       </section>
 
-      {/* 03. CLOSING CTA */}
+      {/* 03. FAQ */}
+      <section className="section-padding" style={{ backgroundColor: '#F6EFE4' }}>
+        <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+            {[
+              {
+                category: 'Homebuying',
+                items: [
+                  { q: 'What should I check before buying an apartment?', a: "Buyers should review the project's approvals and RERA registration, title and legal documentation, sanctioned plans, specifications, area measurements, pricing and applicable charges. It is also important to understand the developer's track record, construction status, possession timeline and the terms of the agreement before making a decision." },
+                  { q: 'What should I check before paying a booking amount?', a: "Before paying a booking amount, confirm the project's RERA registration and approvals, the specific unit being offered, the applicable price and charges, payment schedule, cancellation terms and what is included in the quoted price. Ask for the relevant documents and ensure the terms are clearly recorded." },
+                  { q: 'What costs should I consider when buying a home?', a: 'The purchase price is only one part of the overall cost. Buyers should also understand applicable taxes, registration and stamp duty, maintenance or other project-specific charges, parking charges where applicable, and any additional costs mentioned in the agreement or price sheet.' },
+                  { q: 'What questions should I ask a real estate developer before buying a home?', a: 'Ask about approvals, RERA registration, construction status, specifications, area basis, possession timeline, pricing and additional charges. It is also useful to understand the process for site visits, documentation, customer support and how project updates are communicated.' },
+                ]
+              },
+              {
+                category: 'RERA & Documentation',
+                items: [
+                  { q: "How can I verify a residential project's RERA registration in Karnataka?", a: "A buyer can verify the project's registration details through the official Karnataka RERA records. The project name, promoter details, registration number, approved information and project status should be checked against the information provided by the developer." },
+                  { q: 'Why is RERA registration important when buying a home?', a: "RERA registration provides buyers with access to important project and promoter information and establishes a regulatory framework for applicable residential projects. Buyers should still review the project's specific approvals, disclosures and contractual documents before making a purchase." },
+                  { q: 'What documents should I review before buying an apartment?', a: "Depending on the project and stage of development, buyers should review documents such as RERA registration details, sanctioned plans, relevant approvals, title and legal documents, specifications, the agreement for sale and the applicable price and payment information." },
+                ]
+              },
+              {
+                category: 'Understanding Property Areas',
+                items: [
+                  { q: 'What is the difference between carpet area, built-up area and saleable area?', a: "Carpet area generally refers to the usable floor area within the apartment, subject to the applicable regulatory definition. Built-up area typically includes the carpet area along with certain areas such as internal and external walls. Saleable or super built-up area may include a proportionate share of common areas. Buyers should always check the exact area basis stated in the project's documents." },
+                  { q: 'Why does the area basis matter when comparing apartments?', a: 'Two homes with the same quoted size may offer different usable spaces depending on how the area has been calculated. Comparing apartments on a consistent area basis helps buyers understand what they are actually purchasing and make a more meaningful price comparison.' },
+                ]
+              },
+              {
+                category: 'Evaluating a Project',
+                items: [
+                  { q: 'What makes a low-density or boutique apartment community different?', a: "A low-density development typically has fewer homes sharing the project's common spaces and facilities. This can influence factors such as the number of residents, circulation, shared-space usage and the overall character of the community. Buyers should evaluate the actual plans and resident-to-space relationship rather than relying only on the term 'boutique.'" },
+                  { q: 'How should I evaluate the quality of a residential project?', a: "Look beyond finishes and visual presentation. Review the structural system, materials and specifications, construction controls, quality checks, common areas, documentation and the developer's approach to handover and after-sales support." },
+                ]
+              }
+            ].map((section, idx) => (
+              <div key={idx}>
+                <h3 style={{ marginBottom: '1.5rem', color: '#A6462A', fontSize: '1.5rem', borderBottom: '2px solid rgba(166, 70, 42, 0.2)', paddingBottom: '0.5rem' }}>
+                  {section.category}
+                </h3>
+                <div>
+                  {section.items.map((item, i) => (
+                    <InsightsFaqItem key={i} q={item.q} a={item.a} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section style={{ backgroundColor: '#4A3428', color: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <span className="section-tag">Direct Dialogue</span>

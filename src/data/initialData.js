@@ -110,15 +110,40 @@ export const initialData = {
       vision: "Boutique design homes limited by design. Featuring two towers across five stories with two parking spaces per apartment and elevator access in Hebbal Kempapura.",
       pricing: "Delivered & Occupied",
       pricingNote: "Successfully completed and handed over to 10 families.",
-      amenities: [
-        { title: "2 Towers & 5 Stories", desc: "Low-density architecture catering exclusively to 10 families." },
-        { title: "2 Parking Spaces / Unit", desc: "Dedicated spacious parking allocations per apartment." },
-        { title: "Elevator & Security", desc: "Modern vertical mobility and private gated community access." }
-      ],
-      specifications: [
-        { category: "Location Context", detail: "Hebbal Kempapura, Bengaluru." },
-        { category: "Configuration", detail: "3 BHK spacious residences across 2 towers." },
-        { category: "Parking & Access", detail: "2 reserved car parking spaces per home, elevator infrastructure." }
+      faqs: [
+        {
+          category: "Facilities & Amenities",
+          items: [
+            { q: "What facilities are provided at Urban Chalet?", a: "Urban Chalet provides covered parking, elevator access, common areas and landscaped areas along the building frontage. The project is planned as a limited community of 10 families across two towers." },
+            { q: "How many parking spaces are provided for each apartment?", a: "Each apartment is provided with two parking spaces. The project specifications identify these as covered stack car parking." },
+            { q: "Is an elevator provided?", a: "Yes. Urban Chalet has one lift of a reputed make serving the residential floors." },
+            { q: "Is power backup provided?", a: "Yes. The project provides 24-hour power backup for residence lighting, common areas and the lift." },
+            { q: "Is Urban Chalet Vastu compliant?", a: "The brochure states that the project is 100% Vastu compliant." },
+            { q: "Are balconies provided in the apartments?", a: "Yes. The apartment plans show three balconies for each typical apartment." },
+            { q: "Is there a terrace?", a: "Yes. The project plans include a terrace floor with terrace areas for the residential blocks." }
+          ]
+        },
+        {
+          category: "Materials & Specifications",
+          items: [
+            { q: "What type of structure is used at Urban Chalet?", a: "The project uses an RCC frame structure with solid concrete block walls of 150 mm / 100 mm thickness." },
+            { q: "What flooring is provided?", a: "Main flooring and toilet flooring are specified as 600 × 1200 × 9 mm vitrified tiles." },
+            { q: "Which brands are specified for the flooring?", a: "The brochure specifies Simpolo / Qutone / Equivalent." },
+            { q: "What type of doors are provided?", a: "Factory-made engineered wooden frame flush doors are specified, with Pyramid / Equivalent as the make." },
+            { q: "What type of windows are provided?", a: "The project uses aluminium windows with a powder-coated finish, with 2½-inch thickness specified." },
+            { q: "What wall finishes are provided in the toilets?", a: "Toilet walls are finished with 600 × 1200 × 9 mm ceramic tiles up to the false ceiling." },
+            { q: "What wall finish is provided in the kitchen?", a: "Kitchen dado is specified with 600 × 1200 × 9 mm vitrified tiles, extending 600 mm above the granite countertop." },
+            { q: "What false ceiling is provided?", a: "The lobby is specified with Gypsum Boards, using Saint-Gobain Gyproc or equivalent. Toilets use PVC panels, with VOX or equivalent." },
+            { q: "What sanitary fixtures are provided?", a: "Sanitary fixtures are specified as Jaquar / Hindware / Equivalent." },
+            { q: "What CP fittings are provided?", a: "CP fittings are specified as Jaquar / Equivalent." },
+            { q: "What switches are provided?", a: "Switches are specified as Schneider / L&T / Equivalent." },
+            { q: "What paint finishes are specified?", a: "Interiors use premium emulsion paint, with Asian Paints / Equivalent specified. Exteriors use weatherproof emulsion paint, also specified as Asian Paints / Equivalent." },
+            { q: "Are telephone and internet points provided?", a: "Yes. Telephone and internet points are provided as provisions." },
+            { q: "What is the water supply arrangement?", a: "Water supply is provided through the Municipal Corporation and borewell." },
+            { q: "What type of railings are provided?", a: "MS railings with enamel paint are specified for the staircase, balconies and terrace." },
+            { q: "What type of parking is provided?", a: "The project provides covered stack car parking." }
+          ]
+        }
       ],
       constructionLogs: [
         {

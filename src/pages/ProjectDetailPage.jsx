@@ -1,12 +1,49 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   ShieldCheck, MapPin, Layers, CheckCircle2,
   Send, Eye, ArrowLeft, ExternalLink, Phone, Calendar,
   Download, FileText, X
 } from 'lucide-react';
 import { useCMS } from '../context/CMSContext';
+
+const FaqItem = ({ q, a }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div style={{ borderBottom: '1px solid rgba(74, 52, 40, 0.1)', padding: '1.25rem 0' }}>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          width: '100%', cursor: 'pointer',
+          color: '#4A3428', fontSize: '1.05rem', fontWeight: 600,
+          fontFamily: "'Josefin Sans', sans-serif", userSelect: 'none'
+        }}
+      >
+        <span style={{ paddingRight: '1rem', flex: 1 }}>{q}</span>
+        <span style={{ fontSize: '1.5rem', color: '#A6462A', lineHeight: 1, width: '24px', textAlign: 'center' }}>
+          {isOpen ? '−' : '+'}
+        </span>
+      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            style={{ overflow: 'hidden' }}
+          >
+            <p style={{ margin: '1rem 0 0 0', color: '#626E7A', fontSize: '0.95rem', lineHeight: 1.6 }}>
+              {a}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
   const { company } = useCMS();
@@ -430,42 +467,71 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
         document.body
       )}
 
-      {/* 6. SPECIFICATIONS & AMENITIES */}
-      <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="container">
-          <div className="editorial-grid">
-            <div>
-              <span className="section-tag">Key Amenities</span>
-              <h2 style={{ marginBottom: '1.5rem' }}>Thoughtful Features</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                {project.amenities?.map((item, i) => (
-                  <div key={i} style={{ borderBottom: '1px solid rgba(74, 52, 40, 0.08)', paddingBottom: '1.25rem' }}>
-                    <h4 style={{ color: '#4A3428', fontSize: '1.1rem', marginBottom: '0.25rem' }}>{item.title}</h4>
-                    <p style={{ fontSize: '0.9rem', color: '#626E7A', margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+      {/* 6. SPECIFICATIONS & AMENITIES / FAQ */}
+      {project.faqs ? (
+        <section className="section-padding" style={{ backgroundColor: '#F6EFE4' }}>
+          <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+              <h2>Frequently Asked Questions</h2>
             </div>
 
-            <div>
-              <span className="section-tag">Build Quality</span>
-              <h2 style={{ marginBottom: '1.5rem' }}>Material Specifications</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                {project.specifications?.map((spec, i) => (
-                  <div key={i} style={{ borderBottom: '1px solid rgba(74, 52, 40, 0.08)', paddingBottom: '1.25rem' }}>
-                    <div style={{ fontSize: '0.75rem', color: '#A6462A', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                      {spec.category}
-                    </div>
-                    <p style={{ fontSize: '0.95rem', color: '#4A3428', fontWeight: 500, margin: '0.25rem 0 0 0' }}>
-                      {spec.detail}
-                    </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+              {project.faqs.map((faqSection, idx) => (
+                <div key={idx}>
+                  <h3 style={{ marginBottom: '1.5rem', color: '#A6462A', fontSize: '1.5rem', borderBottom: '2px solid rgba(166, 70, 42, 0.2)', paddingBottom: '0.5rem' }}>
+                    {faqSection.category}
+                  </h3>
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    {faqSection.items.map((item, i) => (
+                      <FaqItem key={i} q={item.q} a={item.a} />
+                    ))}
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+
+            <div style={{ marginTop: '3rem', fontSize: '0.85rem', color: '#626E7A', fontStyle: 'italic', borderTop: '1px solid rgba(74, 52, 40, 0.1)', paddingTop: '1.5rem', textAlign: 'center' }}>
+              Specifications are subject to the final approved specifications and project documentation. Brand names mentioned in the brochure are subject to equivalent alternatives as specified.
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
+          <div className="container">
+            <div className="editorial-grid">
+              <div>
+                <span className="section-tag">Key Amenities</span>
+                <h2 style={{ marginBottom: '1.5rem' }}>Thoughtful Features</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  {project.amenities?.map((item, i) => (
+                    <div key={i} style={{ borderBottom: '1px solid rgba(74, 52, 40, 0.08)', paddingBottom: '1.25rem' }}>
+                      <h4 style={{ color: '#4A3428', fontSize: '1.1rem', marginBottom: '0.25rem' }}>{item.title}</h4>
+                      <p style={{ fontSize: '0.9rem', color: '#626E7A', margin: 0 }}>{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="section-tag">Build Quality</span>
+                <h2 style={{ marginBottom: '1.5rem' }}>Material Specifications</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  {project.specifications?.map((spec, i) => (
+                    <div key={i} style={{ borderBottom: '1px solid rgba(74, 52, 40, 0.08)', paddingBottom: '1.25rem' }}>
+                      <div style={{ fontSize: '0.75rem', color: '#A6462A', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                        {spec.category}
+                      </div>
+                      <p style={{ fontSize: '0.95rem', color: '#4A3428', fontWeight: 500, margin: '0.25rem 0 0 0' }}>
+                        {spec.detail}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* 6. DATED CONSTRUCTION LOGS WITH IMAGE HOVER ZOOM */}
       <section className="section-padding" style={{ backgroundColor: '#F8F9FA' }}>
