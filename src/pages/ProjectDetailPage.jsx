@@ -577,30 +577,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
                   />
-                  <a
-                    href={project.mapUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="map-external-link"
-                    style={{
-                      position: 'absolute',
-                      right: '0.75rem',
-                      bottom: '0.75rem',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      padding: '0.65rem 0.85rem',
-                      borderRadius: '4px',
-                      backgroundColor: '#4A3428',
-                      color: '#FFFFFF',
-                      boxShadow: '0 6px 18px rgba(0,0,0,0.25)',
-                      fontSize: '0.78rem',
-                      fontWeight: 600
-                    }}
-                  >
-                    Open in Google Maps
-                    <ExternalLink size={14} />
-                  </a>
+
                 </>
               ) : (
                 <>

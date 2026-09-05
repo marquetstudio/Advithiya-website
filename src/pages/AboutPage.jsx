@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
-import { ArrowRight, ShieldCheck, Heart, Sparkles, Compass, CheckCircle2, Eye, Award, X } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Heart, Sparkles, Compass, CheckCircle2, Eye, Award, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { assetPath } from '../utils/assetPath';
 
 const editorialLeadershipData = [
@@ -61,7 +61,14 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
   const { leadership, values } = useCMS();
   const [selectedMember, setSelectedMember] = useState(null);
   const profileTriggerRef = useRef(null);
+  const valuesScrollRef = useRef(null);
 
+  const scrollValues = (direction) => {
+    if (valuesScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -350 : 350;
+      valuesScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
   const teamMembers = [
     {
       name: 'Construction & Project Delivery',
@@ -435,67 +442,128 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
               </h2>
             </div>
 
-            <div className="values-grid">
-              {[
-                {
-                  title: "Thoughtful Design",
-                  desc: "Spaces considered around how people live.",
-                  image: assetPath('images/thoughtful_design.png')
-                },
-                {
-                  title: "Integrity",
-                  desc: "Communicate clearly. Act with accountability.",
-                  image: assetPath('images/integrity.png')
-                },
-                {
-                  title: "Quality",
-                  desc: "Attention to detail from planning through delivery.",
-                  image: assetPath('images/quality.png')
-                },
-                {
-                  title: "Responsible Development",
-                  desc: "Considered choices around resources, materials and long-term community well-being.",
-                  image: assetPath('images/responsible_development.png')
-                },
-                {
-                  title: "Transparency",
-                  desc: "Clear information, respectful guidance and accountable delivery.",
-                  image: assetPath('images/transparency.png')
-                }
-              ].map((val, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(74, 52, 40, 0.15)' }}
-                  transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+            <div style={{ position: 'relative', width: '100%' }}>
+              {/* Left Button Wrapper */}
+              <div style={{ position: 'absolute', left: '-24px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+                <button
+                  onClick={() => scrollValues('left')}
+                  aria-label="Scroll left"
                   style={{
-                    backgroundColor: '#F8F9FA',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    boxShadow: '0 10px 30px rgba(74, 52, 40, 0.05)',
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '50%',
+                    backgroundColor: '#A6462A',
+                    color: '#FFFFFF',
                     display: 'flex',
-                    flexDirection: 'column',
-                    border: '1px solid rgba(74, 52, 40, 0.08)'
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: 'none',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 12px rgba(74, 52, 40, 0.15)'
                   }}
                 >
-                  <div style={{ width: '100%', height: '240px', overflow: 'hidden' }}>
-                    <motion.img
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.5 }}
-                      src={val.image}
-                      alt={val.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                    />
-                  </div>
-                  <div style={{ padding: '2rem' }}>
-                    <h3 style={{ fontSize: '1.25rem', color: '#4A3428', marginBottom: '0.75rem', fontWeight: 700 }}>
-                      {val.title}
-                    </h3>
-                    <p style={{ fontSize: '1rem', color: '#626E7A', lineHeight: 1.6, margin: 0 }}>
-                      {val.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                  <ChevronLeft size={24} />
+                </button>
+              </div>
+
+              {/* Right Button Wrapper */}
+              <div style={{ position: 'absolute', right: '-24px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+                <button
+                  onClick={() => scrollValues('right')}
+                  aria-label="Scroll right"
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '50%',
+                    backgroundColor: '#A6462A',
+                    color: '#FFFFFF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: 'none',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 12px rgba(74, 52, 40, 0.15)'
+                  }}
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+
+              <div 
+                ref={valuesScrollRef}
+                style={{
+                  display: 'flex',
+                  overflowX: 'auto',
+                  gap: '2rem',
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                  scrollBehavior: 'smooth',
+                  padding: '1rem 0'
+                }}
+                className="hide-scrollbar"
+              >
+                {[
+                  {
+                    title: "Thoughtful Design",
+                    desc: "Spaces considered around how people live.",
+                    image: assetPath('images/thoughtful_design.png')
+                  },
+                  {
+                    title: "Integrity",
+                    desc: "Communicate clearly. Act with accountability.",
+                    image: assetPath('images/integrity.png')
+                  },
+                  {
+                    title: "Quality",
+                    desc: "Attention to detail from planning through delivery.",
+                    image: assetPath('images/quality.png')
+                  },
+                  {
+                    title: "Responsible Development",
+                    desc: "Considered choices around resources, materials and long-term community well-being.",
+                    image: assetPath('images/responsible_development.png')
+                  },
+                  {
+                    title: "Transparency",
+                    desc: "Clear information, respectful guidance and accountable delivery.",
+                    image: assetPath('images/transparency.png')
+                  }
+                ].map((val, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(74, 52, 40, 0.15)' }}
+                    transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+                    style={{
+                      flex: '0 0 min(100%, 340px)',
+                      backgroundColor: '#F8F9FA',
+                      borderRadius: '16px',
+                      overflow: 'hidden',
+                      boxShadow: '0 10px 30px rgba(74, 52, 40, 0.05)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      border: '1px solid rgba(74, 52, 40, 0.08)'
+                    }}
+                  >
+                    <div style={{ width: '100%', height: '240px', overflow: 'hidden' }}>
+                      <motion.img
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.5 }}
+                        src={val.image}
+                        alt={val.title}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      />
+                    </div>
+                    <div style={{ padding: '2rem' }}>
+                      <h3 style={{ fontSize: '1.25rem', color: '#4A3428', marginBottom: '0.75rem', fontWeight: 700 }}>
+                        {val.title}
+                      </h3>
+                      <p style={{ fontSize: '1rem', color: '#626E7A', lineHeight: 1.6, margin: 0 }}>
+                        {val.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

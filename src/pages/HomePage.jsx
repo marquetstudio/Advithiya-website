@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import {
-  ArrowRight, ShieldCheck, ChevronRight, Calendar,
+  ArrowRight, ShieldCheck, ChevronRight, ChevronLeft, Calendar,
   Sparkles, CheckCircle2, Compass, Layers, FileCheck, HardHat, Eye, BookOpen, MessageSquare
 } from 'lucide-react';
 import { useCMS } from '../context/CMSContext';
@@ -18,6 +18,15 @@ export const HomePage = ({
   onSelectArticle
 }) => {
   const { projects, articles, standardsPillars } = useCMS();
+  const definesScrollRef = useRef(null);
+
+  const scrollDefines = (direction) => {
+    if (definesScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -350 : 350;
+      definesScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const shreyas = projects.find((p) => p.id === 'shreyas') || projects[0];
   const urbanChalet = projects.find((p) => p.id === 'urban-chalet') || projects[1];
 
@@ -404,67 +413,128 @@ export const HomePage = ({
             </p>
           </div>
 
-          <div className="values-grid" style={{ marginBottom: '3.5rem' }}>
-            {[
-              {
-                title: "Thoughtful Design",
-                desc: "Spaces considered around how people live.",
-                image: assetPath('images/thoughtful_design.png')
-              },
-              {
-                title: "Integrity",
-                desc: "Communicate clearly. Act with accountability.",
-                image: assetPath('images/integrity.png')
-              },
-              {
-                title: "Quality",
-                desc: "Attention to detail from planning through delivery.",
-                image: assetPath('images/quality.png')
-              },
-              {
-                title: "Responsible Development",
-                desc: "Considered choices around resources, materials and long-term community well-being.",
-                image: assetPath('images/responsible_development.png')
-              },
-              {
-                title: "Transparency",
-                desc: "Clear information, respectful guidance and accountable delivery.",
-                image: assetPath('images/transparency.png')
-              }
-            ].map((pillar, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(0, 0, 0, 0.35)' }}
-                transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+          <div style={{ position: 'relative', width: '100%', marginBottom: '3.5rem' }}>
+            {/* Left Button Wrapper */}
+            <div style={{ position: 'absolute', left: '-24px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+              <button
+                onClick={() => scrollDefines('left')}
+                aria-label="Scroll left"
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2)',
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  backgroundColor: '#A6462A',
+                  color: '#FFFFFF',
                   display: 'flex',
-                  flexDirection: 'column'
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: 'none',
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.35)'
                 }}
               >
-                <div style={{ width: '100%', height: '240px', overflow: 'hidden', backgroundColor: '#F8F9FA' }}>
-                  <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
-                    src={pillar.image}
-                    alt={pillar.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  />
-                </div>
+                <ChevronLeft size={24} />
+              </button>
+            </div>
 
-                <div style={{ padding: '2rem 1.75rem 2.25rem 1.75rem', textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-                  <h3 style={{ fontSize: '1.3rem', color: '#4A3428', fontWeight: 700, marginBottom: '0.75rem', lineHeight: 1.25 }}>
-                    {pillar.title}
-                  </h3>
-                  <p style={{ fontSize: '0.95rem', color: '#626E7A', margin: 0, lineHeight: 1.65 }}>
-                    {pillar.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+            {/* Right Button Wrapper */}
+            <div style={{ position: 'absolute', right: '-24px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+              <button
+                onClick={() => scrollDefines('right')}
+                aria-label="Scroll right"
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  backgroundColor: '#A6462A',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: 'none',
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.35)'
+                }}
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+
+            <div 
+              ref={definesScrollRef}
+              style={{
+                display: 'flex',
+                overflowX: 'auto',
+                gap: '2rem',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                scrollBehavior: 'smooth',
+                padding: '1rem 0'
+              }}
+              className="hide-scrollbar"
+            >
+              {[
+                {
+                  title: "Thoughtful Design",
+                  desc: "Spaces considered around how people live.",
+                  image: assetPath('images/thoughtful_design.png')
+                },
+                {
+                  title: "Integrity",
+                  desc: "Communicate clearly. Act with accountability.",
+                  image: assetPath('images/integrity.png')
+                },
+                {
+                  title: "Quality",
+                  desc: "Attention to detail from planning through delivery.",
+                  image: assetPath('images/quality.png')
+                },
+                {
+                  title: "Responsible Development",
+                  desc: "Considered choices around resources, materials and long-term community well-being.",
+                  image: assetPath('images/responsible_development.png')
+                },
+                {
+                  title: "Transparency",
+                  desc: "Clear information, respectful guidance and accountable delivery.",
+                  image: assetPath('images/transparency.png')
+                }
+              ].map((pillar, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(0, 0, 0, 0.35)' }}
+                  transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+                  style={{
+                    flex: '0 0 min(100%, 340px)',
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2)',
+                    display: 'flex',
+                    flexDirection: 'column'
+                  }}
+                >
+                  <div style={{ width: '100%', height: '240px', overflow: 'hidden', backgroundColor: '#F8F9FA' }}>
+                    <motion.img
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.5 }}
+                      src={pillar.image}
+                      alt={pillar.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  </div>
+
+                  <div style={{ padding: '2rem 1.75rem 2.25rem 1.75rem', textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+                    <h3 style={{ fontSize: '1.3rem', color: '#4A3428', fontWeight: 700, marginBottom: '0.75rem', lineHeight: 1.25 }}>
+                      {pillar.title}
+                    </h3>
+                    <p style={{ fontSize: '0.95rem', color: '#626E7A', margin: 0, lineHeight: 1.65 }}>
+                      {pillar.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           <div style={{ textAlign: 'center' }}>

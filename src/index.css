@@ -638,8 +638,7 @@ button:active,
   background: #25D366;
   border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 50%;
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.3);
-  transition: transform 180ms var(--ease-out), background-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+  transition: transform 180ms var(--ease-out), background-color 180ms var(--ease-out);
 }
 
 .whatsapp-button svg {
@@ -652,7 +651,6 @@ button:active,
   color: #FFFFFF;
   background: #1EBE5D;
   transform: translateY(-3px);
-  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.38);
 }
 
 .whatsapp-tooltip {
@@ -1007,3 +1005,5 @@ button:active,
     max-height: calc(100dvh - 2rem);
   }
 }
+. h i d e - s c r o l l b a r : : - w e b k i t - s c r o l l b a r   {   d i s p l a y :   n o n e ;   }  
+ 
