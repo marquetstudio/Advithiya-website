@@ -42,6 +42,46 @@ const InsightsFaqItem = ({ q, a }) => {
   );
 };
 
+const InsightsFaqSection = ({ category, items }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <div style={{ borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(74, 52, 40, 0.15)' }}>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          padding: '1.25rem 1.5rem', cursor: 'pointer', userSelect: 'none',
+          backgroundColor: isOpen ? '#4A3428' : '#FFFFFF',
+          transition: 'background-color 0.25s ease'
+        }}
+      >
+        <h3 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 600, color: isOpen ? '#FFFFFF' : '#4A3428', fontFamily: "'Josefin Sans', sans-serif" }}>
+          {category}
+        </h3>
+        <span style={{ fontSize: '1.5rem', color: isOpen ? '#EBE4DD' : '#A6462A', lineHeight: 1, width: '24px', textAlign: 'center' }}>
+          {isOpen ? '−' : '+'}
+        </span>
+      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35, ease: 'easeInOut' }}
+            style={{ overflow: 'hidden', backgroundColor: '#FFFFFF', padding: '0 1.5rem' }}
+          >
+            {items.map((item, i) => (
+              <InsightsFaqItem key={i} q={item.q} a={item.a} />
+            ))}
+            <div style={{ height: '0.5rem' }} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 const renderInlineFormatting = (text) =>
   text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
     part.startsWith('**') && part.endsWith('**') ? (
@@ -99,7 +139,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
     return (
       <div className="insights-detail-page animate-fade-in" style={{ paddingTop: '5.5rem' }}>
         <section style={{ backgroundColor: '#4A3428', color: '#FFFFFF', padding: '4.5rem 0 3.5rem 0' }}>
-          <div className="container" style={{ maxWidth: '840px' }}>
+          <div className="container">
             <button
               onClick={() => onSelectArticle(null)}
               style={{
@@ -153,7 +193,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
         </section>
 
         <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
-          <div className="container" style={{ maxWidth: '800px' }}>
+          <div className="container">
             <div
               style={{
                 fontSize: '1.15rem',
@@ -285,7 +325,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
             <h2>Frequently Asked Questions</h2>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               {
                 category: 'Homebuying',
@@ -319,16 +359,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
                 ]
               }
             ].map((section, idx) => (
-              <div key={idx}>
-                <h3 style={{ marginBottom: '1.5rem', color: '#A6462A', fontSize: '1.5rem', borderBottom: '2px solid rgba(166, 70, 42, 0.2)', paddingBottom: '0.5rem' }}>
-                  {section.category}
-                </h3>
-                <div>
-                  {section.items.map((item, i) => (
-                    <InsightsFaqItem key={i} q={item.q} a={item.a} />
-                  ))}
-                </div>
-              </div>
+              <InsightsFaqSection key={idx} category={section.category} items={section.items} />
             ))}
           </div>
         </div>

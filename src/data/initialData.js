@@ -150,7 +150,7 @@ export const initialData = {
           date: "Completed & Delivered",
           milestone: "Handover to 10 Families",
           description: "All residences completed and handed over in Hebbal Kempapura, Bengaluru.",
-          image: img("urban_chalet.jpg")
+          image: urbanChaletAsset("UC_hero image.png")
         }
       ],
       lastUpdated: "September 2026"
