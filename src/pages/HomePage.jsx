@@ -230,7 +230,7 @@ export const HomePage = ({
             viewport={{ once: true, margin: "-60px" }}
             variants={containerVariants}
           >
-            {/* Project 1: Advithiya Shreyas */}
+            {/* Project 1: Advithiya Codename Prosperity */}
             <motion.div
               variants={itemVariants}
               style={{
@@ -252,7 +252,7 @@ export const HomePage = ({
                 <motion.img
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5 }}
-                  src={shreyas.heroImage}
+                  src={shreyas.cardImage || shreyas.heroImage}
                   alt={shreyas.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -327,7 +327,7 @@ export const HomePage = ({
                   <motion.img
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.5 }}
-                    src={urbanChalet.heroImage}
+                    src={urbanChalet.cardImage || urbanChalet.heroImage}
                     alt={urbanChalet.name}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
@@ -346,7 +346,7 @@ export const HomePage = ({
                     {urbanChalet.name}
                   </h3>
                   <p style={{ fontSize: '0.95rem', color: '#626E7A', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-                    A boutique collection of 3 BHK homes across two towers, created for just 10 families.
+                    A boutique collection of 3 BHK homes across two towers, created for just 8 Families.
                   </p>
 
                   <div
@@ -360,7 +360,7 @@ export const HomePage = ({
                       marginBottom: '1.5rem'
                     }}
                   >
-                    10 Homes | 5 Floors | 2 Parking Spaces per Apartment
+                    8 Families | 5 Floors | 2 Parking Spaces per Apartment
                   </div>
 
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>
@@ -460,7 +460,7 @@ export const HomePage = ({
               </button>
             </div>
 
-            <div 
+            <div
               ref={definesScrollRef}
               style={{
                 display: 'flex',

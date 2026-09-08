@@ -64,7 +64,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
         />
 
         <div className="container" style={{ maxWidth: '880px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <span className="section-tag">Our Standards</span>
+          <span className="section-tag section-tag-glass">Our Standards</span>
           <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '1.25rem' }}>
             Trust is designed into every step.
           </h1>
@@ -91,21 +91,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
             Project-specific specifications, quality processes and relevant checkpoints are documented and reviewed through the development process.
           </p>
 
-          {/* Quality Pillars Badges */}
-          <div
-            style={{
-              padding: '1.25rem 1.5rem',
-              backgroundColor: '#F8F9FA',
-              borderRadius: '8px',
-              borderLeft: '4px solid #A6462A',
-              marginBottom: '3rem',
-              fontSize: '1rem',
-              color: '#4A3428',
-              fontWeight: 600
-            }}
-          >
-            Design Reviews | Construction Controls | Material Selection | Safety | Handover Quality
-          </div>
+
 
           {/* Detailed Accordions for Quality */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

@@ -10,10 +10,14 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
   const [typeFilter, setTypeFilter] = useState('All');
 
   const filteredProjects = projects.filter((p) => {
+    const isUpcoming =
+      p.status === 'Upcoming' ||
+      p.status?.toUpperCase().includes('LAUNCHING');
+
     const matchesStatus =
       statusFilter === 'All' ||
       (statusFilter === 'Ongoing' && p.status === 'Ongoing') ||
-      (statusFilter === 'Upcoming' && p.status === 'Upcoming') ||
+      (statusFilter === 'Upcoming' && isUpcoming) ||
       (statusFilter === 'Delivered' && p.status === 'Delivered');
 
     const matchesType =
@@ -76,7 +80,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
         />
 
         <div className="container" style={{ maxWidth: '880px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <span className="section-tag">Advithiya Projects</span>
+          <span className="section-tag section-tag-glass">Our Projects</span>
           <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '1.25rem' }}>
             Creating spaces for the way people live.
           </h1>
@@ -187,83 +191,91 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                     transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
                     style={{
                       backgroundColor: '#F8F9FA',
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    border: '1px solid rgba(74, 52, 40, 0.08)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => {
-                    onSelectProject(project);
-                    setActivePage('project-detail');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                >
-                  <div>
-                    <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
-                      <motion.img
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.5 }}
-                        src={project.cardImage || project.heroImage}
-                        alt={project.name}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      />
-                      <div style={{ position: 'absolute', top: '1.25rem', left: '1.25rem' }}>
-                        <span className={`status-badge ${project.statusBadgeStyle}`}>
-                          {project.status}
-                        </span>
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(74, 52, 40, 0.08)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      cursor: 'pointer'
+                    }}
+                    onClick={() => {
+                      onSelectProject(project);
+                      setActivePage('project-detail');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    <div>
+                      <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
+                        <motion.img
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.5 }}
+                          src={project.cardImage || project.heroImage}
+                          alt={project.name}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                        <div style={{ position: 'absolute', top: '1.25rem', left: '1.25rem' }}>
+                          <span className={`status-badge ${project.statusBadgeStyle}`}>
+                            {project.status}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div style={{ padding: '2.25rem' }}>
+                        <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
+                          {project.id === 'shreyas'
+                            ? `${project.location} | Residential | Launching Soon`
+                            : project.id === 'rr-nagar'
+                              ? `${project.location} | Residential | Launching Soon`
+                              : `${project.location} | ${project.type} | ${project.status}`}
+                        </div>
+
+                        <h2 style={{ fontSize: '1.85rem', marginBottom: '0.4rem', color: '#4A3428' }}>
+                          {project.name}
+                        </h2>
+
+                        <div style={{ fontSize: '1rem', color: '#4A3428', fontWeight: 600, marginBottom: '0.75rem' }}>
+                          {project.tagline}
+                        </div>
+
+                        <p style={{ fontSize: '0.95rem', color: '#626E7A', marginBottom: '1.75rem', lineHeight: 1.65 }}>
+                          {project.id === 'shreyas'
+                            ? '16 homes across four levels, with 2 and 3 BHK residences designed around privacy, comfort and everyday functionality.'
+                            : project.id === 'rr-nagar'
+                              ? (project.description || 'Upcoming boutique residential development in RR Nagar, Bangalore. Details launching soon.')
+                              : 'A collection of 3 BHK homes across two towers, created for just 8 Families.'}
+                        </p>
+
+                        <div
+                          style={{
+                            padding: '1rem 1.25rem',
+                            backgroundColor: '#FFFFFF',
+                            borderRadius: '6px',
+                            border: '1px solid rgba(74, 52, 40, 0.08)',
+                            fontSize: '0.9rem',
+                            color: '#4A3428',
+                            fontWeight: 600
+                          }}
+                        >
+                          {project.id === 'shreyas'
+                            ? '16 Homes | 4 Floors | 2 & 3 BHK'
+                            : project.id === 'rr-nagar'
+                              ? (project.specsTag || 'Boutique Residences | Launching Soon')
+                              : '2 Towers | 5 Stories | 8 Families | 2 Parking Spaces per Apartment'}
+                        </div>
                       </div>
                     </div>
 
-                    <div style={{ padding: '2.25rem' }}>
-                      <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
-                        {project.id === 'shreyas' ? `${project.location} | Residential | Launching Soon` : `${project.location} | ${project.type} | ${project.status}`}
-                      </div>
-
-                      <h2 style={{ fontSize: '1.85rem', marginBottom: '0.4rem', color: '#4A3428' }}>
-                        {project.name}
-                      </h2>
-
-                      <div style={{ fontSize: '1rem', color: '#4A3428', fontWeight: 600, marginBottom: '0.75rem' }}>
-                        {project.tagline}
-                      </div>
-
-                      <p style={{ fontSize: '0.95rem', color: '#626E7A', marginBottom: '1.75rem', lineHeight: 1.65 }}>
-                        {project.id === 'shreyas'
-                          ? '16 homes across four levels, with 2 and 3 BHK residences designed around privacy, comfort and everyday functionality.'
-                          : 'A collection of 3 BHK homes across two towers, created for just 10 families.'}
-                      </p>
-
-                      <div
-                        style={{
-                          padding: '1rem 1.25rem',
-                          backgroundColor: '#FFFFFF',
-                          borderRadius: '6px',
-                          border: '1px solid rgba(74, 52, 40, 0.08)',
-                          fontSize: '0.9rem',
-                          color: '#4A3428',
-                          fontWeight: 600
-                        }}
-                      >
-                        {project.id === 'shreyas'
-                          ? '16 Homes | 4 Floors | 2 & 3 BHK'
-                          : '2 Towers | 5 Stories | 10 Families | 2 Parking Spaces per Apartment'}
+                    <div style={{ padding: '0 2.25rem 2.25rem 2.25rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#A6462A', fontWeight: 600, fontSize: '0.95rem' }}>
+                        <span>Explore Project</span>
+                        <ArrowRight size={16} />
                       </div>
                     </div>
-                  </div>
-
-                  <div style={{ padding: '0 2.25rem 2.25rem 2.25rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#A6462A', fontWeight: 600, fontSize: '0.95rem' }}>
-                      <span>Explore Project</span>
-                      <ArrowRight size={16} />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
       </section>

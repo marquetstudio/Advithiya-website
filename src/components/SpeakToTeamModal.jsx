@@ -10,7 +10,7 @@ export const SpeakToTeamModal = ({ isOpen, onClose, defaultProject = '' }) => {
     phone: '',
     email: '',
     enquiryType: 'Schedule Site Visit',
-    project: defaultProject || 'Advithiya Shreyas',
+    project: defaultProject || 'Advithiya Codename Prosperity',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);

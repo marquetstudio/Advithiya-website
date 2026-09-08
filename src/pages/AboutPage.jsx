@@ -12,48 +12,6 @@ const editorialLeadershipData = [
     experience: '30+ Years of Experience',
     bio: 'With over three decades of experience across procurement, project delivery and operations, Srinivas Raju brings broad industry knowledge and a strong focus on execution. His approach combines practical decision-making with an emphasis on quality, accountability and long-term value.',
     image: assetPath('images/team_member.png')
-  },
-  {
-    name: 'Mr. Deepak',
-    title: 'Head of Construction',
-    experience: '25+ Years of Experience',
-    bio: 'With more than 25 years of experience in construction, Deepak brings extensive knowledge of site execution, coordination and project delivery. His role focuses on maintaining construction standards while ensuring projects progress with discipline, efficiency and attention to detail.',
-    image: assetPath('images/team_member.png')
-  },
-  {
-    name: 'Mr. Prakash',
-    title: 'Head - Land & Legal',
-    experience: '20 Years of Experience',
-    bio: 'With two decades of experience across land and legal matters, Prakash oversees the processes that support secure and well-structured development. His experience helps ensure that projects move forward with clarity, diligence and sound documentation.',
-    image: assetPath('images/team_member.png')
-  },
-  {
-    name: 'Mrs. Swetha',
-    title: 'Chief Marketing Officer',
-    experience: '10+ Years of Experience',
-    bio: 'With more than 10 years of experience in marketing and brand development, Swetha focuses on building clear, consistent and meaningful communication around the company and its projects. Her role connects the brand\'s vision with the people it serves.',
-    image: assetPath('images/team_member1.png')
-  },
-  {
-    name: 'Mrs. Vyshali S Raju',
-    title: 'Managing Partner',
-    experience: '',
-    bio: 'As Managing Partner, Vyshali contributes to the company\'s strategic direction and day-to-day development. Her approach combines a close understanding of the business with a focus on building a strong and sustainable foundation for future growth.',
-    image: assetPath('images/team_member1.png')
-  },
-  {
-    name: 'Ms. Lekhana',
-    title: 'Admin & Operations',
-    experience: '',
-    bio: 'Lekhana supports the organisation across administration and operations, helping maintain the coordination and processes that keep the business running smoothly. Her role brings structure, responsiveness and consistency to everyday operations.',
-    image: assetPath('images/team_member1.png')
-  },
-  {
-    name: 'Sai Charan A',
-    title: 'Procurement & Logistics',
-    experience: '',
-    bio: 'Sai Charan oversees procurement and logistics, supporting the timely movement of materials, resources and requirements across projects. His role focuses on coordination, efficiency and dependable execution.',
-    image: assetPath('images/team_member.png')
   }
 ];
 
@@ -239,7 +197,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
           />
 
           <div className="container" style={{ maxWidth: '880px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-            <span className="section-tag">About Advithiya</span>
+            <span className="section-tag section-tag-glass">About Advithiya</span>
             <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '1.25rem' }}>
               Building with purpose. <br />
               <span style={{ color: '#A6462A' }}>Thinking ahead.</span>
@@ -349,85 +307,81 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
           <div className="container">
             <div style={{ maxWidth: '720px', margin: '0 auto 3.5rem auto', textAlign: 'center' }}>
               <span className="section-tag">Leadership</span>
-              <h2 style={{ fontSize: 'clamp(1rem, 3.5vw, 2.5rem)', color: '#4A3428', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.5rem)', color: '#4A3428', marginBottom: '0.75rem' }}>
                 Experience that shapes every decision.
               </h2>
               <p style={{ color: '#626E7A', fontSize: '1.1rem' }}>
-                More than 30 years of collective experience across the disciplines that bring a development to life.
+                More than 30 years of leadership experience shaping developments from vision to delivery.
               </p>
             </div>
 
-            <div className="leadership-grid">
-              {editorialLeadershipData.map((member, index) => {
-                const formattedNumber = `0${index + 1}`;
-                const isLead = index === 0;
-                return (
-                  <motion.div
-                    key={index}
-                    onClick={() => setSelectedMember(member)}
-                    whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(74, 52, 40, 0.15)', backgroundColor: '#F6EFE4' }}
-                    transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+            {/* Static Card - Srinivas Raju Only (Enlarged Footprint) */}
+            <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+              <div
+                className="leader-static-card"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'minmax(380px, 460px) 1fr',
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: '28px',
+                  overflow: 'hidden',
+                  boxShadow: '0 16px 48px rgba(74, 52, 40, 0.08)',
+                  border: '1px solid rgba(74, 52, 40, 0.08)'
+                }}
+              >
+                {/* Image Container */}
+                <div
+                  className="leader-image-wrapper"
+                  style={{
+                    backgroundColor: '#F6EFE4',
+                    position: 'relative',
+                    minHeight: '480px'
+                  }}
+                >
+                  <img
+                    src={editorialLeadershipData[0].image}
+                    alt={editorialLeadershipData[0].name}
                     style={{
-                      cursor: 'pointer',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      backgroundColor: '#FFFFFF',
-                      borderRadius: '24px',
-                      overflow: 'hidden',
+                      width: '100%',
                       height: '100%',
-                      boxShadow: '0 8px 32px rgba(74, 52, 40, 0.05)'
+                      objectFit: 'cover',
+                      objectPosition: 'top center',
+                      display: 'block'
                     }}
-                    className="leadership-card group"
-                  >
-                    {/* Image Container */}
-                    <div
-                      style={{
-                        width: '100%',
-                        aspectRatio: isLead ? '4/5' : '4/3',
-                        backgroundColor: '#F6EFE4',
-                        overflow: 'hidden',
-                        position: 'relative'
-                      }}
-                    >
-                      <motion.img
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                        src={member.image}
-                        alt={member.name}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          objectPosition: 'top center',
-                          display: 'block'
-                        }}
-                      />
-                    </div>
+                  />
+                </div>
 
-                    {/* Typography Container */}
-                    <div style={{ padding: isLead ? '3rem 2.5rem' : '1.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'center' }}>
-                      <h3
-                        style={{
-                          fontSize: isLead ? '2rem' : '1.25rem',
-                          color: '#4A3428',
-                          fontWeight: 700,
-                          marginBottom: '0.5rem',
-                          fontFamily: "'Josefin Sans', sans-serif",
-                          transition: 'color 0.3s ease'
-                        }}
-                      >
-                        {member.name}
-                      </h3>
-                      <p style={{ fontSize: isLead ? '1.1rem' : '0.95rem', color: '#626E7A', margin: '0 0 0.9rem' }}>
-                        {member.title}
-                      </p>
-                      <span style={{ color: '#A6462A', fontSize: '0.82rem', fontWeight: 600 }}>
-                        View profile →
-                      </span>
-                    </div>
-                  </motion.div>
-                );
-              })}
+                {/* Content Container */}
+                <div style={{ padding: '3.5rem 3.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <h3
+                    style={{
+                      fontSize: 'clamp(2rem, 3.5vw, 2.65rem)',
+                      color: '#4A3428',
+                      fontWeight: 700,
+                      marginBottom: '0.35rem',
+                      fontFamily: "'Josefin Sans', sans-serif"
+                    }}
+                  >
+                    {editorialLeadershipData[0].name}
+                  </h3>
+
+                  <p style={{ fontSize: '1.15rem', color: '#8A7563', fontWeight: 600, marginBottom: '1.5rem' }}>
+                    {editorialLeadershipData[0].title}
+                  </p>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#626E7A', fontSize: '1.02rem', lineHeight: 1.8 }}>
+                    <p style={{ margin: 0 }}>
+                      With over three decades of foundational experience across real estate procurement, project delivery and operations, Srinivas Raju brings deep industry knowledge and an unyielding focus on execution to Advithiya.
+                    </p>
+                    <p style={{ margin: 0 }}>
+                      His approach combines practical decision-making with an emphasis on construction standards, accountability and long-term value. Having navigated complex urban developments across Bangalore, he ensures that every project balances architectural intelligence with everyday functionality.
+                    </p>
+                    <p style={{ margin: 0 }}>
+                      Under his direction, Advithiya upholds an uncompromising standard of transparency—ensuring verified milestones, clear documentation, and considered spaces built to endure.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

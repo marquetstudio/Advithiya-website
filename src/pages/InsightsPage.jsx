@@ -260,7 +260,7 @@ export const InsightsPage = ({ activeArticle, onSelectArticle, onOpenSpeakModal 
         />
 
         <div className="container" style={{ maxWidth: '880px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <span className="section-tag">Advithiya Insights</span>
+          <span className="section-tag section-tag-glass">Insights</span>
           <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '1.25rem' }}>
             Ideas for better decisions.
           </h1>

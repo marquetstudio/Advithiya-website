@@ -14,7 +14,7 @@ export const ContactPage = ({ setActivePage }) => {
     phone: '',
     email: '',
     enquiryType: 'Project Enquiry',
-    projectOfInterest: 'Advithiya Shreyas',
+    projectOfInterest: 'Advithiya Codename Prosperity',
     message: ''
   });
 
@@ -58,7 +58,7 @@ export const ContactPage = ({ setActivePage }) => {
         />
 
         <div className="container" style={{ maxWidth: '880px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <span className="section-tag">Contact Us</span>
+          <span className="section-tag section-tag-glass">Contact Us</span>
           <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '1.25rem' }}>
             Let's start a conversation.
           </h1>
@@ -167,8 +167,9 @@ export const ContactPage = ({ setActivePage }) => {
                         className="form-select"
                         style={{ width: '100%', padding: '0.85rem', borderRadius: '4px', backgroundColor: '#FFFFFF', borderColor: 'rgba(74, 52, 40,0.15)' }}
                       >
-                        <option value="Advithiya Shreyas">Advithiya Shreyas (Upcoming)</option>
+                        <option value="Advithiya Codename Prosperity">Advithiya Codename Prosperity (Upcoming)</option>
                         <option value="Advithiya Urban Chalet">Advithiya Urban Chalet (Ongoing)</option>
+                        <option value="Advithiya RR Nagar">Advithiya RR Nagar (Launching Soon)</option>
                         <option value="All / General">General</option>
                       </select>
                     </div>

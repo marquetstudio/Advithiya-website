@@ -66,7 +66,7 @@ export const PartnerPage = () => {
         />
 
         <div className="container" style={{ maxWidth: '880px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <span className="section-tag">Partner With Advithiya</span>
+          <span className="section-tag section-tag-glass">Partner With Advithiya</span>
           <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '1.25rem' }}>
             Let's build what's next, together.
           </h1>

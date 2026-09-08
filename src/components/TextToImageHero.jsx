@@ -39,7 +39,7 @@ export const TextToImageHero = ({
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url("${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')}")`,
+          backgroundImage: `url("${assetPath('images/shreyas_exterior.jpg')}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 35%',
           scale: bgScale,
@@ -84,18 +84,21 @@ export const TextToImageHero = ({
               className="home-hero-wordmark"
               style={{
                 color: 'transparent',
-                backgroundImage: `url("${shreyas?.heroImage || assetPath('images/hero_architecture.jpg')}")`,
+                backgroundImage: `linear-gradient(135deg, rgba(74, 52, 40, 0.72) 0%, rgba(49, 33, 25, 0.55) 50%, rgba(166, 70, 42, 0.68) 100%), url("${assetPath('images/shreyas_exterior.jpg')}")`,
+                backgroundBlendMode: 'multiply',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'center 40%',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                WebkitTextStroke: '1px rgba(74, 52, 40, 0.4)',
                 fontSize: 'clamp(3.5rem, 7.5vw, 6.25rem)',
                 lineHeight: 1.02,
-                fontWeight: 700,
-                letterSpacing: '-0.02em',
+                fontWeight: 800,
+                letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 margin: 0,
-                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                filter: 'drop-shadow(0 4px 12px rgba(74, 52, 40, 0.22))'
               }}
             >
               ADVITHIYA

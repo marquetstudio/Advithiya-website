@@ -1,5 +1,6 @@
 const img = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
 const urbanChaletAsset = (filename) => `${import.meta.env.BASE_URL}assets/urbanChalet/${filename}`;
+const shreyasAsset = (filename) => `${import.meta.env.BASE_URL}assets/shreyas/${filename}`;
 
 export const initialData = {
   company: {
@@ -7,17 +8,17 @@ export const initialData = {
     corporateName: "Advithiya Developers",
     tagline: "Thoughtfully built. Transparently delivered.",
     subtagline: "Creating thoughtfully designed residential and commercial communities in Bangalore.",
-    phone: "+91 7406159159",
-    phoneDisplay: "+91 74061 59159",
-    email: "shwetha@advithiya.co.in",
+    phone: "+91 9886036366",
+    phoneDisplay: "+91 98860 36366",
+    email: "admin@advithiya.co",
     address: "RC Heights, No. 5, 3rd Floor, 4th Cross, New BEL Road, RMV 2nd Stage, Bangalore - 560094",
     reraReg: "PRM/KA/RERA/1251/309/AG/190212/001205",
-    grievanceContact: "Customer Support | Reach out to shwetha@advithiya.co.in"
+    grievanceContact: "Customer Support | Reach out to admin@advithiya.co"
   },
   projects: [
     {
       id: "shreyas",
-      name: "Advithiya Shreyas",
+      name: "Advithiya Codename Prosperity",
       tagline: "16 homes. One considered community.",
       subheadline: "Boutique communities. Everyday intelligence.",
       status: "Upcoming",
@@ -38,9 +39,14 @@ export const initialData = {
       landExtent: "0.42 Acres",
       carpetArea: "1,240 – 1,890 sq. ft.",
       reraNo: "PRM/KA/RERA/1251/309/PR/240826/006892",
-      heroImage: img("shreyas_exterior.jpg"),
-      interiorImage: img("shreyas_interior.jpg"),
+      cardImage: shreyasAsset("shreyas_hero.png"),
+      heroImage: shreyasAsset("shreyas_front.jpeg"),
+      interiorImage: shreyasAsset("shreyas_side_front.jpeg"),
       textureImage: img("material_texture.jpg"),
+      galleryImages: [
+        { title: "Front Elevation", src: shreyasAsset("shreyas_front.jpeg") },
+        { title: "Side & Front Perspective", src: shreyasAsset("shreyas_side_front.jpeg") }
+      ],
       description: "A boutique residential community designed around privacy, comfort and everyday functionality.",
       vision: "A considered collection of 16 homes across four levels, offering 2 and 3 BHK residences designed around privacy, comfort and everyday functionality.",
       pricing: "Pricing on request (Launching Soon)",
@@ -70,7 +76,7 @@ export const initialData = {
       id: "urban-chalet",
       name: "Advithiya Urban Chalet",
       tagline: "Boutique design homes. Limited by design.",
-      subheadline: "A boutique collection of 3 BHK homes across two towers, created for just 10 families.",
+      subheadline: "A boutique collection of 3 BHK homes across two towers, created for just 8 Families.",
       status: "Ongoing",
       statusBadgeStyle: "ongoing",
       type: "Residential",
@@ -85,12 +91,12 @@ export const initialData = {
         "Convenient access to Bellary Road",
         "Close to healthcare, retail and employment hubs"
       ],
-      units: "10 Families",
+      units: "8 Families",
       floors: "5 Stories (2 Towers)",
       towers: "2 Towers",
       parking: "2 Parking Spaces per Apartment",
       typology: "3 BHK",
-      specsTag: "2 Towers | 5 Stories | 10 Families | 2 Parking Spaces per Apartment",
+      specsTag: "2 Towers | 5 Stories | 8 Families | 2 Parking Spaces per Apartment",
       landExtent: "Boutique Enclave",
       carpetArea: "3 BHK Boutique Residences",
       reraNo: "PRM/KA/RERA/1251/309/PR/210515/004120",
@@ -106,15 +112,15 @@ export const initialData = {
       ],
       floorPlanPdf: urbanChaletAsset("URBAN CHALET_REVISED PLAN RENDERS (R2)_12.07.25.pdf"),
       floorPlanDownloadName: "Advithiya-Urban-Chalet-Floor-Plans.pdf",
-      description: "A boutique collection of 3 BHK homes across two towers, created for just 10 families.",
+      description: "A boutique collection of 3 BHK homes across two towers, created for just 8 Families.",
       vision: "Boutique design homes limited by design. Featuring two towers across five stories with two parking spaces per apartment and elevator access in Hebbal Kempapura.",
       pricing: "Delivered & Occupied",
-      pricingNote: "Successfully completed and handed over to 10 families.",
+      pricingNote: "Successfully completed and handed over to 8 Families.",
       faqs: [
         {
           category: "Facilities & Amenities",
           items: [
-            { q: "What facilities are provided at Urban Chalet?", a: "Urban Chalet provides covered parking, elevator access, common areas and landscaped areas along the building frontage. The project is planned as a limited community of 10 families across two towers." },
+            { q: "What facilities are provided at Urban Chalet?", a: "Urban Chalet provides covered parking, elevator access, common areas and landscaped areas along the building frontage. The project is planned as a limited community of 8 Families across two towers." },
             { q: "How many parking spaces are provided for each apartment?", a: "Each apartment is provided with two parking spaces. The project specifications identify these as covered stack car parking." },
             { q: "Is an elevator provided?", a: "Yes. Urban Chalet has one lift of a reputed make serving the residential floors." },
             { q: "Is power backup provided?", a: "Yes. The project provides 24-hour power backup for residence lighting, common areas and the lift." },
@@ -148,11 +154,48 @@ export const initialData = {
       constructionLogs: [
         {
           date: "Completed & Delivered",
-          milestone: "Handover to 10 Families",
+          milestone: "Handover to 8 Families",
           description: "All residences completed and handed over in Hebbal Kempapura, Bengaluru.",
           image: urbanChaletAsset("UC_hero image.png")
         }
       ],
+      lastUpdated: "September 2026"
+    },
+    {
+      id: "rr-nagar",
+      name: "Advithiya RR Nagar",
+      tagline: "Thoughtfully designed boutique living. Coming soon to RR Nagar.",
+      subheadline: "Boutique residential community in RR Nagar, Bengaluru.",
+      status: "LAUNCHING SOON",
+      statusBadgeStyle: "upcoming",
+      type: "Residential",
+      location: "RR Nagar, Bengaluru",
+      locationSubtitle: "RR Nagar, Bengaluru",
+      neighborhoodDescription: "Located in Rajarajeshwari Nagar (RR Nagar), Bengaluru with excellent connectivity to major IT corridors, top schools, healthcare, and metro transit.",
+      neighborhoodHighlights: [
+        "Prime residential enclave in RR Nagar",
+        "Seamless connectivity via Mysore Road & Metro",
+        "Close to healthcare, educational & retail landmarks"
+      ],
+      units: "Launching Soon",
+      floors: "Launching Soon",
+      typology: "Boutique Residences",
+      specsTag: "Boutique Residences | Launching Soon",
+      landExtent: "Launching Soon",
+      carpetArea: "Details on Request",
+      reraNo: "Coming Soon",
+      cardImage: img("shreyas_exterior.jpg"),
+      heroImage: img("shreyas_exterior.jpg"),
+      interiorImage: img("shreyas_interior.jpg"),
+      textureImage: img("material_texture.jpg"),
+      description: "Upcoming boutique residential development in RR Nagar, Bangalore. Details launching soon.",
+      vision: "A considered boutique community designed around comfort, connectivity, and everyday functionality in RR Nagar.",
+      pricing: "Launching Soon",
+      pricingNote: "Pricing and project details will be released upon launch.",
+      amenities: [],
+      specifications: [],
+      constructionLogs: [],
+      isEmptyPage: true,
       lastUpdated: "September 2026"
     }
   ],

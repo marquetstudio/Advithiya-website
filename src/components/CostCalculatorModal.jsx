@@ -85,7 +85,7 @@ export const CostCalculatorModal = ({ isOpen, onClose, onOpenSpeakModal }) => {
         </div>
 
         <h2 style={{ color: '#FFFFFF', fontSize: '1.85rem', marginBottom: '0.5rem' }}>
-          Advithiya Shreyas Cost & EMI Estimator
+          Advithiya Codename Prosperity Cost & EMI Estimator
         </h2>
         <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', marginBottom: '2rem' }}>
           Itemized cost calculations with zero hidden multipliers.

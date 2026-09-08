@@ -126,15 +126,104 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
 
   if (!project) return null;
 
+  if (project.isEmptyPage || project.id === 'rr-nagar') {
+    return (
+      <div className="project-detail-page animate-fade-in" style={{ paddingTop: '4.5rem' }}>
+        <section
+          style={{
+            position: 'relative',
+            minHeight: 'calc(100vh - 4.5rem)',
+            display: 'flex',
+            alignItems: 'flex-end',
+            backgroundColor: '#312119',
+            color: '#FFFFFF',
+            paddingBottom: '5rem',
+            overflow: 'hidden'
+          }}
+        >
+          <motion.div
+            initial={{ scale: 1.15, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: `url("${project.heroImage}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              zIndex: 0
+            }}
+          />
+
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(180deg, rgba(49, 33, 25, 0.4) 0%, rgba(74, 52, 40, 0.85) 75%, rgba(49, 33, 25, 0.98) 100%)',
+              zIndex: 1
+            }}
+          />
+
+          <div className="container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
+            <button
+              onClick={onBack}
+              style={{
+                background: 'rgba(255, 255, 255, 0.12)',
+                border: 'none',
+                color: '#FFFFFF',
+                padding: '0.5rem 1rem',
+                borderRadius: '4px',
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: '0.85rem',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                marginBottom: '1.5rem'
+              }}
+            >
+              <ArrowLeft size={16} />
+              <span>Back to All Projects</span>
+            </button>
+
+            <div>
+              <span
+                className={`status-badge ${project.statusBadgeStyle || 'upcoming'}`}
+                style={{ marginBottom: '0.75rem', display: 'inline-block' }}
+              >
+                {project.status}
+              </span>
+              <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.5rem, 5vw, 4.25rem)', marginBottom: '0.5rem' }}>
+                {project.name}
+              </h1>
+              {project.location && (
+                <div style={{ fontSize: '1.2rem', color: '#A6462A', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <MapPin size={18} />
+                  <span>{project.location}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
   };
 
   const fallbackImages = [
-    { title: 'Exterior Facade & Teak Louvers', src: project.heroImage },
-    { title: 'Double Height Living & Garden', src: project.interiorImage },
-    { title: 'Tactile Material Texture', src: project.textureImage }
+    { title: 'Exterior Architecture & Facade', src: project.heroImage },
+    { title: 'Living Spaces & Natural Light', src: project.interiorImage },
+    { title: 'Material & Construction Detailing', src: project.textureImage }
   ];
   const imagesList = project.galleryImages?.length ? project.galleryImages : fallbackImages;
 
@@ -319,7 +408,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
           <span className="section-tag">Architectural Gallery</span>
           <h2 style={{ marginBottom: '2.5rem' }}>Space, Texture & Daylight</h2>
 
-          <div className={`architectural-gallery-grid${project.galleryImages?.length ? ' architectural-gallery-grid--featured' : ''}`}>
+          <div className={`architectural-gallery-grid${project.galleryImages?.length >= 4 ? ' architectural-gallery-grid--featured' : ''}`}>
             {imagesList.map((img, idx) => (
               <motion.div
                 key={idx}

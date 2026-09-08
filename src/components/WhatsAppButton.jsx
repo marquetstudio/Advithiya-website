@@ -1,7 +1,7 @@
 import React from 'react';
 
 const STARTUP_MESSAGE = 'Hi, I’m interested in an Advithiya project and would like some more information.';
-const WHATSAPP_URL = `https://wa.me/917406159159?text=${encodeURIComponent(STARTUP_MESSAGE)}`;
+const WHATSAPP_URL = `https://wa.me/919886036366?text=${encodeURIComponent(STARTUP_MESSAGE)}`;
 
 export const WhatsAppButton = () => (
   <div className="whatsapp-float">
