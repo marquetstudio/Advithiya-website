@@ -225,7 +225,7 @@ button:active,
 
 /* Editorial Section Header */
 .section-tag {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 0.55rem;
   font-family: var(--font-heading);
@@ -367,7 +367,7 @@ section[style*="312119"] .section-tag::before {
 
 /* Status Badges */
 .status-badge {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.85rem;

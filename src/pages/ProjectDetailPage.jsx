@@ -195,7 +195,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
             <div>
               <span
                 className={`status-badge ${project.statusBadgeStyle || 'upcoming'}`}
-                style={{ marginBottom: '0.75rem', display: 'inline-block' }}
+                style={{ marginBottom: '0.75rem' }}
               >
                 {project.status}
               </span>
@@ -601,6 +601,7 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
         <section className="section-padding" style={{ backgroundColor: '#F6EFE4' }}>
           <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+              <span className="section-tag">Specifications & Amenities</span>
               <h2>Frequently Asked Questions</h2>
             </div>
 

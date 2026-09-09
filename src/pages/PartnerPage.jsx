@@ -98,7 +98,7 @@ export const PartnerPage = () => {
                   <Building2 size={26} />
                 </div>
 
-                <span className="section-tag" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>Landowners</span>
+                <span className="section-tag" style={{ marginBottom: '0.5rem' }}>Landowners</span>
                 <h2 style={{ fontSize: '1.5rem', color: '#4A3428', marginBottom: '0.5rem' }}>
                   Have a development opportunity?
                 </h2>
@@ -143,7 +143,7 @@ export const PartnerPage = () => {
                   <Users size={26} />
                 </div>
 
-                <span className="section-tag" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>Channel Partners</span>
+                <span className="section-tag" style={{ marginBottom: '0.5rem' }}>Channel Partners</span>
                 <h2 style={{ fontSize: '1.5rem', color: '#4A3428', marginBottom: '1rem' }}>
                   Grow with Advithiya.
                 </h2>
@@ -184,7 +184,7 @@ export const PartnerPage = () => {
                   <HardHat size={26} />
                 </div>
 
-                <span className="section-tag" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>Vendors & Consultants</span>
+                <span className="section-tag" style={{ marginBottom: '0.5rem' }}>Vendors & Consultants</span>
                 <h2 style={{ fontSize: '1.5rem', color: '#4A3428', marginBottom: '1rem' }}>
                   Bring your expertise to our projects.
                 </h2>

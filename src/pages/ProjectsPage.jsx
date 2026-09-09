@@ -261,7 +261,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                             ? '16 Homes | 4 Floors | 2 & 3 BHK'
                             : project.id === 'rr-nagar'
                               ? (project.specsTag || 'Boutique Residences | Launching Soon')
-                              : '2 Towers | 5 Stories | 8 Families | 2 Parking Spaces per Apartment'}
+                              : '2 Towers | 4 Strories | 8 Families | 2 Parking Spaces per Apartment'}
                         </div>
                       </div>
                     </div>

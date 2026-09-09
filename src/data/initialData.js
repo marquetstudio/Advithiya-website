@@ -28,9 +28,12 @@ export const initialData = {
       locationSubtitle: "Bangalore",
       neighborhoodDescription: "Located in Bangalore with convenient access to established residential, employment and everyday-service corridors.",
       neighborhoodHighlights: [
-        "Well connected to key North Bangalore corridors",
-        "Access to established schools, healthcare and retail",
-        "Detailed site location shared during a project enquiry"
+        "Kempegowda International Airport (BLR) – 25 minutes",
+        "Manyata Tech Park – 10 minutes",
+        "Aster CMI Hospital – 7 minutes",
+        "Manipal Hospital (Hebbal) – 5 minutes",
+        "Sindhi High School (Kempapura) – 5 minutes",
+        "Vidya Niketan School – 4 minutes"
       ],
       units: "16 Homes",
       floors: "4 Floors",
@@ -39,9 +42,9 @@ export const initialData = {
       landExtent: "0.42 Acres",
       carpetArea: "1,240 – 1,890 sq. ft.",
       reraNo: "PRM/KA/RERA/1251/309/PR/240826/006892",
-      cardImage: shreyasAsset("shreyas_hero.png"),
-      heroImage: shreyasAsset("shreyas_front.jpeg"),
-      interiorImage: shreyasAsset("shreyas_side_front.jpeg"),
+      cardImage: shreyasAsset("shreyas_front.jpeg"),
+      heroImage: shreyasAsset("shreyas_side_front.jpeg"),
+      interiorImage: shreyasAsset("shreyas_hero.png"),
       textureImage: img("material_texture.jpg"),
       galleryImages: [
         { title: "Front Elevation", src: shreyasAsset("shreyas_front.jpeg") },
@@ -61,6 +64,27 @@ export const initialData = {
         { category: "Flooring & Finishes", detail: "Carefully curated premium materials with attention to long-term durability." },
         { category: "Doors & Windows", detail: "Acoustically insulated window sections and precision timber door joinery." },
         { category: "Sanitary & Plumbing", detail: "Water-efficient branded fixtures and dual-plumbing infrastructure." }
+      ],
+      faqs: [
+        {
+          category: "Facilities & Amenities",
+          items: [
+            { q: "What facilities are provided at Prosperity?", a: "Advithiya Codename Prosperity provides covered parking, elevator access, low-density living with only 16 homes across 4 levels, and landscaped building frontage." },
+            { q: "How is privacy maintained in the community?", a: "Considered Privacy: Designed around acoustic separation, low resident density, and peaceful everyday living." },
+            { q: "How are natural light and ventilation incorporated?", a: "Everyday Intelligence: Thoughtful space planning, natural daylight channeling, and cross-ventilation are designed into every residence." },
+            { q: "What is the quality handover and construction assurance process?", a: "Quality Handover: Rigorous multi-stage construction checkpoints and transparent documentation from ground up." },
+            { q: "What configurations and unit sizes are available?", a: "The project offers a considered collection of 16 homes across four levels, featuring 2 and 3 BHK residences with carpet areas from 1,240 to 1,890 sq. ft." }
+          ]
+        },
+        {
+          category: "Materials & Specifications",
+          items: [
+            { q: "What type of structure is used at Prosperity?", a: "RCC framed structure built to verified seismic standards and quality review checkpoints." },
+            { q: "What flooring and finishes are provided?", a: "Carefully curated premium materials with attention to long-term durability and aesthetic refinement." },
+            { q: "What type of doors and windows are specified?", a: "Acoustically insulated window sections and precision timber door joinery." },
+            { q: "What are the sanitary and plumbing specifications?", a: "Water-efficient branded fixtures and dual-plumbing infrastructure." }
+          ]
+        }
       ],
       constructionLogs: [
         {
@@ -92,11 +116,11 @@ export const initialData = {
         "Close to healthcare, retail and employment hubs"
       ],
       units: "8 Families",
-      floors: "5 Stories (2 Towers)",
+      floors: "4 Strories (2 Towers)",
       towers: "2 Towers",
       parking: "2 Parking Spaces per Apartment",
       typology: "3 BHK",
-      specsTag: "2 Towers | 5 Stories | 8 Families | 2 Parking Spaces per Apartment",
+      specsTag: "2 Towers | 4 Strories | 8 Families | 2 Parking Spaces per Apartment",
       landExtent: "Boutique Enclave",
       carpetArea: "3 BHK Boutique Residences",
       reraNo: "PRM/KA/RERA/1251/309/PR/210515/004120",
