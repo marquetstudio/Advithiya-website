@@ -129,7 +129,7 @@ export const TextToImageHero = ({
               lineHeight: 1.7
             }}
           >
-            Advithiya creates future-ready homes and commercial communities in Bangalore, combining practical design, responsible development and experienced leadership.
+            Advithiya creates future-ready communities, combining practical design, responsible development and experienced leadership.
           </p>
 
           <div className="home-hero-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>

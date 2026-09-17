@@ -1,13 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCMS } from '../context/CMSContext';
-import { ArrowRight, ShieldCheck, Filter, MessageSquare, Compass } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Filter, MessageSquare, Compass, ChevronDown, Check, Building2, Trees, Sparkles } from 'lucide-react';
 import { assetPath } from '../utils/assetPath';
 
 export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
   const { projects } = useCMS();
   const [statusFilter, setStatusFilter] = useState('All');
   const [typeFilter, setTypeFilter] = useState('All');
+  const [residentialFilter, setResidentialFilter] = useState('All');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const getResidentialCount = (subType) => {
+    return projects.filter((p) => {
+      const isUpcoming =
+        p.status === 'Upcoming' ||
+        p.status?.toUpperCase().includes('LAUNCHING');
+      const matchesStatus =
+        statusFilter === 'All' ||
+        (statusFilter === 'Ongoing' && p.status === 'Ongoing') ||
+        (statusFilter === 'Upcoming' && isUpcoming) ||
+        (statusFilter === 'Delivered' && p.status === 'Delivered');
+      if (!matchesStatus || p.type !== 'Residential') return false;
+      if (subType === 'All') return true;
+      if (subType === 'Apartments') return p.residentialType === 'Apartments' || (!p.residentialType && p.type === 'Residential');
+      if (subType === 'Plotted Developments') return p.residentialType === 'Plotted Developments' || p.residentialType === 'Plotted' || p.residentialType === 'Plots';
+      return false;
+    }).length;
+  };
 
   const filteredProjects = projects.filter((p) => {
     const isUpcoming =
@@ -25,7 +67,13 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
       (typeFilter === 'Residential' && p.type === 'Residential') ||
       (typeFilter === 'Commercial' && p.type === 'Commercial');
 
-    return matchesStatus && matchesType;
+    const matchesResidentialSubtype =
+      typeFilter !== 'Residential' ||
+      residentialFilter === 'All' ||
+      (residentialFilter === 'Apartments' && (p.residentialType === 'Apartments' || (!p.residentialType && p.type === 'Residential'))) ||
+      (residentialFilter === 'Plotted Developments' && (p.residentialType === 'Plotted Developments' || p.residentialType === 'Plotted' || p.residentialType === 'Plots'));
+
+    return matchesStatus && matchesType && matchesResidentialSubtype;
   });
 
   const containerVariants = {
@@ -85,7 +133,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
             Creating spaces for the way people live.
           </h1>
           <p style={{ fontSize: '1.2rem', color: 'rgba(255, 255, 255, 0.88)', fontWeight: 300, lineHeight: 1.6 }}>
-            Explore Advithiya's residential and commercial developments across Bangalore, each shaped by its location, purpose and approach to everyday living.
+            Explore Advithiya's residential and commercial developments, each shaped by its location, purpose and approach to everyday living.
           </p>
         </div>
       </section>
@@ -122,30 +170,220 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
               ))}
             </div>
 
-            {/* Typology Filter: Residential | Commercial */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '0.85rem', color: '#626E7A', fontWeight: 500 }}>Category:</span>
-              {['All', 'Residential', 'Commercial'].map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setTypeFilter(type)}
-                  style={{
-                    padding: '0.5rem 1rem',
-                    borderRadius: '4px',
-                    border: '1px solid',
-                    borderColor: typeFilter === type ? '#A6462A' : 'rgba(74, 52, 40, 0.15)',
-                    backgroundColor: typeFilter === type ? 'rgba(166, 70, 42, 0.12)' : '#FFFFFF',
-                    color: typeFilter === type ? '#A6462A' : '#4A3428',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontSize: '0.85rem',
-                    fontWeight: typeFilter === type ? 600 : 400,
-                    cursor: 'pointer',
-                    transition: 'all 0.25s ease'
-                  }}
-                >
-                  {type}
-                </button>
-              ))}
+            {/* Typology Filter: Residential | Commercial & Residential Sub-type Dropdown */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: '0.85rem', color: '#626E7A', fontWeight: 500 }}>Category:</span>
+                {['All', 'Residential', 'Commercial'].map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => {
+                      setTypeFilter(type);
+                      if (type !== 'Residential') {
+                        setResidentialFilter('All');
+                        setIsDropdownOpen(false);
+                      }
+                    }}
+                    style={{
+                      padding: '0.5rem 1rem',
+                      borderRadius: '4px',
+                      border: '1px solid',
+                      borderColor: typeFilter === type ? '#A6462A' : 'rgba(74, 52, 40, 0.15)',
+                      backgroundColor: typeFilter === type ? 'rgba(166, 70, 42, 0.12)' : '#FFFFFF',
+                      color: typeFilter === type ? '#A6462A' : '#4A3428',
+                      fontFamily: "'Poppins', sans-serif",
+                      fontSize: '0.85rem',
+                      fontWeight: typeFilter === type ? 600 : 400,
+                      cursor: 'pointer',
+                      transition: 'all 0.25s ease'
+                    }}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+
+              {/* Sub-Filter Dropdown: Apartments & Plotted Developments */}
+              <AnimatePresence>
+                {typeFilter === 'Residential' && (
+                  <motion.div
+                    ref={dropdownRef}
+                    initial={{ opacity: 0, scale: 0.95, x: -8 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, x: -8 }}
+                    transition={{ duration: 0.2 }}
+                    style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '0.45rem' }}
+                  >
+                    <span style={{ color: 'rgba(74, 52, 40, 0.2)', fontSize: '1rem', fontWeight: 300 }}>|</span>
+                    <span style={{ fontSize: '0.85rem', color: '#626E7A', fontWeight: 500 }}>Type:</span>
+
+                    <button
+                      type="button"
+                      onClick={() => setIsDropdownOpen((prev) => !prev)}
+                      aria-haspopup="listbox"
+                      aria-expanded={isDropdownOpen}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        padding: '0.48rem 0.85rem',
+                        borderRadius: '4px',
+                        border: '1px solid',
+                        borderColor: residentialFilter !== 'All' ? '#A6462A' : 'rgba(74, 52, 40, 0.2)',
+                        backgroundColor: residentialFilter !== 'All' ? '#A6462A' : '#FFFFFF',
+                        color: residentialFilter !== 'All' ? '#FFFFFF' : '#4A3428',
+                        fontFamily: "'Poppins', sans-serif",
+                        fontSize: '0.85rem',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        boxShadow: isDropdownOpen ? '0 0 0 3px rgba(166, 70, 42, 0.15)' : 'none',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      <span>
+                        {residentialFilter === 'All' ? 'All Residential' : residentialFilter}
+                      </span>
+                      <ChevronDown
+                        size={15}
+                        style={{
+                          transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                          transition: 'transform 0.2s ease',
+                          color: residentialFilter !== 'All' ? '#FFFFFF' : '#8A7563'
+                        }}
+                      />
+                    </button>
+
+                    {/* Dropdown Menu Popover */}
+                    {isDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                        transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                        role="listbox"
+                        style={{
+                          position: 'absolute',
+                          top: 'calc(100% + 8px)',
+                          right: 0,
+                          minWidth: '280px',
+                          backgroundColor: '#FFFFFF',
+                          borderRadius: '8px',
+                          boxShadow: '0 16px 40px rgba(74, 52, 40, 0.16), 0 2px 6px rgba(74, 52, 40, 0.06)',
+                          border: '1px solid rgba(74, 52, 40, 0.12)',
+                          padding: '0.5rem',
+                          zIndex: 100
+                        }}
+                      >
+                        <div style={{ padding: '0.4rem 0.6rem 0.5rem', borderBottom: '1px solid rgba(74, 52, 40, 0.08)', marginBottom: '0.35rem' }}>
+                          <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8A7563', fontWeight: 600 }}>
+                            Filter Residential By
+                          </div>
+                        </div>
+
+                        {[
+                          {
+                            id: 'All',
+                            label: 'All Residential',
+                            subtitle: 'All boutique residences & land enclaves',
+                            icon: Sparkles
+                          },
+                          {
+                            id: 'Apartments',
+                            label: 'Apartments',
+                            subtitle: 'Boutique apartment residences & homes',
+                            icon: Building2
+                          },
+                          {
+                            id: 'Plotted Developments',
+                            label: 'Plotted Developments',
+                            subtitle: 'Master-planned plotted enclaves',
+                            icon: Trees
+                          }
+                        ].map((option) => {
+                          const isSelected = residentialFilter === option.id;
+                          const count = getResidentialCount(option.id);
+                          const Icon = option.icon;
+
+                          return (
+                            <button
+                              key={option.id}
+                              role="option"
+                              aria-selected={isSelected}
+                              onClick={() => {
+                                setResidentialFilter(option.id);
+                                setIsDropdownOpen(false);
+                              }}
+                              style={{
+                                width: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                padding: '0.65rem 0.75rem',
+                                borderRadius: '6px',
+                                border: 'none',
+                                backgroundColor: isSelected ? 'rgba(166, 70, 42, 0.08)' : 'transparent',
+                                color: isSelected ? '#A6462A' : '#4A3428',
+                                fontFamily: "'Poppins', sans-serif",
+                                cursor: 'pointer',
+                                textAlign: 'left',
+                                transition: 'all 0.15s ease'
+                              }}
+                              onMouseEnter={(e) => {
+                                if (!isSelected) e.currentTarget.style.backgroundColor = '#F8F9FA';
+                              }}
+                              onMouseLeave={(e) => {
+                                if (!isSelected) e.currentTarget.style.backgroundColor = 'transparent';
+                              }}
+                            >
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                                <div
+                                  style={{
+                                    width: '30px',
+                                    height: '30px',
+                                    borderRadius: '5px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    backgroundColor: isSelected ? '#A6462A' : 'rgba(74, 52, 40, 0.06)',
+                                    color: isSelected ? '#FFFFFF' : '#4A3428',
+                                    flexShrink: 0
+                                  }}
+                                >
+                                  <Icon size={16} />
+                                </div>
+                                <div>
+                                  <div style={{ fontSize: '0.86rem', fontWeight: isSelected ? 600 : 500, lineHeight: 1.25 }}>
+                                    {option.label}
+                                  </div>
+                                  <div style={{ fontSize: '0.72rem', color: '#626E7A', marginTop: '0.15rem' }}>
+                                    {option.subtitle}
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginLeft: '0.5rem', flexShrink: 0 }}>
+                                <span
+                                  style={{
+                                    fontSize: '0.72rem',
+                                    padding: '0.15rem 0.45rem',
+                                    borderRadius: '10px',
+                                    backgroundColor: isSelected ? 'rgba(166, 70, 42, 0.15)' : 'rgba(74, 52, 40, 0.06)',
+                                    color: isSelected ? '#A6462A' : '#626E7A',
+                                    fontWeight: 600
+                                  }}
+                                >
+                                  {count}
+                                </span>
+                                {isSelected && <Check size={14} color="#A6462A" />}
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </motion.div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -167,7 +405,11 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                 <h3>No projects match your selected filter.</h3>
                 <button
                   className="btn btn-outline-dark"
-                  onClick={() => { setStatusFilter('All'); setTypeFilter('All'); }}
+                  onClick={() => {
+                    setStatusFilter('All');
+                    setTypeFilter('All');
+                    setResidentialFilter('All');
+                  }}
                   style={{ marginTop: '1rem' }}
                 >
                   Clear Filters
@@ -175,7 +417,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
               </motion.div>
             ) : (
               <motion.div
-                key={`${statusFilter}-${typeFilter}`}
+                key={`${statusFilter}-${typeFilter}-${residentialFilter}`}
                 style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(420px, 100%), 1fr))', gap: '3rem' }}
                 initial="hidden"
                 animate="visible"
@@ -224,10 +466,10 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
                       <div style={{ padding: '2.25rem' }}>
                         <div style={{ fontSize: '0.85rem', color: '#A6462A', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
                           {project.id === 'shreyas'
-                            ? `${project.location} | Residential | Launching Soon`
+                            ? `${project.location} | Residential · ${project.residentialType || 'Apartments'} | Launching Soon`
                             : project.id === 'rr-nagar'
-                              ? `${project.location} | Residential | Launching Soon`
-                              : `${project.location} | ${project.type} | ${project.status}`}
+                              ? `${project.location} | Residential · ${project.residentialType || 'Apartments'} | Launching Soon`
+                              : `${project.location} | ${project.residentialType ? `Residential · ${project.residentialType}` : project.type} | ${project.status}`}
                         </div>
 
                         <h2 style={{ fontSize: '1.85rem', marginBottom: '0.4rem', color: '#4A3428' }}>

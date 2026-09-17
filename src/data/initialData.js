@@ -24,16 +24,14 @@ export const initialData = {
       status: "Upcoming",
       statusBadgeStyle: "upcoming",
       type: "Residential",
+      residentialType: "Apartments",
       location: "Bangalore",
       locationSubtitle: "Bangalore",
       neighborhoodDescription: "Located in Bangalore with convenient access to established residential, employment and everyday-service corridors.",
       neighborhoodHighlights: [
-        "Kempegowda International Airport (BLR) – 25 minutes",
-        "Manyata Tech Park – 10 minutes",
-        "Aster CMI Hospital – 7 minutes",
-        "Manipal Hospital (Hebbal) – 5 minutes",
-        "Sindhi High School (Kempapura) – 5 minutes",
-        "Vidya Niketan School – 4 minutes"
+        "Well connected to key North Bangalore corridors",
+        "Access to established schools, healthcare and retail",
+        "Detailed site location shared during a project enquiry"
       ],
       units: "16 Homes",
       floors: "4 Floors",
@@ -104,6 +102,7 @@ export const initialData = {
       status: "Ongoing",
       statusBadgeStyle: "ongoing",
       type: "Residential",
+      residentialType: "Apartments",
       location: "Hebbal Kempapura, Bengaluru",
       locationSubtitle: "Hebbal Kempapura, Bengaluru",
       fullAddress: "24, 14th Cross Road, Sonnappa Layout, H A Farm Post, Maruthi Layout, Hebbal Kempapura, Bengaluru, Karnataka 560024",
@@ -111,9 +110,12 @@ export const initialData = {
       mapEmbedUrl: "https://www.google.com/maps?q=Advithiya+Urban+Chalet,+24,+14th+Cross+Rd,+Sonnappa+Layout,+H+A+Farm+Post,+Maruthi+Layout,+Hebbal+Kempapura,+Bengaluru,+Karnataka+560024&output=embed",
       neighborhoodDescription: "Located in Hebbal Kempapura, with convenient access to North Bangalore's major employment, healthcare and transport corridors.",
       neighborhoodHighlights: [
-        "Established residential neighborhood",
-        "Convenient access to Bellary Road",
-        "Close to healthcare, retail and employment hubs"
+        "Kempegowda International Airport (BLR) – 25 minutes",
+        "Manyata Tech Park – 10 minutes",
+        "Aster CMI Hospital – 7 minutes",
+        "Manipal Hospital (Hebbal) – 5 minutes",
+        "Sindhi High School (Kempapura) – 5 minutes",
+        "Vidya Niketan School – 4 minutes"
       ],
       units: "8 Families",
       floors: "4 Strories (2 Towers)",
@@ -193,6 +195,7 @@ export const initialData = {
       status: "LAUNCHING SOON",
       statusBadgeStyle: "upcoming",
       type: "Residential",
+      residentialType: "Apartments",
       location: "RR Nagar, Bengaluru",
       locationSubtitle: "RR Nagar, Bengaluru",
       neighborhoodDescription: "Located in Rajarajeshwari Nagar (RR Nagar), Bengaluru with excellent connectivity to major IT corridors, top schools, healthcare, and metro transit.",
