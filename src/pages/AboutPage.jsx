@@ -246,6 +246,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                     display: 'block'
                   }}
                 />
+                <span className="image-disclaimer-badge">For illustrative purposes only</span>
               </motion.div>
 
               {/* Right Column: Text Content */}
@@ -498,7 +499,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                       border: '1px solid rgba(74, 52, 40, 0.08)'
                     }}
                   >
-                    <div style={{ width: '100%', height: '240px', overflow: 'hidden' }}>
+                    <div style={{ width: '100%', height: '240px', overflow: 'hidden', position: 'relative' }}>
                       <motion.img
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.5 }}
@@ -506,6 +507,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                         alt={val.title}
                         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                       />
+                      <span className="image-disclaimer-badge">For illustrative purposes only</span>
                     </div>
                     <div style={{ padding: '2rem' }}>
                       <h3 style={{ fontSize: '1.25rem', color: '#4A3428', marginBottom: '0.75rem', fontWeight: 700 }}>

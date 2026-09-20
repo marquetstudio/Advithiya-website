@@ -193,6 +193,7 @@ export const HomePage = ({
                   display: 'block'
                 }}
               />
+              <span className="image-disclaimer-badge">For illustrative purposes only</span>
             </motion.div>
           </div>
         </div>
@@ -514,7 +515,7 @@ export const HomePage = ({
                     flexDirection: 'column'
                   }}
                 >
-                  <div style={{ width: '100%', height: '240px', overflow: 'hidden', backgroundColor: '#F8F9FA' }}>
+                  <div style={{ width: '100%', height: '240px', overflow: 'hidden', backgroundColor: '#F8F9FA', position: 'relative' }}>
                     <motion.img
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.5 }}
@@ -522,6 +523,7 @@ export const HomePage = ({
                       alt={pillar.title}
                       style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     />
+                    <span className="image-disclaimer-badge">For illustrative purposes only</span>
                   </div>
 
                   <div style={{ padding: '2rem 1.75rem 2.25rem 1.75rem', textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>

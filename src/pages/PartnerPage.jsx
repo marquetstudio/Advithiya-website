@@ -57,13 +57,15 @@ export const PartnerPage = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(${assetPath('images/urban_chalet.jpg')})`,
+            backgroundImage: `url(${assetPath('images/transparency.png')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',
             zIndex: 0
           }}
         />
+
+        <span className="image-disclaimer-badge">For illustrative purposes only</span>
 
         <div className="container" style={{ maxWidth: '880px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <span className="section-tag section-tag-glass">Partner With Advithiya</span>
