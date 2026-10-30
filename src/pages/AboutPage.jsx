@@ -91,8 +91,8 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
   };
 
   const profileModal = selectedMember ? createPortal(
-    <div 
-      className="modal-overlay" 
+    <div
+      className="modal-overlay"
       onClick={() => setSelectedMember(null)}
       style={{
         position: 'fixed',
@@ -188,7 +188,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundImage: `url(${assetPath('images/shreyas_interior.jpg')})`,
+              backgroundImage: `url(${assetPath('images/About_us_hero_image.png')})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               filter: 'brightness(0.7)',
@@ -214,7 +214,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
             <div
               style={{
                 display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))',
                 gap: '4rem',
                 alignItems: 'center'
               }}
@@ -246,7 +246,6 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                     display: 'block'
                   }}
                 />
-                <span className="image-disclaimer-badge">For illustrative purposes only</span>
               </motion.div>
 
               {/* Right Column: Text Content */}
@@ -444,7 +443,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                 </button>
               </div>
 
-              <div 
+              <div
                 ref={valuesScrollRef}
                 style={{
                   display: 'flex',

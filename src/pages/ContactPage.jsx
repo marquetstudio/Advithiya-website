@@ -49,7 +49,7 @@ export const ContactPage = ({ setActivePage }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(${assetPath('images/shreyas_exterior.jpg')})`,
+            backgroundImage: `url("${assetPath('images/hero image.png')}")`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',

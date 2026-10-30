@@ -39,14 +39,22 @@ export const initialData = {
       specsTag: "16 Homes | 4 Floors | 2 & 3 BHK",
       landExtent: "0.42 Acres",
       carpetArea: "1,240 – 1,890 sq. ft.",
-      reraNo: "PRM/KA/RERA/1251/309/PR/240826/006892",
+      // reraNo: "PRM/KA/RERA/1251/309/PR/240826/006892",
+      reraNo: "",
       cardImage: shreyasAsset("shreyas_front.jpeg"),
       heroImage: shreyasAsset("shreyas_side_front.jpeg"),
       interiorImage: shreyasAsset("shreyas_hero.png"),
       textureImage: img("material_texture.jpg"),
       galleryImages: [
-        { title: "Front Elevation", src: shreyasAsset("shreyas_front.jpeg") },
-        { title: "Side & Front Perspective", src: shreyasAsset("shreyas_side_front.jpeg") }
+        { title: "Front Elevation", src: shreyasAsset("1 (1).png") },
+        { title: "Side Perspective", src: shreyasAsset("2 (1).png") },
+        { title: "Dusk Exterior", src: shreyasAsset("shreyas_hero.png") },
+        { title: "Day Exterior", src: shreyasAsset("shreyas_side_front.jpeg") },
+        { title: "Common Corridor", src: shreyasAsset("3.png") },
+        { title: "Covered Parking", src: shreyasAsset("4.png") },
+        { title: "Children's Play Area", src: shreyasAsset("5.png") },
+        { title: "Rooftop Garden", src: shreyasAsset("6.png") },
+        { title: "Rooftop Social Terrace", src: shreyasAsset("7.png") }
       ],
       description: "A boutique residential community designed around privacy, comfort and everyday functionality.",
       vision: "A considered collection of 16 homes across four levels, offering 2 and 3 BHK residences designed around privacy, comfort and everyday functionality.",
@@ -89,9 +97,11 @@ export const initialData = {
           date: "Q3 2026",
           milestone: "Project Planning & Internal Verification",
           description: "Micro-climate site analysis, structural engineering reviews, and RERA documentation completed.",
-          image: img("shreyas_exterior.jpg")
+          image: img("hero image.png")
         }
       ],
+      mapUrl: "https://www.google.com/maps/place/Advithiya+Shreyas/@13.0651722,77.6304932,17z/",
+      mapEmbedUrl: "https://www.google.com/maps?q=13.0651722,77.6304932&output=embed",
       lastUpdated: "September 2026"
     },
     {
@@ -211,8 +221,8 @@ export const initialData = {
       landExtent: "Launching Soon",
       carpetArea: "Details on Request",
       reraNo: "Coming Soon",
-      cardImage: img("shreyas_exterior.jpg"),
-      heroImage: img("shreyas_exterior.jpg"),
+      cardImage: img("RRNagar_placeholder.png"),
+      heroImage: img("RRNagar_placeholder.png"),
       interiorImage: img("shreyas_interior.jpg"),
       textureImage: img("material_texture.jpg"),
       description: "Upcoming boutique residential development in RR Nagar, Bangalore. Details launching soon.",

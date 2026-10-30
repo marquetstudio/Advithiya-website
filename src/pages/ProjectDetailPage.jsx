@@ -4,8 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   ShieldCheck, MapPin, Layers, CheckCircle2,
   Send, Eye, ArrowLeft, ExternalLink, Phone, Calendar,
-  Download, FileText, X,
-  Plane, Building2, HeartPulse, GraduationCap, Navigation, ShoppingBag
+  Download, FileText, X
 } from 'lucide-react';
 import { useCMS } from '../context/CMSContext';
 
@@ -84,29 +83,6 @@ const FaqSection = ({ category, items }) => {
       </AnimatePresence>
     </div>
   );
-};
-
-const getNeighborhoodIcon = (highlight) => {
-  const text = typeof highlight === 'string' ? highlight.toLowerCase() : '';
-  if (text.includes('airport') || text.includes('blr') || text.includes('flight')) {
-    return <Plane size={15} strokeWidth={2} />;
-  }
-  if (text.includes('tech park') || text.includes('office') || text.includes('commercial') || text.includes('business')) {
-    return <Building2 size={15} strokeWidth={2} />;
-  }
-  if (text.includes('hospital') || text.includes('healthcare') || text.includes('clinic') || text.includes('medical')) {
-    return <HeartPulse size={15} strokeWidth={2} />;
-  }
-  if (text.includes('school') || text.includes('college') || text.includes('education') || text.includes('academy') || text.includes('university')) {
-    return <GraduationCap size={15} strokeWidth={2} />;
-  }
-  if (text.includes('metro') || text.includes('road') || text.includes('corridor') || text.includes('highway') || text.includes('transit') || text.includes('connected')) {
-    return <Navigation size={15} strokeWidth={2} />;
-  }
-  if (text.includes('retail') || text.includes('mall') || text.includes('shopping') || text.includes('store')) {
-    return <ShoppingBag size={15} strokeWidth={2} />;
-  }
-  return <MapPin size={15} strokeWidth={2} />;
 };
 
 export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
@@ -754,36 +730,9 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
               <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
                 {project.neighborhoodDescription}
               </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', padding: 0, margin: 0 }}>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.9rem', color: '#A6462A' }}>
                 {project.neighborhoodHighlights?.map((highlight) => (
-                  <li
-                    key={highlight}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.75rem',
-                      fontSize: '0.92rem',
-                      color: 'rgba(255, 255, 255, 0.95)'
-                    }}
-                  >
-                    <span
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '28px',
-                        height: '28px',
-                        borderRadius: '6px',
-                        backgroundColor: 'rgba(166, 70, 42, 0.25)',
-                        color: '#F29A76',
-                        flexShrink: 0
-                      }}
-                      aria-hidden="true"
-                    >
-                      {getNeighborhoodIcon(highlight)}
-                    </span>
-                    <span style={{ lineHeight: 1.4 }}>{highlight}</span>
-                  </li>
+                  <li key={highlight}>✓ {highlight}</li>
                 ))}
               </ul>
             </div>
@@ -817,7 +766,28 @@ export const ProjectDetailPage = ({ project, onBack, onOpenSpeakModal }) => {
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
                   />
-
+                  {project.mapUrl && (
+                    <a
+                      href={project.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        position: 'absolute',
+                        bottom: '10px',
+                        right: '10px',
+                        backgroundColor: '#A6462A',
+                        color: '#FFFFFF',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        padding: '0.4rem 0.85rem',
+                        borderRadius: '4px',
+                        textDecoration: 'none',
+                        zIndex: 1
+                      }}
+                    >
+                      View on Google Maps ?
+                    </a>
+                  )}
                 </>
               ) : (
                 <>

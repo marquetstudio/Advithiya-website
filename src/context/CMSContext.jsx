@@ -1,23 +1,22 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { initialData } from '../data/initialData';
 
 const CMSContext = createContext();
 
 export const CMSProvider = ({ children }) => {
-  const [data] = useState(initialData);
-  const [activeProject, setActiveProject] = useState(data.projects[0]);
+  const [activeProject, setActiveProject] = useState(initialData.projects[0]);
 
   return (
     <CMSContext.Provider
       value={{
-        company: data.company,
-        projects: data.projects,
-        articles: data.articles,
-        leadership: data.leadership,
-        charter: data.charter,
-        qualityPillars: data.qualityPillars,
-        standardsPillars: data.standardsPillars || initialData.standardsPillars,
-        values: data.values || initialData.values,
+        company: initialData.company,
+        projects: initialData.projects,
+        articles: initialData.articles,
+        leadership: initialData.leadership,
+        charter: initialData.charter,
+        qualityPillars: initialData.qualityPillars,
+        standardsPillars: initialData.standardsPillars,
+        values: initialData.values,
         activeProject,
         setActiveProject
       }}

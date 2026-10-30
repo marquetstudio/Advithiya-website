@@ -182,7 +182,7 @@ export const HomePage = ({
               }}
             >
               <img
-                src={assetPath('images/about_advithiya_image.png')}
+                src={assetPath('images/about.png')}
                 alt="Advithiya Architectural Landscape & Living"
                 style={{
                   width: '100%',
@@ -193,7 +193,6 @@ export const HomePage = ({
                   display: 'block'
                 }}
               />
-              <span className="image-disclaimer-badge">For illustrative purposes only</span>
             </motion.div>
           </div>
         </div>
