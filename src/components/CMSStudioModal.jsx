@@ -23,7 +23,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
     date: 'September 2026',
     milestone: 'Superstructure 1st Floor Slab Concrete Casting',
     description: 'First floor structural slab poured with self-compacting concrete. Post-tensioning cables tensioned.',
-    image: '/assets/images/hero_architecture.jpg'
+    image: '/assets/images/hero_architecture.webp'
   });
 
   const [newArticle, setNewArticle] = useState({
@@ -55,7 +55,7 @@ export const CMSStudioModal = ({ isOpen, onClose }) => {
       date: 'October 2026',
       milestone: '',
       description: '',
-      image: '/assets/images/shreyas_interior.jpg'
+      image: '/assets/images/shreyas_interior.webp'
     });
   };
 

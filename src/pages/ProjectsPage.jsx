@@ -119,7 +119,7 @@ export const ProjectsPage = ({ setActivePage, onSelectProject }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(${assetPath('images/hero_architecture.jpg')})`,
+            backgroundImage: `url(${assetPath('images/hero_architecture.webp')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',

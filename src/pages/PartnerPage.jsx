@@ -57,7 +57,7 @@ export const PartnerPage = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(${assetPath('images/transparency.png')})`,
+            backgroundImage: `url(${assetPath('images/transparency.webp')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',

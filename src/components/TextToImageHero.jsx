@@ -39,7 +39,7 @@ export const TextToImageHero = ({
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url("${assetPath('images/hero image.png')}")`,
+          backgroundImage: `url("${assetPath('images/hero image.webp')}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 35%',
           scale: bgScale,
@@ -84,7 +84,7 @@ export const TextToImageHero = ({
               className="home-hero-wordmark"
               style={{
                 color: 'transparent',
-                backgroundImage: `linear-gradient(135deg, rgba(74, 52, 40, 0.72) 0%, rgba(49, 33, 25, 0.55) 50%, rgba(166, 70, 42, 0.68) 100%), url("${assetPath('images/hero image.png')}")`,
+                backgroundImage: `linear-gradient(135deg, rgba(74, 52, 40, 0.72) 0%, rgba(49, 33, 25, 0.55) 50%, rgba(166, 70, 42, 0.68) 100%), url("${assetPath('images/hero image.webp')}")`,
                 backgroundBlendMode: 'multiply',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center 40%',

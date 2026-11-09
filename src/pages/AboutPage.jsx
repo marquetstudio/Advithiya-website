@@ -11,7 +11,7 @@ const editorialLeadershipData = [
     title: 'Managing Director',
     experience: '30+ Years of Experience',
     bio: 'With over three decades of experience across procurement, project delivery and operations, Srinivas Raju brings broad industry knowledge and a strong focus on execution. His approach combines practical decision-making with an emphasis on quality, accountability and long-term value.',
-    image: assetPath('images/team_member.png')
+    image: assetPath('images/team_member.webp')
   }
 ];
 
@@ -31,21 +31,21 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
     {
       name: 'Construction & Project Delivery',
       title: 'Director | Construction Strategy & CEO | Bespoke',
-      image: assetPath('images/team_member.png'),
+      image: assetPath('images/team_member.webp'),
       details: ['Project planning', 'Construction controls', 'Quality handover'],
       bio: leadership[1]?.bio || 'Guides project execution from early planning through construction and handover, with a focus on dependable delivery and quality control.'
     },
     {
       name: 'Commercial & Development',
       title: 'Vice President | Commercial & Development Strategy',
-      image: assetPath('images/team_member.png'),
+      image: assetPath('images/team_member.webp'),
       details: ['Development strategy', 'Commercial planning', 'Procurement'],
       bio: leadership[2]?.bio || 'Shapes development and commercial strategy by connecting design intent, responsible material choices and long-term project value.'
     },
     {
       name: 'Business & Customer Experience',
       title: 'Vice President & Business Head | Advithiya',
-      image: assetPath('images/team_member.png'),
+      image: assetPath('images/team_member.webp'),
       details: ['Business operations', 'Customer relationships', 'Transparent communication'],
       bio: leadership[3]?.bio || 'Leads business operations and customer experience, ensuring clear communication and accountable support throughout the customer journey.'
     }
@@ -188,7 +188,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundImage: `url(${assetPath('images/About_us_hero_image.png')})`,
+              backgroundImage: `url(${assetPath('images/About_us_hero_image.webp')})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               filter: 'brightness(0.7)',
@@ -235,7 +235,7 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                 }}
               >
                 <img
-                  src={assetPath('images/who_we_are.png')}
+                  src={assetPath('images/who_we_are.webp')}
                   alt="Who We Are"
                   style={{
                     width: '100%',
@@ -460,27 +460,27 @@ export const AboutPage = ({ setActivePage, onOpenSpeakModal }) => {
                   {
                     title: "Thoughtful Design",
                     desc: "Spaces considered around how people live.",
-                    image: assetPath('images/thoughtful_design.png')
+                    image: assetPath('images/thoughtful_design.webp')
                   },
                   {
                     title: "Integrity",
                     desc: "Communicate clearly. Act with accountability.",
-                    image: assetPath('images/integrity.png')
+                    image: assetPath('images/integrity.webp')
                   },
                   {
                     title: "Quality",
                     desc: "Attention to detail from planning through delivery.",
-                    image: assetPath('images/quality.png')
+                    image: assetPath('images/quality.webp')
                   },
                   {
                     title: "Responsible Development",
                     desc: "Considered choices around resources, materials and long-term community well-being.",
-                    image: assetPath('images/responsible_development.png')
+                    image: assetPath('images/responsible_development.webp')
                   },
                   {
                     title: "Transparency",
                     desc: "Clear information, respectful guidance and accountable delivery.",
-                    image: assetPath('images/transparency.png')
+                    image: assetPath('images/transparency.webp')
                   }
                 ].map((val, idx) => (
                   <motion.div

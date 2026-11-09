@@ -55,7 +55,7 @@ export const StandardsPage = ({ setActivePage, onOpenCharterModal }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(${assetPath('images/material_texture.jpg')})`,
+            backgroundImage: `url(${assetPath('images/material_texture.webp')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.7)',

@@ -41,20 +41,20 @@ export const initialData = {
       carpetArea: "1,240 – 1,890 sq. ft.",
       // reraNo: "PRM/KA/RERA/1251/309/PR/240826/006892",
       reraNo: "",
-      cardImage: shreyasAsset("shreyas_front.jpeg"),
-      heroImage: shreyasAsset("shreyas_side_front.jpeg"),
-      interiorImage: shreyasAsset("shreyas_hero.png"),
-      textureImage: img("material_texture.jpg"),
+      cardImage: shreyasAsset("shreyas_front.webp"),
+      heroImage: shreyasAsset("shreyas_side_front.webp"),
+      interiorImage: shreyasAsset("shreyas_hero.webp"),
+      textureImage: img("material_texture.webp"),
       galleryImages: [
-        { title: "Front Elevation", src: shreyasAsset("1 (1).png") },
-        { title: "Side Perspective", src: shreyasAsset("2 (1).png") },
-        { title: "Dusk Exterior", src: shreyasAsset("shreyas_hero.png") },
-        { title: "Day Exterior", src: shreyasAsset("shreyas_side_front.jpeg") },
-        { title: "Common Corridor", src: shreyasAsset("3.png") },
-        { title: "Covered Parking", src: shreyasAsset("4.png") },
-        { title: "Children's Play Area", src: shreyasAsset("5.png") },
-        { title: "Rooftop Garden", src: shreyasAsset("6.png") },
-        { title: "Rooftop Social Terrace", src: shreyasAsset("7.png") }
+        { title: "Front Elevation", src: shreyasAsset("1 (1).webp") },
+        { title: "Side Perspective", src: shreyasAsset("2 (1).webp") },
+        { title: "Dusk Exterior", src: shreyasAsset("shreyas_hero.webp") },
+        { title: "Day Exterior", src: shreyasAsset("shreyas_side_front.webp") },
+        { title: "Common Corridor", src: shreyasAsset("3.webp") },
+        { title: "Covered Parking", src: shreyasAsset("4.webp") },
+        { title: "Children's Play Area", src: shreyasAsset("5.webp") },
+        { title: "Rooftop Garden", src: shreyasAsset("6.webp") },
+        { title: "Rooftop Social Terrace", src: shreyasAsset("7.webp") }
       ],
       description: "A boutique residential community designed around privacy, comfort and everyday functionality.",
       vision: "A considered collection of 16 homes across four levels, offering 2 and 3 BHK residences designed around privacy, comfort and everyday functionality.",
@@ -97,7 +97,7 @@ export const initialData = {
           date: "Q3 2026",
           milestone: "Project Planning & Internal Verification",
           description: "Micro-climate site analysis, structural engineering reviews, and RERA documentation completed.",
-          image: img("hero image.png")
+          image: img("hero image.webp")
         }
       ],
       mapUrl: "https://www.google.com/maps/place/Advithiya+Shreyas/@13.0651722,77.6304932,17z/",
@@ -136,15 +136,15 @@ export const initialData = {
       landExtent: "Boutique Enclave",
       carpetArea: "3 BHK Boutique Residences",
       reraNo: "PRM/KA/RERA/1251/309/PR/210515/004120",
-      cardImage: urbanChaletAsset("UC_hero image.png"),
-      heroImage: urbanChaletAsset("UC_hero image2.png"),
-      interiorImage: img("hero_architecture.jpg"),
-      textureImage: img("material_texture.jpg"),
+      cardImage: urbanChaletAsset("UC_hero image.webp"),
+      heroImage: urbanChaletAsset("UC_hero image2.webp"),
+      interiorImage: img("hero_architecture.webp"),
+      textureImage: img("material_texture.webp"),
       galleryImages: [
-        { title: "Front Elevation", src: urbanChaletAsset("1_1 - Photo.jpg.jpeg") },
-        { title: "Corner Perspective", src: urbanChaletAsset("1_6 - Photo.jpg.jpeg") },
-        { title: "Balcony & Facade Detail", src: urbanChaletAsset("1_4 - Photo.jpg.jpeg") },
-        { title: "Landscaped Arrival", src: urbanChaletAsset("1_2 - Photo.jpg.jpeg") }
+        { title: "Front Elevation", src: urbanChaletAsset("1_1 - Photo.jpg.webp") },
+        { title: "Corner Perspective", src: urbanChaletAsset("1_6 - Photo.jpg.webp") },
+        { title: "Balcony & Facade Detail", src: urbanChaletAsset("1_4 - Photo.jpg.webp") },
+        { title: "Landscaped Arrival", src: urbanChaletAsset("1_2 - Photo.jpg.webp") }
       ],
       floorPlanPdf: urbanChaletAsset("URBAN CHALET_REVISED PLAN RENDERS (R2)_12.07.25.pdf"),
       floorPlanDownloadName: "Advithiya-Urban-Chalet-Floor-Plans.pdf",
@@ -192,7 +192,7 @@ export const initialData = {
           date: "Completed & Delivered",
           milestone: "Handover to 8 Families",
           description: "All residences completed and handed over in Hebbal Kempapura, Bengaluru.",
-          image: urbanChaletAsset("UC_hero image.png")
+          image: urbanChaletAsset("UC_hero image.webp")
         }
       ],
       lastUpdated: "September 2026"
@@ -221,10 +221,10 @@ export const initialData = {
       landExtent: "Launching Soon",
       carpetArea: "Details on Request",
       reraNo: "Coming Soon",
-      cardImage: img("RRNagar_placeholder.png"),
-      heroImage: img("RRNagar_placeholder.png"),
-      interiorImage: img("shreyas_interior.jpg"),
-      textureImage: img("material_texture.jpg"),
+      cardImage: img("RRNagar_placeholder.webp"),
+      heroImage: img("RRNagar_placeholder.webp"),
+      interiorImage: img("shreyas_interior.webp"),
+      textureImage: img("material_texture.webp"),
       description: "Upcoming boutique residential development in RR Nagar, Bangalore. Details launching soon.",
       vision: "A considered boutique community designed around comfort, connectivity, and everyday functionality in RR Nagar.",
       pricing: "Launching Soon",

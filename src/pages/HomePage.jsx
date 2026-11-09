@@ -182,7 +182,7 @@ export const HomePage = ({
               }}
             >
               <img
-                src={assetPath('images/about.png')}
+                src={assetPath('images/about.webp')}
                 alt="Advithiya Architectural Landscape & Living"
                 style={{
                   width: '100%',
@@ -477,27 +477,27 @@ export const HomePage = ({
                 {
                   title: "Thoughtful Design",
                   desc: "Spaces considered around how people live.",
-                  image: assetPath('images/thoughtful_design.png')
+                  image: assetPath('images/thoughtful_design.webp')
                 },
                 {
                   title: "Integrity",
                   desc: "Communicate clearly. Act with accountability.",
-                  image: assetPath('images/integrity.png')
+                  image: assetPath('images/integrity.webp')
                 },
                 {
                   title: "Quality",
                   desc: "Attention to detail from planning through delivery.",
-                  image: assetPath('images/quality.png')
+                  image: assetPath('images/quality.webp')
                 },
                 {
                   title: "Responsible Development",
                   desc: "Considered choices around resources, materials and long-term community well-being.",
-                  image: assetPath('images/responsible_development.png')
+                  image: assetPath('images/responsible_development.webp')
                 },
                 {
                   title: "Transparency",
                   desc: "Clear information, respectful guidance and accountable delivery.",
-                  image: assetPath('images/transparency.png')
+                  image: assetPath('images/transparency.webp')
                 }
               ].map((pillar, idx) => (
                 <motion.div
