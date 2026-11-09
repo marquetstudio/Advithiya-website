@@ -1,10 +1,7 @@
 /**
  * Prepends Vite's BASE_URL to public asset paths.
- * Required because vite.config.js sets base: '/Advithiya-website/'
- * for GitHub Pages deployment. Without this, absolute paths like
- * '/assets/images/foo.png' resolve to the site root instead of
- * the sub-path, causing 404s in production (and in local dev when
- * the base is set).
+ * Required for consistent asset resolution across environments.
+ * base is set to '/' in vite.config.js for Cloudflare Workers deployment.
  *
  * Usage:
  *   import { assetPath } from '../utils/assetPath';
